@@ -1,0 +1,35 @@
+<?xml version="1.0" ?>
+<sdf version="1.4">
+  <!-- We use a custom world for the rrbot so that the camera angle is launched correctly -->
+
+  <world name="default">
+    <include>
+      <uri>model://ground_plane</uri>
+    </include>
+    <scene>
+      <shadows>0</shadows>
+    </scene>
+
+    <!-- Global light source -->
+    <include>
+      <uri>model://sun</uri>
+      <cast_shadows>false</cast_shadows>
+    </include>
+
+    <!-- <light type="point" name="point_light">
+      <pose>0.612599 0.000594 1.6009 0 0 0</pose>
+      <diffuse>1 1 1 1</diffuse> -->
+      <!-- <specular>.1 .1 .1 1</specular> -->
+      <!-- <attenuation>
+        <range>20</range>
+        <linear>0.2</linear>
+        <constant>0.8</constant>
+        <quadratic>0.01</quadratic>
+      </attenuation>
+      <cast_shadows>false</cast_shadows>
+    </light> -->
+
+
+  </world>
+
+</sdf>

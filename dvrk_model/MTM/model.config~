@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+
+<model>
+  <name>dvrk</name>
+  <version>1.0</version>
+  <sdf version="1.6">dvrk_full.sdf</sdf>
+
+  <author>
+    <name>Ankur Agrawal</name>
+    <email>asagrawal@wpi.edu</email>
+  </author>
+
+  <description>
+    daVinci Research Kit
+  </description>
+</model>
+

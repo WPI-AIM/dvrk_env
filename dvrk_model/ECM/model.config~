@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+
+<model>
+  <name>dvrk_ecm</name>
+  <version>1.0</version>
+  <sdf version="1.6">ECM_camera.sdf</sdf>
+
+  <author>
+    <name>Ankur Agrawal</name>
+    <email>asagrawal@wpi.edu</email>
+  </author>
+
+  <description>
+    daVinci Research Kit
+  </description>
+</model>
+

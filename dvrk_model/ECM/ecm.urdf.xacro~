@@ -1,0 +1,365 @@
+<?xml version="1.0" ?>
+<robot name="ecm" xmlns:xacro="http://www.ros.org/wiki/xacro">
+  <!-- Colors -->
+  <xacro:include filename="$(find dvrk_model)/urdf/common.urdf.xacro"/>
+
+  <!-- Macro for da Vinci Endoscope Camera Manipulator (ECM) -->
+  <xacro:macro name="ecm" params="prefix parent_link xyz rpy">
+  <xacro:property name="PI" value="3.14159" />
+    <!-- Joint 0: Fixed to World-->
+    <!--<joint name="setup_fixed_joint" type="fixed">
+      <parent link="${parent_link}"/>
+      <child link="${prefix}_setup_base_link"/>
+      <origin rpy="${rpy}" xyz="${xyz}"/>
+    </joint>
+
+    <link name="${prefix}_setup_base_link"/>
+
+    <joint name="setup_tip_joint" type="fixed">
+      <parent link="${parent_link}"/>
+      <child link="${prefix}_setup_link"/>
+      <origin rpy="-0.87046370379 0 -${3.14159/2}" xyz="0.91324 -0.02111 0.03166"/>
+      <axis xyz="0 0 1"/>
+    </joint>
+
+    <link name="${prefix}_setup_link">
+      <visual>
+        <origin rpy="0 0 0" xyz="0 0 0"/>
+        <geometry>
+          <mesh filename="package://dvrk_model/ECM/meshes/ecm/Endo_Arm.STL"/>
+        </geometry>
+	<material name="DaVinciRed"/>
+      </visual>
+      <collision>
+        <origin rpy="0 0 0" xyz="0 0 0"/>
+        <geometry>
+          <mesh filename="package://dvrk_model/ECM/meshes/ecm/Endo_Arm.STL"/>
+        </geometry>
+      </collision>
+    </link>-->
+
+    <!-- Joint 0: Fixed to Setup Joint-->
+    <joint name="fixed_joint" type="fixed">
+      <parent link="${parent_link}"/>
+      <child link="${prefix}_base_link"/>
+      <origin rpy="${rpy}" xyz="${xyz}"/>
+    </joint>
+    <link name="${prefix}_base_link">
+      <inertial>
+        <mass value="0.01"/>
+        <origin rpy="0 0 0" xyz="0.0 0 0"/>
+        <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+      </inertial>
+      <visual>
+        <origin rpy="0 ${3.14159/2} ${3.14159}" xyz="0.0 0 0"/>
+        <geometry>
+          <mesh filename="package://dvrk_model/ECM/meshes/ecm/ECM_Base.STL" scale="0.001 0.001 0.001"/>
+        </geometry>
+	<material name="DaVinciGreen"/>
+      </visual>
+      <collision>
+        <origin rpy="0 ${3.14159/2} ${3.14159}" xyz="0.0 0 0"/>
+        <geometry>
+          <mesh filename="package://dvrk_model/ECM/meshes/ecm/ECM_Base.STL" scale="0.001 0.001 0.001"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <!-- Joint 1: Outer Yaw -->
+    <joint name="outer_yaw" type="revolute">
+      <parent link="${prefix}_base_link"/>
+      <child link="${prefix}_yaw_link"/>
+      <!--<origin rpy="0 -${3.14159/2} ${3.14159/2}" xyz="0 0 0"/>-->
+      <!--<origin rpy="-${3.14159/2} 0 -${3.14159/2}" xyz="-0.6 0.1 0"/>-->
+      <origin rpy="-${3.14159/2} 0 -${3.14159/2}" xyz="-0.76 -0.075 -0.0775"/>
+      <axis xyz="0 0 1"/>
+      <!--rotates about z axis-->
+      <!--limit effort and velocity picked arbitrarily check-->
+      <limit effort="50.0" lower="${-75/180*3.14159}" upper="${3.14159/4}" velocity="2"/>
+      <joint_properties damping="1.0" friction="0.0"/>
+    </joint>
+
+    <link name="${prefix}_yaw_link">
+    <inertial>
+      <mass value="0.01"/>
+      <origin rpy="0 0 -${3.14159/2}" xyz="0.0 0 0.603"/>
+      <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+    </inertial>
+      <visual>
+        <origin rpy="0 0 -${3.14159/2}" xyz="0.0 0 0.603"/>
+        <geometry>
+          <mesh filename="package://dvrk_model/ECM/meshes/ecm/Endo_Link_5.STL"/>
+        </geometry>
+	<material name="DaVinciGreen"/>
+      </visual>
+      <collision>
+        <origin rpy="0 0 -${3.14159/2}" xyz="0.0 0 0.603"/>
+        <geometry>
+          <mesh filename="package://dvrk_model/ECM/meshes/ecm/Endo_Link_5.STL"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <!-- Joint 2: Pitch -->
+    <joint name="outer_pitch" type="revolute">
+      <parent link="${prefix}_yaw_link"/>
+      <child link="${prefix}_pitch_link"/>
+      <origin rpy="-${3.14159/2} -${3.14159/2} 0" xyz="0 0 0"/>
+      <axis xyz="0 0 1"/>
+      <limit effort="100.0" lower="${-3.14159/4}" upper="${3.14159*65/180}" velocity="10"/>
+      <joint_properties damping="1.0" friction="0.0"/>
+    </joint>
+    <link name="${prefix}_pitch_link">
+    <inertial>
+      <mass value="0.01"/>
+      <origin rpy="${3.14159} 0 ${3.14159*78.5/180}" xyz="0 0 0"/>
+      <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+    </inertial>
+    </link>
+
+    <joint name="outer_pitch_0" type="continuous">
+      <parent link="${prefix}_yaw_link"/>
+      <child link="${prefix}_pitch_link_1"/>
+      <origin rpy="-${3.14159/2} -${3.14159/2} 0" xyz="0 0 0.378"/>
+      <axis xyz="0 0 1"/>
+      <joint_properties damping="1.0" friction="0.0"/>
+      <mimic joint="outer_pitch" multiplier="1"/>
+    </joint>
+
+    <link name="${prefix}_pitch_link_1">
+
+    <inertial>
+      <mass value="0.01"/>
+      <origin rpy="${3.14159} 0 ${3.14159*78.5/180}" xyz="0 0 0"/>
+      <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+    </inertial>
+      <visual>
+        <origin rpy="${3.14159} 0 ${3.14159*78.5/180}" xyz="0.0 0 0.0"/>
+        <geometry>
+          <mesh filename="package://dvrk_model/ECM/meshes/ecm/Endo_Link_5_2.STL"/>
+        </geometry>
+	<material name="DaVinciMedGray"/>
+      </visual>
+      <collision>
+        <origin rpy="${3.14159} 0 ${3.14159*78.5/180}" xyz="0.0 0 0.0"/>
+        <geometry>
+          <mesh filename="package://dvrk_model/ECM/meshes/ecm/Endo_Link_5_2.STL"/>
+        </geometry>
+      </collision>
+      <!--<inertial>
+        <mass value=".9"/>
+        <inertia ixx="9.0" ixy="0.0" ixz="0.0" iyy="9.0" iyz="0.0" izz="9.0"/>
+      </inertial>-->
+    </link>
+
+    <joint name="outer_pitch_1" type="continuous">
+      <parent link="${prefix}_pitch_link_1"/>
+      <child link="${prefix}_pitch_link_2"/>
+      <origin rpy="0 0 0" xyz="0.0558629 0.274575 0"/>
+      <axis xyz="0 0 1"/>
+      <joint_properties damping="1.0" friction="0.0"/>
+      <mimic joint="outer_pitch" multiplier="-1"/>
+    </joint>
+
+    <link name="${prefix}_pitch_link_2">
+    <inertial>
+      <mass value="0.01"/>
+      <origin rpy="0 0 0" xyz="0 0 -0.0225"/>
+      <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+    </inertial>
+      <visual>
+        <origin rpy="0 0 0" xyz="0.0 0 -0.0225"/>
+        <geometry>
+          <mesh filename="package://dvrk_model/ECM/meshes/ecm/Endo_Link_6_2.STL"/>
+        </geometry>
+	<material name="DaVinciMedGray"/>
+      </visual>
+      <collision>
+        <origin rpy="0 0 0" xyz="0.0 0 -0.0225"/>
+        <geometry>
+          <mesh filename="package://dvrk_model/ECM/meshes/ecm/Endo_Link_6_2.STL"/>
+        </geometry>
+      </collision>
+<!--      <inertial>
+        <mass value=".9"/>
+        <inertia ixx="9.0" ixy="0.0" ixz="0.0" iyy="9.0" iyz="0.0" izz="9.0"/>
+      </inertial>-->
+    </link>
+
+    <joint name="outer_pitch_2" type="continuous">
+      <parent link="${prefix}_pitch_link_2"/>
+      <child link="${prefix}_pitch_link_3"/>
+      <origin rpy="0 0 0" xyz="-0.340 0 0"/>
+      <axis xyz="0 0 1"/>
+      <joint_properties damping="1.0" friction="0.0"/>
+      <mimic joint="outer_pitch" multiplier="1"/>
+    </joint>
+
+    <link name="${prefix}_pitch_link_3">
+      <inertial>
+      	<mass value="0.01"/>
+      	<origin rpy="0 0 -${3.14159/2}" xyz="0.0 0 0.025"/>
+      	<inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+      </inertial>
+      <visual>
+        <origin rpy="0 0 -${3.14159/2}" xyz="0.0 0 0.025"/>
+        <geometry>
+          <mesh filename="package://dvrk_model/ECM/meshes/ecm/Endo_Link_7.STL"/>
+        </geometry>
+	<material name="DaVinciMedGray"/>
+      </visual>
+      <collision>
+        <origin rpy="0 0 -${3.14159/2}" xyz="0.0 0 0.025"/>
+        <geometry>
+          <mesh filename="package://dvrk_model/ECM/meshes/ecm/Endo_Link_7.STL"/>
+        </geometry>
+      </collision>
+<!--      <inertial>
+        <mass value=".9"/>
+        <inertia ixx="9.0" ixy="0.0" ixz="0.0" iyy="9.0" iyz="0.0" izz="9.0"/>
+      </inertial>-->
+    </link>
+
+    <!-- Joint 3: Insertion -->
+    <joint name="insertion" type="prismatic">
+      <parent link="${prefix}_pitch_link"/>
+      <child link="${prefix}_insertion_link"/>
+      <origin rpy="${3.14159/2} 0 0" xyz="0 0.3822 0"/>
+      <axis xyz="0 0 1"/>
+      <joint_properties damping="1.0" friction="0.0"/>
+      <limit effort="100.0" lower="0" upper="0.235" velocity="1"/>
+    </joint>
+
+    <link name="${prefix}_insertion_link">
+      <inertial>
+      	<mass value="1"/>
+      	<origin rpy="0 0 -${3.14159/2}" xyz="0.0 0 -0.015"/>
+      	<inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+      </inertial>
+      <visual>
+        <origin rpy="0 0 -${3.14159/2}" xyz="0.0 0 -0.015"/>
+        <geometry>
+          <mesh filename="package://dvrk_model/ECM/meshes/ecm/Endo_Link_8.STL"/>
+        </geometry>
+	<material name="DaVinciBlue"/>
+      </visual>
+      <collision>
+        <origin rpy="0 0 -${3.14159/2}" xyz="0.0 0 -0.015"/>
+        <geometry>
+          <mesh filename="package://dvrk_model/ECM/meshes/ecm/Endo_Link_8.STL"/>
+        </geometry>
+      </collision>
+
+    </link>
+
+    <!-- Joint 4: Roll -->
+    <joint name="outer_roll" type="revolute">
+      <parent link="${prefix}_insertion_link"/>
+      <child link="${prefix}_roll_link"/>
+      <origin rpy="0 0 0" xyz="0 0 0.3829"/>
+      <axis xyz="0 0 1"/>
+      <joint_properties damping="1.0" friction="0.0"/>
+      <limit effort="100.0" lower="-${3.14159/2}" upper="${3.14159/2}" velocity="10"/>
+    </joint>
+
+    <link name="${prefix}_roll_link">
+      <inertial>
+      	<mass value="0.01"/>
+      	<origin rpy="0 0 ${3.14159/2}" xyz="0.0 0 -0.3979"/>
+      	<inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+      </inertial>
+      <visual>
+        <origin rpy="0 0 ${3.14159/2}" xyz="0.0 0 -0.3979"/>
+        <geometry>
+          <mesh filename="package://dvrk_model/ECM/meshes/ecm/EndoScope.STL"/>
+        </geometry>
+	<material name="DaVinciBlue"/>
+      </visual>
+      <collision>
+        <origin rpy="0 0 ${3.14159/2}" xyz="0.0 0 -0.3979"/>
+        <geometry>
+          <mesh filename="package://dvrk_model/ECM/meshes/ecm/EndoScope.STL"/>
+        </geometry>
+      </collision>
+    </link>
+
+
+  <!--<gazebo reference="${prefix}_yaw_link">
+  <material>Gazebo/Black</material>
+  <turnGravityOff>true</turnGravityOff>
+  </gazebo>
+
+  <gazebo reference="${prefix}_pitch_link">
+  <material>Gazebo/Black</material>
+  <turnGravityOff>true</turnGravityOff>
+  </gazebo>
+
+  <gazebo reference="${prefix}_pitch_link_1">
+  <material>Gazebo/Black</material>
+  <turnGravityOff>true</turnGravityOff>
+  </gazebo>
+
+  <gazebo reference="${prefix}_pitch_link_2">
+  <material>Gazebo/Black</material>
+  <turnGravityOff>true</turnGravityOff>
+  </gazebo>
+
+  <gazebo reference="${prefix}_pitch_link_3">
+  <material>Gazebo/Black</material>
+  <turnGravityOff>true</turnGravityOff>
+  </gazebo>
+
+  <gazebo reference="${prefix}_insertion_link">
+  <material>Gazebo/Black</material>
+  <turnGravityOff>true</turnGravityOff>
+  </gazebo>
+
+  <gazebo reference="${prefix}_roll_link">
+  <material>Gazebo/Black</material>
+  <turnGravityOff>true</turnGravityOff>
+  </gazebo>-->
+
+
+ <!-- camera -->
+  <gazebo reference="${prefix}_roll_link">
+    <sensor type="camera" name="camera1">
+      <update_rate>30.0</update_rate>
+      <camera name="head">
+        <horizontal_fov>.95</horizontal_fov>
+        <!-- <horizontal_fov>0.95</horizontal_fov> -->
+        <image>
+          <width>800</width>
+          <height>800</height>
+          <format>R8G8B8</format>
+        </image>
+        <clip>
+          <near>0.02</near>
+          <far>300</far>
+        </clip>
+        <noise>
+          <type>gaussian</type>
+          <!-- Noise is sampled independently per pixel on each frame.
+               That pixel's noise value is added to each of its color
+               channels, which at that point lie in the range [0,1]. -->
+          <mean>0.0</mean>
+          <stddev>0.007</stddev>
+        </noise>
+      </camera>
+      <plugin name="camera_controller" filename="libgazebo_ros_camera.so">
+        <alwaysOn>true</alwaysOn>
+        <updateRate>0.0</updateRate>
+        <cameraName>ecm/camera</cameraName>
+        <imageTopicName>image_raw</imageTopicName>
+        <cameraInfoTopicName>camera_info</cameraInfoTopicName>
+        <frameName>camera_link</frameName>
+        <hackBaseline>0.07</hackBaseline>
+        <distortionK1>0.0</distortionK1>
+        <distortionK2>0.0</distortionK2>
+        <distortionK3>0.0</distortionK3>
+        <distortionT1>0.0</distortionT1>
+        <distortionT2>0.0</distortionT2>
+      </plugin>
+    </sensor>
+  </gazebo>
+  </xacro:macro>
+</robot>

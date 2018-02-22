@@ -1,0 +1,420 @@
+<sdf version='1.6'>
+  <model name='ecm'>
+    <link name='ecm_base_link'>
+      <pose frame=''>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <mass>0.01</mass>
+        <inertia>
+          <ixx>1</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1</iyy>
+          <iyz>0</iyz>
+          <izz>1</izz>
+        </inertia>
+      </inertial>
+      <collision name='ecm_base_link_collision'>
+        <pose frame=''>0 0 0 3.14159 1.57079 -3e-06</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://ECM/meshes/ecm/ECM_Base.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='ecm_base_link_visual'>
+        <pose frame=''>0 0 0 3.14159 1.57079 -3e-06</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://ECM/meshes/ecm/ECM_Base.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <link name='ecm_yaw_link'>
+      <pose frame=''>-0.76 -0.075 -0.0775 -1.57079 -0 -1.57079</pose>
+      <inertial>
+        <pose frame=''>0 0 0.603 0 0 -1.57079</pose>
+        <mass>0.01</mass>
+        <inertia>
+          <ixx>1</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1</iyy>
+          <iyz>0</iyz>
+          <izz>1</izz>
+        </inertia>
+      </inertial>
+      <collision name='ecm_yaw_link_collision'>
+        <pose frame=''>0 0 0.603 0 0 -1.57079</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://ECM/meshes/ecm/Endo_Link_5.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='ecm_yaw_link_visual'>
+        <pose frame=''>0 0 0.603 0 0 -1.57079</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://ECM/meshes/ecm/Endo_Link_5.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='outer_yaw' type='revolute'>
+      <child>ecm_yaw_link</child>
+      <parent>ecm_base_link</parent>
+      <axis>
+        <xyz>1 1e-06 1e-06</xyz>
+        <limit>
+          <lower>-1.309</lower>
+          <upper>0.785397</upper>
+          <effort>50</effort>
+          <velocity>2</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='ecm_pitch_link'>
+      <pose frame=''>-0.76 -0.075 -0.0775 -3.14159 -1e-06 -0</pose>
+      <inertial>
+        <pose frame=''>0 0 0 3.14159 -0 1.37008</pose>
+        <mass>0.01</mass>
+        <inertia>
+          <ixx>1</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1</iyy>
+          <iyz>0</iyz>
+          <izz>1</izz>
+        </inertia>
+      </inertial>
+    </link>
+    <joint name='outer_pitch' type='revolute'>
+      <child>ecm_pitch_link</child>
+      <parent>ecm_yaw_link</parent>
+      <axis>
+        <xyz>1e-06 1e-06 -1</xyz>
+        <limit>
+          <lower>-0.785397</lower>
+          <upper>1.13446</upper>
+          <effort>100</effort>
+          <velocity>10</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='ecm_insertion_link'>
+      <pose frame=''>-0.76 -0.4572 -0.077501 -1.5708 -1e-06 -0</pose>
+      <inertial>
+        <pose frame=''>0 0 -0.015 0 0 -1.57079</pose>
+        <mass>1</mass>
+        <inertia>
+          <ixx>1</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1</iyy>
+          <iyz>0</iyz>
+          <izz>1</izz>
+        </inertia>
+      </inertial>
+      <collision name='ecm_insertion_link_collision'>
+        <pose frame=''>0 0 -0.015 0 0 -1.57079</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://ECM/meshes/ecm/Endo_Link_8.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='ecm_insertion_link_visual'>
+        <pose frame=''>0 0 -0.015 0 0 -1.57079</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://ECM/meshes/ecm/Endo_Link_8.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='insertion' type='prismatic'>
+      <child>ecm_insertion_link</child>
+      <parent>ecm_pitch_link</parent>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>0.235</upper>
+          <effort>100</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='ecm_roll_link'>
+      <pose frame=''>-0.76 -0.0743 -0.077501 -1.5708 -1e-06 -0</pose>
+      <inertial>
+        <pose frame=''>0 0 -0.3979 0 -0 1.57079</pose>
+        <mass>0.01</mass>
+        <inertia>
+          <ixx>1</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1</iyy>
+          <iyz>0</iyz>
+          <izz>1</izz>
+        </inertia>
+      </inertial>
+      <collision name='ecm_roll_link_collision'>
+        <pose frame=''>0 0 -0.3979 0 -0 1.57079</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://ECM/meshes/ecm/EndoScope.STL</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='ecm_roll_link_visual'>
+        <pose frame=''>0 0 -0.3979 0 -0 1.57079</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://ECM/meshes/ecm/EndoScope.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <uri>__default__</uri>
+            <name>__default__</name>
+          </script>
+        </material>
+      </visual>
+      <gravity>1</gravity>
+      <velocity_decay/>
+      <sensor name='camera1' type='camera'>
+        <update_rate>30</update_rate>
+        <camera name='head'>
+          <horizontal_fov>0.95</horizontal_fov>
+          <image>
+            <width>800</width>
+            <height>800</height>
+            <format>R8G8B8</format>
+          </image>
+          <clip>
+            <near>0.02</near>
+            <far>300</far>
+          </clip>
+          <noise>
+            <type>gaussian</type>
+            <mean>0</mean>
+            <stddev>0.007</stddev>
+          </noise>
+        </camera>
+        <plugin name='camera_controller' filename='libgazebo_ros_camera.so'>
+          <alwaysOn>true</alwaysOn>
+          <updateRate>0.0</updateRate>
+          <cameraName>ecm/camera</cameraName>
+          <imageTopicName>image_raw</imageTopicName>
+          <cameraInfoTopicName>camera_info</cameraInfoTopicName>
+          <frameName>camera_link</frameName>
+          <hackBaseline>0.07</hackBaseline>
+          <distortionK1>0.0</distortionK1>
+          <distortionK2>0.0</distortionK2>
+          <distortionK3>0.0</distortionK3>
+          <distortionT1>0.0</distortionT1>
+          <distortionT2>0.0</distortionT2>
+        </plugin>
+      </sensor>
+    </link>
+    <joint name='outer_roll' type='revolute'>
+      <child>ecm_roll_link</child>
+      <parent>ecm_insertion_link</parent>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-1.57079</lower>
+          <upper>1.57079</upper>
+          <effort>100</effort>
+          <velocity>10</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='ecm_pitch_link_1'>
+      <pose frame=''>-0.382 -0.075 -0.0775 -3.14159 -1e-06 -0</pose>
+      <inertial>
+        <pose frame=''>0 0 0 3.14159 -0 1.37008</pose>
+        <mass>0.01</mass>
+        <inertia>
+          <ixx>1</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1</iyy>
+          <iyz>0</iyz>
+          <izz>1</izz>
+        </inertia>
+      </inertial>
+      <collision name='ecm_pitch_link_1_collision'>
+        <pose frame=''>0 0 0 3.14159 -0 1.37008</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://ECM/meshes/ecm/Endo_Link_5_2.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='ecm_pitch_link_1_visual'>
+        <pose frame=''>0 0 0 3.14159 -0 1.37008</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://ECM/meshes/ecm/Endo_Link_5_2.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='outer_pitch_0' type='revolute'>
+      <child>ecm_pitch_link_1</child>
+      <parent>ecm_yaw_link</parent>
+      <axis>
+        <xyz>1e-06 1e-06 -1</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='ecm_pitch_link_2'>
+      <pose frame=''>-0.326137 -0.349574 -0.0775 -3.14159 -1e-06 -0</pose>
+      <inertial>
+        <pose frame=''>0 0 -0.0225 0 -0 0</pose>
+        <mass>0.01</mass>
+        <inertia>
+          <ixx>1</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1</iyy>
+          <iyz>0</iyz>
+          <izz>1</izz>
+        </inertia>
+      </inertial>
+      <collision name='ecm_pitch_link_2_collision'>
+        <pose frame=''>0 0 -0.0225 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://ECM/meshes/ecm/Endo_Link_6_2.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='ecm_pitch_link_2_visual'>
+        <pose frame=''>0 0 -0.0225 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://ECM/meshes/ecm/Endo_Link_6_2.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='outer_pitch_1' type='revolute'>
+      <child>ecm_pitch_link_2</child>
+      <parent>ecm_pitch_link_1</parent>
+      <axis>
+        <xyz>1e-06 1e-06 -1</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='ecm_pitch_link_3'>
+      <pose frame=''>-0.666137 -0.349574 -0.0775 -3.14159 -1e-06 -0</pose>
+      <inertial>
+        <pose frame=''>0 0 0.025 0 0 -1.57079</pose>
+        <mass>0.01</mass>
+        <inertia>
+          <ixx>1</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1</iyy>
+          <iyz>0</iyz>
+          <izz>1</izz>
+        </inertia>
+      </inertial>
+      <collision name='ecm_pitch_link_3_collision'>
+        <pose frame=''>0 0 0.025 0 0 -1.57079</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://ECM/meshes/ecm/Endo_Link_7.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='ecm_pitch_link_3_visual'>
+        <pose frame=''>0 0 0.025 0 0 -1.57079</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://ECM/meshes/ecm/Endo_Link_7.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='outer_pitch_2' type='revolute'>
+      <child>ecm_pitch_link_3</child>
+      <parent>ecm_pitch_link_2</parent>
+      <axis>
+        <xyz>1e-06 1e-06 -1</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+  </model>
+</sdf>
