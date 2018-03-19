@@ -1,7 +1,7 @@
 dvrk:
   SUJ:
     SUJ_PSM1_J0_controller:
-      p: 2000
+      p: 50000
       i: 0
       d: 10
 

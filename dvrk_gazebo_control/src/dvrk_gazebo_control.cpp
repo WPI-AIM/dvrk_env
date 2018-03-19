@@ -182,7 +182,7 @@ int main(int argc, char **argv)
   ros::Rate loop_rate(10);
   ROS_INFO("%s", mes.data.c_str());
 
-  while(count<1500&&ros::ok())
+  while(count<150&&ros::ok())
   {
   obj.PublishCartStates();
   obj.PublishECMStates();
