@@ -1,5 +1,7 @@
 #include "dvrk_gazebo_control.h"
 
+
+
 void dvrk_gazebo_control::getECMEndEffector(const gazebo_msgs::LinkStatesPtr &msg)
 {
   gazebo_msgs::LinkState ecm_roll;
@@ -39,11 +41,11 @@ void dvrk_gazebo_control::getECMEndEffector(const gazebo_msgs::LinkStatesPtr &ms
   // ecmPub[2].publish(msg2);
   // msg2.data=0;
 
-  // PublishCartStates();
+  PublishCartStates();
   PublishECMStates();
   PublishPSM1States();
   PublishPSM2States();
-  // PublishPSM3States();
+  PublishPSM3States();
 
 }
 
@@ -51,10 +53,10 @@ void dvrk_gazebo_control::PublishECMStates()
 {
   std::vector<std_msgs::Float64> msg;
   msg.resize(4);
-  msg[0].data=0;
-  msg[1].data=0;
-  msg[2].data=0;
-  msg[3].data=0;
+  msg[0].data=0.0;
+  msg[1].data=0.0;
+  msg[2].data=0.0;
+  msg[3].data=0.0;
 
   ecmPub[0].publish(msg[0]);
   ecmPub[1].publish(msg[1]);
@@ -67,11 +69,11 @@ void dvrk_gazebo_control::PublishPSM1States()
 {
   std::vector<std_msgs::Float64> msg;
   msg.resize(5);
-  msg[0].data=0.5;
-  msg[1].data=0;
-  msg[2].data=0;
-  msg[3].data=0;
-  msg[4].data=0;
+  msg[0].data=0.0;
+  msg[1].data=0.0;
+  msg[2].data=0.0;
+  msg[3].data=0.0;
+  msg[4].data=0.0;
 
   psm1Pub[0].publish(msg[0]);
   psm1Pub[1].publish(msg[1]);
@@ -84,11 +86,11 @@ void dvrk_gazebo_control::PublishPSM2States()
 {
   std::vector<std_msgs::Float64> msg;
   msg.resize(5);
-  msg[0].data=-0.75;
-  msg[1].data=0;
-  msg[2].data=0;
-  msg[3].data=0;
-  msg[4].data=0;
+  msg[0].data=0.0;
+  msg[1].data=0.0;
+  msg[2].data=0.0;
+  msg[3].data=0.0;
+  msg[4].data=0.0;
 
   psm2Pub[0].publish(msg[0]);
   psm2Pub[1].publish(msg[1]);
@@ -102,11 +104,11 @@ void dvrk_gazebo_control::PublishPSM3States()
 {
   std::vector<std_msgs::Float64> msg;
   msg.resize(5);
-  msg[0].data=0;
-  msg[1].data=0;
-  msg[2].data=0;
-  msg[3].data=0;
-  msg[4].data=0;
+  msg[0].data=0.0;
+  msg[1].data=0.0;
+  msg[2].data=0.0;
+  msg[3].data=0.0;
+  msg[4].data=0.0;
 
   psm3Pub[0].publish(msg[0]);
   psm3Pub[1].publish(msg[1]);
@@ -121,28 +123,29 @@ void dvrk_gazebo_control::PublishCartStates()
   std::vector<std_msgs::Float64> msg;
   msg.resize(19);
 
-  msg[0].data=0;
-  msg[1].data=-0.57;
-  msg[2].data=-0.74;
-  msg[3].data=1.16;
-  msg[4].data=-1.00;
+  msg[0].data=0.0;
+  msg[1].data=0.0;
+  msg[2].data=0.0;
+  msg[3].data=0.0;
+  msg[4].data=0.0;
 
-  msg[5].data=0;
-  msg[6].data=0.36;
-  msg[7].data=1.14;
-  msg[8].data=-0.74;
-  msg[9].data=0.60;
+  msg[5].data=0.0;
+  msg[6].data=0.0;
+  msg[7].data=0.0;
+  msg[8].data=0.0;
+  msg[9].data=0.0;
 
-  msg[10].data=0;
-  msg[11].data=0;
-  msg[12].data=0;
-  msg[13].data=0;
-  msg[14].data=0;
+  msg[10].data=0.0;
+  msg[11].data=0.0;
+  msg[12].data=0.0;
+  msg[13].data=0.0;
+  msg[14].data=0.0;
 
-  msg[15].data=0.75;
-  msg[16].data=0;
-  msg[17].data=0;
-  msg[18].data=0;
+  msg[15].data=0.2;
+  msg[16].data=0.0;
+  msg[17].data=0.0;
+  msg[18].data=0.0;
+
   for (int i=1;i<4;i++)
   {
     for (int j=0;j<5;j++)
@@ -158,17 +161,48 @@ void dvrk_gazebo_control::PublishCartStates()
 
 int main(int argc, char **argv)
 {
+  
   ros::init(argc, argv, "dvrk_gazebo_control_node");
   ros::NodeHandle n;
+ 
+  std_msgs::String mes;
+  std::stringstream ss;
+  ss<<"it starteed";
+  mes.data = ss.str();
+  ROS_INFO("%s", mes.data.c_str());
+
+
   dvrk_gazebo_control obj(n);
   // int i, j;
+  int count = 0;
 
   std_msgs::Float64 msg;
   // char link[100];
+  ros::Duration(0.1).sleep();
+  ros::Rate loop_rate(10);
+  ROS_INFO("%s", mes.data.c_str());
 
-
-  while (ros::ok())
+  while(count<1500&&ros::ok())
   {
-    ros::spin();
+  obj.PublishCartStates();
+  obj.PublishECMStates();
+  obj.PublishPSM1States();
+  obj.PublishPSM2States();
+  obj.PublishPSM3States();
+  loop_rate.sleep();
+  //ROS_INFO("%s", mes.data.c_str());
+  count=count+1;
   }
+
+/*  while (ros::ok())
+  {
+    obj.PublishCartStates();
+  obj.PublishECMStates();
+  obj.PublishPSM1States();
+  obj.PublishPSM2States();
+  obj.PublishPSM3States();
+  count=count+1;
+  ROS_INFO("%s", mes.data.c_str());
+   // ros::spin();
+  }*/
 }

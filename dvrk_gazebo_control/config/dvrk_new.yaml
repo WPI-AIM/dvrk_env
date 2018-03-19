@@ -26,7 +26,7 @@ dvrk:
       d: 10
 
     SUJ_ECM_J0_controller:
-      p: 2000
+      p: 3000
       i: 0
       d: 10
 
@@ -95,7 +95,11 @@ dvrk:
       i: 0
       d: 10
   PSM1:
-    outer_yaw_controller:
+    rev_joint_controller:
+      p: 200
+      i: 0
+      d: 10
+    outer_yaw_joint_controller:
       p: 20
       i: 0
       d: 10
@@ -103,8 +107,16 @@ dvrk:
       p: 600
       i: 0
       d: 0
+    outer_insertion_joint_controller:
+      p: 40
+      i: 0
+      d: 1
   PSM2:
-    outer_yaw_controller:
+    rev_joint_controller:
+      p: 200
+      i: 0
+      d: 10
+    outer_yaw_joint_controller:
       p: 20
       i: 0
       d: 10
@@ -112,8 +124,16 @@ dvrk:
       p: 600
       i: 0
       d: 0
+    outer_insertion_joint_controller:
+      p: 40
+      i: 0
+      d: 1
   PSM3:
-    outer_yaw_controller:
+    rev_joint_controller:
+      p: 200
+      i: 0
+      d: 10
+    outer_yaw_joint_controller:
       p: 20
       i: 0
       d: 10
@@ -121,7 +141,15 @@ dvrk:
       p: 600
       i: 0
       d: 0
+    outer_insertion_joint_controller:
+      p: 40
+      i: 0
+      d: 1
   ecm:
+    yaw_joint_controller:
+      p: 20
+      i: 0
+      d: 10
     pitch_front_joint_controller:
       p: 500
       i: 0
