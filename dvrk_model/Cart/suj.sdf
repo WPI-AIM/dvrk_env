@@ -1016,6 +1016,6 @@
     </joint>
 
     <static>0</static>
-
+    <plugin name='dvrk_plugins' filename='libdvrk_plugins.so'/>
   </model>
 </sdf>
