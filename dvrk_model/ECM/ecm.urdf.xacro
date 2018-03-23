@@ -538,6 +538,19 @@
       <axis
         xyz="0 0 0" />
     </joint>
-
+    <link name="${prefix}_end_link"/>
+    <joint
+      name="${prefix}_end_joint"
+      type="fixed">
+      <origin
+        xyz="0 0 0.37364"
+        rpy="0 0 0" />
+      <parent
+        link="${prefix}_tool_link" />
+      <child
+        link="${prefix}_end_link" />
+      <axis
+        xyz="0 0 0" />
+    </joint>
   </xacro:macro>
 </robot>

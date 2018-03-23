@@ -1,0 +1,318 @@
+<sdf version='1.6'>
+  <model name='Tool_LND'>
+    <link name='tool_main_link'>
+      <pose frame=''>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose frame=''>0.001528 -0.000127 0.013848 0 -0 0</pose>
+        <mass>0.193728</mass>
+        <inertia>
+          <ixx>0</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0</iyy>
+          <iyz>0</iyz>
+          <izz>0</izz>
+        </inertia>
+      </inertial>
+      <collision name='tool_main_link_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://Tool_LND/meshes/tool_main_link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='tool_main_link_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://Tool_LND/meshes/tool_main_link.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0 0 0 1</ambient>
+          <diffuse>0 0 0 1</diffuse>
+          <specular>1 1 1 1</specular>
+          <emissive>0 0 0 1</emissive>
+        </material>
+      </visual>
+    </link>
+    <link name='tool_roll_link'>
+      <pose frame=''>0 0 0.4071 0 -0 1.5708</pose>
+      <inertial>
+        <pose frame=''>-3e-06 -0 0.003457 0 -0 0</pose>
+        <mass>0.000342894</mass>
+        <inertia>
+          <ixx>3.49788e-10</ixx>
+          <ixy>1.2833e-17</ixy>
+          <ixz>6.60772e-12</ixz>
+          <iyy>3.49913e-10</iyy>
+          <iyz>-6.7933e-16</iyz>
+          <izz>1.24824e-13</izz>
+        </inertia>
+      </inertial>
+      <collision name='tool_roll_link_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://Tool_LND/meshes/tool_roll_link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='tool_roll_link_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://Tool_LND/meshes/tool_roll_link.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.8 0.8 0.8 1</ambient>
+          <diffuse>0.8 0.8 0.8 1</diffuse>
+          <specular>1 1 1 1</specular>
+          <emissive>0 0 0 1</emissive>
+        </material>
+      </visual>
+    </link>
+    <joint name='tool_roll_joint' type='revolute'>
+      <child>tool_roll_link</child>
+      <parent>tool_main_link</parent>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='tool_pitch_link'>
+      <pose frame=''>0 0 0.4162 1.57079 1.57079 1.57079</pose>
+      <inertial>
+        <pose frame=''>-0.003729 0.0002 5.1e-05 0 -0 0</pose>
+        <mass>0.000249121</mass>
+        <inertia>
+          <ixy>0</ixy>
+          <ixx>0</ixx>
+          <ixz>0</ixz>
+          <iyy>0</iyy>
+          <iyz>0</iyz>
+          <izz>0</izz>
+        </inertia>
+      </inertial>
+      <collision name='tool_pitch_link_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://Tool_LND/meshes/tool_pitch_link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='tool_pitch_link_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://Tool_LND/meshes/tool_pitch_link.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.8 0.8 0.8 1</ambient>
+          <diffuse>0.8 0.8 0.8 1</diffuse>
+          <specular>1 1 1 1</specular>
+          <emissive>0 0 0 1</emissive>
+        </material>
+      </visual>
+    </link>
+    <joint name='tool_pitch_joint' type='revolute'>
+      <child>tool_pitch_link</child>
+      <parent>tool_roll_link</parent>
+      <axis>
+        <xyz>0 1 -0</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='tool_yaw_link'>
+      <pose frame=''>0 0.0002 0.4253 -1.5708 0.285119 1.5708</pose>
+      <inertial>
+        <pose frame=''>0 0 -0.0001 0 -0 0</pose>
+        <mass>6.63661e-06</mass>
+        <inertia>
+          <ixx>0</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0</iyy>
+          <iyz>0</iyz>
+          <izz>0</izz>
+        </inertia>
+      </inertial>
+      <collision name='tool_yaw_link_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://Tool_LND/meshes/tool_yaw_link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='tool_yaw_link_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://Tool_LND/meshes/tool_yaw_link.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.8 0.8 0.8 1</ambient>
+          <diffuse>0.8 0.8 0.8 1</diffuse>
+          <specular>1 1 1 1</specular>
+          <emissive>0 0 0 1</emissive>
+        </material>
+      </visual>
+    </link>
+    <joint name='tool_yaw_joint' type='revolute'>
+      <child>tool_yaw_link</child>
+      <parent>tool_pitch_link</parent>
+      <axis>
+        <xyz>-1 0 0</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='gripper1_link'>
+      <pose frame=''>0 0.0002 0.4253 1.5708 0 -1.5708</pose>
+      <inertial>
+        <pose frame=''>-0.000189 0.001353 0.000857 0 -0 0</pose>
+        <mass>3.90696e-05</mass>
+        <inertia>
+          <ixx>0</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0</iyy>
+          <iyz>0</iyz>
+          <izz>0</izz>
+        </inertia>
+      </inertial>
+      <collision name='gripper1_link_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://Tool_LND/meshes/gripper1_link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='gripper1_link_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://Tool_LND/meshes/gripper1_link.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.8 0.8 0.8 1</ambient>
+          <diffuse>0.8 0.8 0.8 1</diffuse>
+          <specular>1 1 1 1</specular>
+          <emissive>0 0 0 1</emissive>
+        </material>
+      </visual>
+    </link>
+    <joint name='gripper1_joint' type='revolute'>
+      <child>gripper1_link</child>
+      <parent>tool_yaw_link</parent>
+      <axis>
+        <xyz>-1 0 0</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='gripper2_link'>
+      <pose frame=''>0 0.0002 0.4253 1.5708 -0 1.5708</pose>
+      <inertial>
+        <pose frame=''>-0.000189 0.001353 0.000967 0 -0 0</pose>
+        <mass>3.90696e-05</mass>
+        <inertia>
+          <ixx>0</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0</iyy>
+          <iyz>0</iyz>
+          <izz>0</izz>
+        </inertia>
+      </inertial>
+      <collision name='gripper2_link_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://Tool_LND/meshes/gripper2_link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='gripper2_link_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://Tool_LND/meshes/gripper2_link.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.8 0.8 0.8 1</ambient>
+          <diffuse>0.8 0.8 0.8 1</diffuse>
+          <specular>1 1 1 1</specular>
+          <emissive>0 0 0 1</emissive>
+        </material>
+      </visual>
+    </link>
+    <joint name='gripper2_joint' type='revolute'>
+      <child>gripper2_link</child>
+      <parent>tool_yaw_link</parent>
+      <axis>
+        <xyz>-1 0 -0</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+  </model>
+</sdf>

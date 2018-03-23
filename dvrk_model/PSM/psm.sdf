@@ -1,0 +1,524 @@
+<sdf version='1.6'>
+  <model name='dvrk_psm'>
+    <pose>0 0 0 0 0 0</pose>
+    <link name='base_link'>
+      <pose frame=''>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose frame=''>-0.170155 0 0.066793 0 -0 0</pose>
+        <mass>2.01612</mass>
+        <inertia>
+          <ixx>0</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0</iyy>
+          <iyz>0</iyz>
+          <izz>0</izz>
+        </inertia>
+      </inertial>
+      <collision name='base_link_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://PSM/meshes/base_link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='base_link_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://PSM/meshes/base_link.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.6 0.6 0.6 1</ambient>
+          <diffuse>0.6 0.6 0.6 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+          <emissive>0 0 0 1</emissive>
+        </material>
+      </visual>
+    </link>
+
+    <link name='remote_center_link'>
+    <pose>0.4864 0 0.1524 0 0 0</pose>
+    <inertial>
+      <pose frame=''>-0 0 0 0 -0 0</pose>
+      <mass>0.01</mass>
+      <inertia>
+        <ixx>0</ixx>
+        <ixy>0</ixy>
+        <ixz>0</ixz>
+        <iyy>0</iyy>
+        <iyz>0</iyz>
+        <izz>0</izz>
+      </inertia>
+    </inertial>
+    <visual name='remote_center_link_visual'>
+      <geometry>
+        <sphere>
+          <radius>0.01</radius>
+        </sphere>
+      </geometry>
+      <transparency>1</transparency>
+    </visual>
+    </link>
+
+    <joint name='remote_center_joint' type='fixed'>
+      <child>remote_center_link</child>
+      <parent>base_link</parent>
+    </joint>
+
+    <link name='yaw_Link'>
+      <pose frame=''>0.1174 0 0.1524 1.5708 -0 1.5708</pose>
+      <inertial>
+        <pose frame=''>7.8e-05 -0.038769 -0.158996 0 -0 0</pose>
+        <mass>1.47048</mass>
+        <inertia>
+          <ixx>0</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0</iyy>
+          <iyz>0</iyz>
+          <izz>0</izz>
+        </inertia>
+      </inertial>
+      <collision name='yaw_Link_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://PSM/meshes/yaw_Link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='yaw_Link_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://PSM/meshes/yaw_Link.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.6 0.6 0.6 1</ambient>
+          <diffuse>0.6 0.6 0.6 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+          <emissive>0 0 0 1</emissive>
+        </material>
+      </visual>
+    </link>
+    <joint name='yaw_joint' type='revolute'>
+      <child>yaw_Link</child>
+      <parent>base_link</parent>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-1.605</lower>
+          <upper>1.5994</upper>
+          <effort>1000</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='pitch_back_Link'>
+      <pose frame=''>-0.0296 -0 0.1524 1.57079 -1.28007 -3.14158</pose>
+      <inertial>
+        <pose frame=''>-0.012175 -0.036897 3.5e-05 0 -0 0</pose>
+        <mass>0.995109</mass>
+        <inertia>
+          <ixx>0</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0</iyy>
+          <iyz>0</iyz>
+          <izz>0</izz>
+        </inertia>
+      </inertial>
+      <collision name='pitch_back_Link_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://PSM/meshes/pitch_back_Link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='pitch_back_Link_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://PSM/meshes/pitch_back_Link.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0 0 0 1</ambient>
+          <diffuse>0 0 0 1</diffuse>
+          <specular>0.8 0.8 0.8 1</specular>
+          <emissive>0 0 0 1</emissive>
+        </material>
+      </visual>
+    </link>
+    <joint name='pitch_back_joint' type='revolute'>
+      <child>pitch_back_Link</child>
+      <parent>yaw_Link</parent>
+      <axis>
+        <xyz>-4e-06 1 3e-06</xyz>
+        <limit>
+          <lower>-0.93556</lower>
+          <upper>0.94249</upper>
+          <effort>1000</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='pitch_bottom_Link'>
+      <pose frame=''>-0.072598 -1e-06 0.296105 4e-06 -1.57079 -1.5708</pose>
+      <inertial>
+        <pose frame=''>0.010348 0.256832 -6e-06 0 -0 0</pose>
+        <mass>0.445695</mass>
+        <inertia>
+          <ixx>0</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0</iyy>
+          <iyz>0</iyz>
+          <izz>0</izz>
+        </inertia>
+      </inertial>
+      <collision name='pitch_bottom_Link_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://PSM/meshes/pitch_bottom_Link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='pitch_bottom_Link_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://PSM/meshes/pitch_bottom_Link.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0 0 0 1</ambient>
+          <diffuse>0 0 0 1</diffuse>
+          <specular>0.8 0.8 0.8 1</specular>
+          <emissive>0 0 0 1</emissive>
+        </material>
+      </visual>
+    </link>
+    <joint name='pitch_bottom_joint' type='revolute'>
+      <child>pitch_bottom_Link</child>
+      <parent>pitch_back_Link</parent>
+      <axis>
+        <xyz>-4e-06 1 3e-06</xyz>
+        <limit>
+          <lower>-0.93556</lower>
+          <upper>0.94249</upper>
+          <effort>1000</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='pitch_end_Link'>
+      <pose frame=''>0.443402 1e-06 0.296105 4e-06 -1.57079 -1.5708</pose>
+      <inertial>
+        <pose frame=''>0.136127 -0.001929 -0 0 -0 0</pose>
+        <mass>2.09102</mass>
+        <inertia>
+          <ixx>0</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0</iyy>
+          <iyz>0</iyz>
+          <izz>0</izz>
+        </inertia>
+      </inertial>
+      <collision name='pitch_end_Link_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://PSM/meshes/pitch_end_Link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='pitch_end_Link_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://PSM/meshes/pitch_end_Link.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0 0 0 1</ambient>
+          <diffuse>0 0 0 1</diffuse>
+          <specular>0.8 0.8 0.8 1</specular>
+          <emissive>0 0 0 1</emissive>
+        </material>
+      </visual>
+    </link>
+    <joint name='pitch_end_joint' type='revolute'>
+      <child>pitch_end_Link</child>
+      <parent>pitch_bottom_Link</parent>
+      <axis>
+        <xyz>-4e-06 1 3e-06</xyz>
+        <limit>
+          <lower>-0.93556</lower>
+          <upper>0.94249</upper>
+          <effort>1000</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='main_insertion_Link'>
+      <pose frame=''>0.486402 1e-06 0.584195 -3.14159 4e-06 -3.14159</pose>
+      <inertial>
+        <pose frame=''>0.019764 0 -0.011799 0 -0 0</pose>
+        <mass>0.0311806</mass>
+        <inertia>
+          <ixx>0</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0</iyy>
+          <iyz>0</iyz>
+          <izz>0</izz>
+        </inertia>
+      </inertial>
+      <collision name='main_insertion_Link_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://PSM/meshes/main_insertion_Link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='main_insertion_Link_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://PSM/meshes/main_insertion_Link.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1 0.25 0 0.75</ambient>
+          <diffuse>1 0.25 0 0.75</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+          <emissive>0 0 0 1</emissive>
+        </material>
+      </visual>
+    </link>
+    <joint name='main_insertion_joint' type='prismatic'>
+      <child>main_insertion_Link</child>
+      <parent>pitch_end_Link</parent>
+      <axis>
+        <xyz>4e-06 -1e-06 -1</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>0.24</upper>
+          <effort>1000</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='pitch_top_Link'>
+      <pose frame=''>-0.068718 -1e-06 0.332398 0.741985 -1.57079 -2.31278</pose>
+      <inertial>
+        <pose frame=''>0.000566 0.31246 -0 0 -0 0</pose>
+        <mass>0.178407</mass>
+        <inertia>
+          <ixx>0</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0</iyy>
+          <iyz>0</iyz>
+          <izz>0</izz>
+        </inertia>
+      </inertial>
+      <collision name='pitch_top_Link_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://PSM/meshes/pitch_top_Link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='pitch_top_Link_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://PSM/meshes/pitch_top_Link.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0 0 0 1</ambient>
+          <diffuse>0 0 0 1</diffuse>
+          <specular>0.8 0.8 0.8 1</specular>
+          <emissive>0 0 0 1</emissive>
+        </material>
+      </visual>
+    </link>
+    <joint name='pitch_top_joint' type='revolute'>
+      <child>pitch_top_Link</child>
+      <parent>pitch_back_Link</parent>
+      <axis>
+        <xyz>-4e-06 1 3e-06</xyz>
+        <limit>
+          <lower>-0.93556</lower>
+          <upper>0.94249</upper>
+          <effort>1000</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='pitch_front_Link'>
+      <pose frame=''>0.0664 -0 0.1524 1.5708 -1.28007 -3.14159</pose>
+      <inertial>
+        <pose frame=''>0.096269 -0 0.047551 0 -0 0</pose>
+        <mass>0.0744253</mass>
+        <inertia>
+          <ixx>0</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0</iyy>
+          <iyz>0</iyz>
+          <izz>0</izz>
+        </inertia>
+      </inertial>
+      <collision name='pitch_front_Link_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://PSM/meshes/pitch_front_Link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='pitch_front_Link_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://PSM/meshes/pitch_front_Link.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0 0 0 1</ambient>
+          <diffuse>0 0 0 1</diffuse>
+          <specular>0.8 0.8 0.8 1</specular>
+          <emissive>0 0 0 1</emissive>
+        </material>
+      </visual>
+    </link>
+    <joint name='pitch_front_joint' type='revolute'>
+      <child>pitch_front_Link</child>
+      <parent>yaw_Link</parent>
+      <axis>
+        <xyz>-0 1 0</xyz>
+        <limit>
+          <lower>-0.93556</lower>
+          <upper>0.94249</upper>
+          <effort>1000</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+
+    <joint name='pitch_front_bottom_joint' type='revolute'>
+      <pose>0 0.096 0 0 0 0 </pose>
+      <child>pitch_bottom_Link</child>
+      <parent>pitch_front_Link</parent>
+      <axis>
+        <xyz>-0 1 0</xyz>
+        <limit>
+          <lower>-0.93556</lower>
+          <upper>0.94249</upper>
+          <effort>1000</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+
+    <joint name='pitch_top_end_joint' type='revolute'>
+      <pose>0.036293189 0.00388 0 0 0 0 </pose>
+      <child>pitch_end_Link</child>
+      <parent>pitch_top_Link</parent>
+      <axis>
+        <xyz>-0 1 0</xyz>
+        <limit>
+          <lower>-0.93556</lower>
+          <upper>0.94249</upper>
+          <effort>1000</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+
+    <include>
+      <uri>model://Tool_LND</uri>
+        <name>large_needle_driver</name>
+        <pose>0.486402 1e-06 0.584195 -3.14159 4e-06 -3.14159</pose>
+    </include>
+
+    <joint name='tool_joint' type='fixed'>
+      <child>large_needle_driver::tool_main_link</child>
+      <parent>main_insertion_Link</parent>
+    </joint>
+  </model>
+</sdf>

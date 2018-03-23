@@ -1,308 +1,477 @@
 <?xml version="1.0" encoding="utf-8"?>
-<robot name="dvrk_psm" xmlns:xacro="http://www.ros.org/wiki/xacro">
+<robot name="PSM" xmlns:xacro="http://www.ros.org/wiki/xacro">
 
-  <xacro:macro name="psm" params="prefix parent_link xyz rpy">
-     <link name="${prefix}rev_base_link">
-     </link>
-     <joint name="${prefix}rev_joint" type="continuous">
-      <parent link="${parent_link}"/>
-      <child link="${prefix}rev_base_link"/>
-      <origin rpy="${rpy}" xyz="${xyz}"/>
-      <axis xyz="0 0 -1"/>
-     </joint>
-     <joint name="${prefix}rev_fixed_joint" type="fixed">
-      <parent link="${prefix}rev_base_link"/>
-      <child link="${prefix}remote_center_link"/>
-      <origin rpy="0 3.1416 0" xyz="0 0.4864 0"/>
-     </joint>
+  <xacro:macro name="psm" params=" prefix parent_link xyz rpy">
 
-    <!-- fixed joint -->
-    <!--<joint name="${prefix}fixed_joint" type="fixed">
-      <parent link="${parent_link}"/>
-      <child link="${prefix}remote_center_link"/>
-      <origin rpy="${rpy}" xyz="${xyz}"/>
-    </joint>-->
-
-    <!-- link rc: remote centre link -->
-    <link name="${prefix}remote_center_link" />
-
-    <!-- fixed joint -->
-    <joint name="${prefix}rc_fixed_joint" type="fixed">
-      <parent link="${prefix}remote_center_link"/>
-      <child link="${prefix}psm_base_link"/>
-      <origin rpy="0 0 0" xyz="0 -0.369 0"/>
+    <joint name="${prefix}rev_joint" type="revolute">
+     <parent link="${parent_link}"/>
+     <child link="${prefix}base_link"/>
+     <origin rpy="${rpy}" xyz="${xyz}"/>
+     <axis xyz="0 0 1"/>
+     <limit
+       lower="-3.14159"
+       upper="3.14159"
+       effort="1000"
+       velocity="10" />
     </joint>
 
-    <!-- link 0: psm base link -->
-    <link name="${prefix}psm_base_link">
-      <visual>
-        <origin rpy="1.5708 0 3.1416" xyz="0.039 -0.03888 -0.07879"/>
-        <geometry>
-          <mesh filename="package://dvrk_model/PSM/meshes/psm_base.dae"/>
-        </geometry>
-      </visual>
-    </link>
+  <link
+    name="${prefix}base_link">
+    <inertial>
+      <origin
+        xyz="-0.170155334863205 1.21879980786378E-08 0.066793166062727"
+        rpy="0 0 0" />
+      <mass
+        value="2.01611935350024" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://dvrk_model/PSM/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://dvrk_model/PSM/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="${prefix}yaw_Link">
+    <inertial>
+      <origin
+        xyz="7.84810687552783E-05 -0.0387688268954186 -0.158996070278593"
+        rpy="0 0 0" />
+      <mass
+        value="1.47048370646334" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://dvrk_model/PSM/meshes/yaw_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://dvrk_model/PSM/meshes/yaw_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="${prefix}yaw_joint"
+    type="revolute">
+    <origin
+      xyz="0.1174 0 0.1524"
+      rpy="1.57079632679489 0 1.5707963267949" />
+    <parent
+      link="${prefix}base_link" />
+    <child
+      link="${prefix}yaw_Link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1.605"
+      upper="1.5994"
+      effort="1000"
+      velocity="10" />
+  </joint>
+  <link
+    name="${prefix}pitch_back_Link">
+    <inertial>
+      <origin
+        xyz="-0.0121747017772931 -0.0368970293075621 3.52126111557088E-05"
+        rpy="0 0 0" />
+      <mass
+        value="0.995108878833389" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://dvrk_model/PSM/meshes/pitch_back_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://dvrk_model/PSM/meshes/pitch_back_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="${prefix}pitch_back_joint"
+    type="revolute">
+    <origin
+      xyz="0 0 -0.147"
+      rpy="1.5708 0.29073 1.5708" />
+    <parent
+      link="${prefix}yaw_Link" />
+    <child
+      link="${prefix}pitch_back_Link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-0.93556"
+      upper="0.94249"
+      effort="1000"
+      velocity="10" />
+  </joint>
+  <link
+    name="${prefix}pitch_bottom_Link">
+    <inertial>
+      <origin
+        xyz="0.0103480348652787 0.256832099418565 -6.17918781630264E-06"
+        rpy="0 0 0" />
+      <mass
+        value="0.44569486685622" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://dvrk_model/PSM/meshes/pitch_bottom_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://dvrk_model/PSM/meshes/pitch_bottom_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="${prefix}pitch_bottom_joint"
+    type="revolute">
+    <origin
+      xyz="0.15 0 0"
+      rpy="4.7846E-27 -1.6818E-39 0.29073" />
+    <parent
+      link="${prefix}pitch_back_Link" />
+    <child
+      link="${prefix}pitch_bottom_Link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-0.94249"
+      upper="0.93556"
+      effort="1000"
+      velocity="10" />
+    <mimic joint="${prefix}pitch_back_joint" multiplier="-1"/>
+  </joint>
+  <link
+    name="${prefix}pitch_end_Link">
+    <inertial>
+      <origin
+        xyz="0.136126867582571 -0.00192933659797534 -5.97041916218732E-08"
+        rpy="0 0 0" />
+      <mass
+        value="2.09102449600225" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://dvrk_model/PSM/meshes/pitch_end_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://dvrk_model/PSM/meshes/pitch_end_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="${prefix}pitch_end_joint"
+    type="revolute">
+    <origin
+      xyz="0 0.516 0"
+      rpy="0 0 -3.5146E-13" />
+    <parent
+      link="${prefix}pitch_bottom_Link" />
+    <child
+      link="${prefix}pitch_end_Link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-0.93556"
+      upper="0.94249"
+      effort="1000"
+      velocity="10" />
+    <mimic joint="${prefix}pitch_back_joint" multiplier="1"/>
+  </joint>
+  <link
+    name="${prefix}main_insertion_Link">
+    <inertial>
+      <origin
+        xyz="0.0197642044936629 1.01697660725325E-13 -0.0117993612461738"
+        rpy="0 0 0" />
+      <mass
+        value="0.0311805666105664" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://dvrk_model/PSM/meshes/main_insertion_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0.556862745098039 0.0588235294117647 0.4" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://dvrk_model/PSM/meshes/main_insertion_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="${prefix}main_insertion_joint"
+    type="prismatic">
+    <origin
+      xyz="0.28809 0.043 0"
+      rpy="1.5708 1.1996E-14 -1.5708" />
+    <parent
+      link="${prefix}pitch_end_Link" />
+    <child
+      link="${prefix}main_insertion_Link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0.24"
+      effort="1000"
+      velocity="1" />
+  </joint>
+  <link
+    name="${prefix}pitch_top_Link">
+    <inertial>
+      <origin
+        xyz="0.000565655662842945 0.31245956116006 -3.41314861789972E-07"
+        rpy="0 0 0" />
+      <mass
+        value="0.178406510206942" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://dvrk_model/PSM/meshes/pitch_top_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://dvrk_model/PSM/meshes/pitch_top_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="${prefix}pitch_top_joint"
+    type="revolute">
+    <origin
+      xyz="0.183657966666658 0.0141205977162965 0"
+      rpy="4.78463252481875E-27 -1.79366203433577E-43 0.290727597908942" />
+    <parent
+      link="${prefix}pitch_back_Link" />
+    <child
+      link="${prefix}pitch_top_Link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-0.94249"
+      upper="0.93556"
+      effort="1000"
+      velocity="10" />
+    <mimic joint="${prefix}pitch_back_joint" multiplier="-1"/>
+  </joint>
+  <link
+    name="${prefix}pitch_front_Link">
+    <inertial>
+      <origin
+        xyz="0.0962686548283327 -9.04831765069503E-15 0.0475509864129518"
+        rpy="0 0 0" />
+      <mass
+        value="0.0744252818496182" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://dvrk_model/PSM/meshes/pitch_front_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://dvrk_model/PSM/meshes/pitch_front_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="${prefix}pitch_front_joint"
+    type="revolute">
+    <origin
+      xyz="0 0 -0.0509999999999997"
+      rpy="1.5707963267949 0.290727597908941 1.5707963267949" />
+    <parent
+      link="${prefix}yaw_Link" />
+    <child
+      link="${prefix}pitch_front_Link" />
+    <axis
+      xyz="0 0 1" />
 
-    <!-- joint 1 -->
-    <joint name="${prefix}outer_yaw_joint" type="revolute">
-      <parent link="${prefix}psm_base_link"/>
-      <child link="${prefix}outer_yaw_link"/>
-      <axis xyz="0 0 1"/>
-      <origin rpy="1.5708 -1.5708 0" xyz="0.0 0.0 0.0"/>
-      <limit lower="-1.5707" upper="1.5707" velocity=".4" effort="1000"/>
-    </joint>
-
-
-    <!-- link 1: outer_yaw -->
-    <link name="${prefix}outer_yaw_link">
-      <visual>
-        <!-- <origin rpy="0 0 -1.5708" xyz="0.0125 0 0.1575"/> -->
-        <origin rpy="3.1416 0 1.5708" xyz="0.0125 0 0.1575"/>
-        <geometry>
-          <mesh filename="package://dvrk_model/PSM/meshes/outer_yaw.dae"/>
-        </geometry>
-      </visual>
-    </link>
-
-    <!-- joint 2-1: outer_pitch_1 -->
-    <joint name="${prefix}outer_pitch_joint_1" type="revolute">
-      <parent link="${prefix}outer_yaw_link"/>
-      <child link="${prefix}outer_pitch_back_link"/>
-      <axis xyz="0 0 1"/>
-      <origin rpy="-1.5708 -1.5708 0" xyz="0 0.0295 0.1495"/>
-      <limit lower="-0.7854" upper="0.7854" velocity=".4" effort="1000"/>
-    </joint>
-
-    <!-- link 2: outer_pitch_back -->
-    <link name="${prefix}outer_pitch_back_link">
-      <visual>
-        <origin rpy="0 0 -0.27129" xyz="0 0 0"/>
-        <geometry>
-          <mesh filename="package://dvrk_model/PSM/meshes/outer_pitch_back.dae"/>
-        </geometry>
-      </visual>
-    </link>
-
-    <!-- joint 2-2: outer_pitch_2 -->
-    <joint name="${prefix}outer_pitch_joint_2" type="continuous">
-      <parent link="${prefix}outer_yaw_link"/>
-      <child link="${prefix}outer_pitch_front_link"/>
-      <axis xyz="0 0 1"/>
-      <origin rpy="-1.5708 -1.5708 0" xyz="0 0.0295 0.0595"/>
-      <mimic joint="${prefix}outer_pitch_joint_1" multiplier="1"/>
-    </joint>
-
-    <!-- link 2-2: outer_pitch_front -->
-    <link name="${prefix}outer_pitch_front_link">
-      <visual>
-        <origin rpy="0 0 -0.27129" xyz="0 0 0"/>
-        <!-- <origin rpy="0 0 0" xyz="0 0 0"/> -->
-        <geometry>
-          <mesh filename="package://dvrk_model/PSM/meshes/outer_pitch_front.dae"/>
-        </geometry>
-      </visual>
-    </link>
-
-    <!-- joint 2-3: outer_pitch_3 -->
-    <joint name="${prefix}outer_pitch_joint_3" type="continuous">
-      <parent link="${prefix}outer_pitch_back_link"/>
-      <child link="${prefix}outer_pitch_bottom_link"/>
-      <axis xyz="0 0 1"/>
-      <origin rpy="0 0 0" xyz="0.04178 0.15007 -0.0137"/>
-      <mimic joint="${prefix}outer_pitch_joint_1" multiplier="-1"/>
-    </joint>
-
-    <!-- link 2-3: outer_pitch_bottom -->
-    <link name="${prefix}outer_pitch_bottom_link">
-      <visual>
-        <origin rpy="0 -1.5708 0" xyz="0.009 0 0"/>
-        <geometry>
-          <mesh filename="package://dvrk_model/PSM/meshes/outer_pitch_bottom.dae"/>
-        </geometry>
-      </visual>
-    </link>
-
-    <!-- joint 2-4: outer_pitch_4 -->
-    <joint name="${prefix}outer_pitch_joint_4" type="continuous">
-      <parent link="${prefix}outer_pitch_back_link"/>
-      <child link="${prefix}outer_pitch_top_link"/>
-      <axis xyz="0 0 1"/>
-      <origin rpy="0 0 0" xyz="0.04209 0.18695 -0.02412"/>
-      <mimic joint="${prefix}outer_pitch_joint_1" multiplier="-1"/>
-    </joint>
-
-    <!-- link 2-4: outer_pitch_top -->
-    <link name="${prefix}outer_pitch_top_link">
-      <visual>
-        <origin rpy="0 -1.5708 0" xyz="0.009 0 0"/>
-        <geometry>
-          <mesh filename="package://dvrk_model/PSM/meshes/outer_pitch_top.dae"/>
-        </geometry>
-      </visual>
-    </link>
-
-    <!-- joint 2-5: outer_pitch_5 -->
-    <joint name="${prefix}outer_pitch_joint_5" type="continuous">
-      <parent link="${prefix}outer_pitch_bottom_link"/>
-      <child link="${prefix}outer_insertion_link"/>
-      <axis xyz="0 0 1"/>
-      <origin rpy="0 0 0" xyz="-0.520 0 -0.0155"/>
-      <mimic joint="${prefix}outer_pitch_joint_1" multiplier="1"/>
-    </joint>
-
-    <!-- link 2-5: outer_insertion -->
-    <link name="${prefix}outer_insertion_link">
-      <visual>
-        <origin rpy="0 -1.5708 1.5708" xyz="0.02528 0.429 0"/>
-        <geometry>
-          <mesh filename="package://dvrk_model/PSM/meshes/outer_insertion.dae"/>
-        </geometry>
-      </visual>
-    </link>
-
-    <!-- joint 3: insertion -->
-    <joint name="${prefix}outer_insertion_joint" type="prismatic">
-      <parent link="${prefix}outer_insertion_link"/>
-      <child link="${prefix}tool_main_link"/>
-      <axis xyz="0 0 1"/>
-      <origin rpy="1.5708 0 0" xyz="-0.0403 0.23622 0"/>
-      <limit lower="0" upper="0.240" velocity=".4" effort="1000"/>
-    </joint>
-
-    <!-- link 3: tool_main_link -->
-    <link name="${prefix}tool_main_link">
-      <visual>
-        <origin rpy="0 0 1.5708" xyz="0 0 0"/>
-        <geometry>
-          <mesh filename="package://dvrk_model/PSM/meshes/tool_main.dae"/>
-        </geometry>
-      </visual>
-    </link>
-
-    <!-- joint 4-1: Outer Roll -->
-    <joint name="${prefix}outer_roll_joint" type="revolute">
-      <parent link="${prefix}tool_main_link"/>
-      <child link="${prefix}tool_wrist_link"/>
-      <axis xyz="0 0 1"/>
-      <origin rpy="0 0 0" xyz="0 0 0.36680"/>
-      <limit lower="-2.2689" upper="2.2689" velocity=".4" effort="1000"/>
-    </joint>
-
-    <!-- link 4-1: tool_main_link -->
-    <link name="${prefix}tool_wrist_link">
-      <visual>
-        <origin rpy="0 0 1.5708" xyz="0 0 0"/>
-        <geometry>
-          <mesh filename="package://dvrk_model/PSM/meshes/tool_wrist_link.dae"/>
-        </geometry>
-      </visual>
-    </link>
-
-    <!-- joint 4-1: Outer Roll shaft -->
-    <joint name="${prefix}outer_roll_shaft_joint" type="fixed">
-      <parent link="${prefix}tool_wrist_link"/>
-      <child link="${prefix}tool_wrist_shaft_link"/>
-      <axis xyz="0 0 1"/>
-      <origin rpy="0 0 0" xyz="0 0 0.0091"/>
-    </joint>
-
-    <!-- link 4-1: tool_wrist_shaft_link -->
-    <link name="${prefix}tool_wrist_shaft_link">
-      <visual>
-        <origin rpy="1.5708 0 0" xyz="0 0.00401 0"/>
-        <geometry>
-          <mesh filename="package://dvrk_model/PSM/meshes/tool_wrist_shaft_link.dae"/>
-        </geometry>
-      </visual>
-    </link>
-
-    <!-- joint 5: Outer wrist pitch joint -->
-    <joint name="${prefix}outer_wrist_pitch_joint" type="revolute">
-      <parent link="${prefix}tool_wrist_shaft_link"/>
-      <child link="${prefix}tool_wrist_sca_link"/>
-      <axis xyz="0 0 1"/>
-      <origin rpy="-1.5708 -1.5708 0" xyz="0 0 0"/>
-      <limit lower="-1.5707" upper="1.5707" velocity=".4" effort="1000"/>
-    </joint>
-
-    <!-- link 5: tool_wrist_sca_link -->
-    <link name="${prefix}tool_wrist_sca_link">
-      <visual>
-        <!-- <origin rpy="0 3.1416 0" xyz="0 0 0"/> -->
-        <origin rpy="1.5708 3.1416 0" xyz="0.0051 0.0032 0"/>
-        <geometry>
-          <mesh filename="package://dvrk_model/PSM/meshes/tool_wrist_sca_link.dae"/>
-        </geometry>
-      </visual>
-    </link>
-
-    <!-- joint 5-2: Outer wristyaw joint -->
-    <joint name="${prefix}outer_wrist_yaw_joint" type="revolute">
-      <parent link="${prefix}tool_wrist_sca_link"/>
-      <child link="${prefix}tool_wrist_sca_shaft_link"/>
-      <axis xyz="0 0 1"/>
-      <origin rpy="-1.5708 -1.5708 0" xyz="0.0089 0 0"/>
-      <!-- +/- 80 deg -->
-      <limit lower="-1.3963" upper="1.3963" velocity=".4" effort="1000"/>
-    </joint>
-
-    <!-- link 5-2: tool_wrist_sca_shaft_link -->
-    <link name="${prefix}tool_wrist_sca_shaft_link">
-      <visual>
-        <origin rpy="0 0 0" xyz="0 0 -0.0025"/>
-        <geometry>
-          <mesh filename="package://dvrk_model/PSM/meshes/tool_wrist_sca_shaft_link.dae"/>
-        </geometry>
-      </visual>
-    </link>
-
-    <!-- joint 6-1: Outer open angle 1  -->
-    <joint name="${prefix}outer_wrist_open_angle_joint_1" type="revolute">
-      <parent link="${prefix}tool_wrist_sca_shaft_link"/>
-      <child link="${prefix}tool_wrist_sca_ee_link_1"/>
-      <axis xyz="0 0 1"/>
-      <origin rpy="0 0 0" xyz="0 0 0"/>
-      <!-- <origin rpy="-1.5708 -1.5708 0" xyz="0 0 0"/> -->
-      <limit lower="0" upper="1.5707" velocity=".4" effort="1000"/>
-    </joint>
-
-    <!-- link 6-1: Outer open angle link 1 -->
-    <link name="${prefix}tool_wrist_sca_ee_link_1">
-      <visual>
-        <origin rpy="0 0 0" xyz="0 0 0"/>
-        <geometry>
-          <!--mesh filename="package://dvrk_model/PSM/meshes/needle.dae"/-->
-          <mesh filename="package://dvrk_model/PSM/meshes/tool_wrist_sca_link_2.dae"/>
-        </geometry>
-      </visual>
-    </link>
-
-    <!-- joint 6-2: Outer open angle 2   -->
-    <joint name="${prefix}outer_wrist_open_angle_joint_2" type="revolute">
-      <parent link="${prefix}tool_wrist_sca_shaft_link"/>
-      <child link="${prefix}tool_wrist_sca_ee_link_2"/>
-      <axis xyz="0 0 1"/>
-      <origin rpy="0 0 0" xyz="0 0 0"/>
-      <limit lower="-1.5707" upper="1.5707" velocity=".4" effort="1000"/>
-      <mimic joint="${prefix}outer_wrist_open_angle_joint_1" multiplier="-1"/>
-    </joint>
-
-    <!-- link 6-2: Outer open angle link 2 -->
-    <link name="${prefix}tool_wrist_sca_ee_link_2">
-      <visual>
-        <origin rpy="0 3.1516 0" xyz="0 0 0"/>
-        <geometry>
-	  <!--mesh filename="package://dvrk_model/PSM/meshes/needle.stl"/-->
-          <mesh filename="package://dvrk_model/PSM/meshes/sphere_50mm.dae"/>
-          <!--mesh filename="package://dvrk_model/PSM/meshes/tool_wrist_sca_link_2.dae"/-->
-        </geometry>
-      </visual>
-     <!--collision>
-       <geometry>
-         <mesh filename="package://dvrk_model/PSM/meshes/needle.dae"/>
-       </geometry>
-     </collision-->
-    </link>
+    <mimic joint="${prefix}pitch_back_joint" multiplier="1"/>
+    <limit
+      lower="-0.93556"
+      upper="0.94249"
+      effort="1000"
+      velocity="10" />
+  </joint>
+  <link name="${prefix}remote_center_link"/>
+  <joint name="${prefix}remote_center_joint" type="fixed">
+    <parent link="${prefix}base_link"/>
+    <child link="${prefix}remote_center_link"/>
+    <origin rpy="0 0 -1.5708" xyz="0.4864 0 0.1524"/>
+  </joint>
   </xacro:macro>
 
 </robot>
