@@ -106,7 +106,7 @@
     <child
       link="${prefix}yaw_Link" />
     <axis
-      xyz="0 0 1" />
+      xyz="0 0 -1" />
     <limit
       lower="-1.605"
       upper="1.5994"
