@@ -26,12 +26,14 @@
   <node name="sdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
         args="-sdf -model dvrk -param robot_description"/>
 
-  <node name ="controller" pkg="dvrk_gazebo_control" type="dvrk_gazebo_control_node"/>
-
   <param name="use_gui" value="$(arg gui)" />
 
-  <!--node name="image_view" type="image_view" pkg="image_view">
-  <remap from="image" to="/dvrk/ecm/camera/image_raw"/>
-  </node-->
+  <node name="image_view_left" type="image_view" pkg="image_view">
+  <remap from="image" to="/dvrk/ecm/camera/left/image_raw"/>
+  </node>
+
+  <node name="image_view_right" type="image_view" pkg="image_view">
+  <remap from="image" to="/dvrk/ecm/camera/right/image_raw"/>
+  </node>
 
 </launch>
