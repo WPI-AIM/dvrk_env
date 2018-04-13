@@ -7,12 +7,12 @@
         <pose frame=''>-0.170155 0 0.066793 0 -0 0</pose>
         <mass>2.01612</mass>
         <inertia>
-          <ixx>0</ixx>
+          <ixx>0.00942520</ixx>
           <ixy>0</ixy>
-          <ixz>0</ixz>
-          <iyy>0</iyy>
+          <ixz>-0.00334012</ixz>
+          <iyy>0.03342853</iyy>
           <iyz>0</iyz>
-          <izz>0</izz>
+          <izz>0.02897334</izz>
         </inertia>
       </inertial>
       <collision name='base_link_collision'>
@@ -47,12 +47,12 @@
       <pose frame=''>-0 0 0 0 -0 0</pose>
       <mass>0.01</mass>
       <inertia>
-        <ixx>0</ixx>
+        <ixx>0.0000001</ixx>
         <ixy>0</ixy>
         <ixz>0</ixz>
-        <iyy>0</iyy>
+        <iyy>0.0000001</iyy>
         <iyz>0</iyz>
-        <izz>0</izz>
+        <izz>0.0000001</izz>
       </inertia>
     </inertial>
     <visual name='remote_center_link_visual'>
@@ -76,12 +76,12 @@
         <pose frame=''>7.8e-05 -0.038769 -0.158996 0 -0 0</pose>
         <mass>1.47048</mass>
         <inertia>
-          <ixx>0</ixx>
-          <ixy>0</ixy>
-          <ixz>0</ixz>
-          <iyy>0</iyy>
-          <iyz>0</iyz>
-          <izz>0</izz>
+          <ixx>0.01571450</ixx>
+          <ixy>0.0000043</ixy>
+          <ixz>0.00000728</ixz>
+          <iyy>0.01814321</iyy>
+          <iyz>-0.00048589</iyz>
+          <izz>0.00824930</izz>
         </inertia>
       </inertial>
       <collision name='yaw_Link_collision'>
@@ -133,12 +133,12 @@
         <pose frame=''>-0.012175 -0.036897 3.5e-05 0 -0 0</pose>
         <mass>0.995109</mass>
         <inertia>
-          <ixx>0</ixx>
-          <ixy>0</ixy>
-          <ixz>0</ixz>
-          <iyy>0</iyy>
-          <iyz>0</iyz>
-          <izz>0</izz>
+          <ixx>0.00202417</ixx>
+          <ixy>0.00047511</ixy>
+          <ixz>0.00000043</ixz>
+          <iyy>0.00564963</iyy>
+          <iyz>0.00000129</iyz>
+          <izz>0.00564716</izz>
         </inertia>
       </inertial>
       <collision name='pitch_back_Link_collision'>
@@ -190,12 +190,12 @@
         <pose frame=''>0.010348 0.256832 -6e-06 0 -0 0</pose>
         <mass>0.445695</mass>
         <inertia>
-          <ixx>0</ixx>
-          <ixy>0</ixy>
-          <ixz>0</ixz>
-          <iyy>0</iyy>
-          <iyz>0</iyz>
-          <izz>0</izz>
+          <ixx>0.01127103</ixx>
+          <ixy>-0.00031801</ixy>
+          <ixz>0.00000003</ixz>
+          <iyy>0.00045979</iyy>
+          <iyz>-0.00000040</iyz>
+          <izz>0.01110239</izz>
         </inertia>
       </inertial>
       <collision name='pitch_bottom_Link_collision'>
@@ -247,12 +247,12 @@
         <pose frame=''>0.136127 -0.001929 -0 0 -0 0</pose>
         <mass>2.09102</mass>
         <inertia>
-          <ixx>0</ixx>
-          <ixy>0</ixy>
-          <ixz>0</ixz>
-          <iyy>0</iyy>
-          <iyz>0</iyz>
-          <izz>0</izz>
+          <ixx>0.00156905</ixx>
+          <ixy>-0.00123970</ixy>
+          <ixz>0.00000002</ixz>
+          <iyy>0.04284466</iyy>
+          <iyz>0.0000</iyz>
+          <izz>0.04227453</izz>
         </inertia>
       </inertial>
       <collision name='pitch_end_Link_collision'>
@@ -304,12 +304,12 @@
         <pose frame=''>0.019764 0 -0.011799 0 -0 0</pose>
         <mass>0.0311806</mass>
         <inertia>
-          <ixx>0</ixx>
-          <ixy>0</ixy>
-          <ixz>0</ixz>
-          <iyy>0</iyy>
-          <iyz>0</iyz>
-          <izz>0</izz>
+          <ixx>0.00006363</ixx>
+          <ixy>0.000000</ixy>
+          <ixz>-0.00000018</ixz>
+          <iyy>000004346</iyy>
+          <iyz>0.00000</iyz>
+          <izz>0.00002063</izz>
         </inertia>
       </inertial>
       <collision name='main_insertion_Link_collision'>
@@ -361,12 +361,12 @@
         <pose frame=''>0.000566 0.31246 -0 0 -0 0</pose>
         <mass>0.178407</mass>
         <inertia>
-          <ixx>0</ixx>
-          <ixy>0</ixy>
-          <ixz>0</ixz>
-          <iyy>0</iyy>
-          <iyz>0</iyz>
-          <izz>0</izz>
+          <ixx>0.00463460</ixx>
+          <ixy>0.00001128</ixy>
+          <ixz>0.0000</ixz>
+          <iyy>0.00014989</iyy>
+          <iyz>0.00000</iyz>
+          <izz>0.00449516</izz>
         </inertia>
       </inertial>
       <collision name='pitch_top_Link_collision'>
@@ -418,12 +418,12 @@
         <pose frame=''>0.096269 -0 0.047551 0 -0 0</pose>
         <mass>0.0744253</mass>
         <inertia>
-          <ixx>0</ixx>
-          <ixy>0</ixy>
-          <ixz>0</ixz>
-          <iyy>0</iyy>
-          <iyz>0</iyz>
-          <izz>0</izz>
+          <ixx>0.00000876</ixx>
+          <ixy>0.000000</ixy>
+          <ixz>-0.00001711</ixz>
+          <iyy>0.00022654</iyy>
+          <iyz>0.000</iyz>
+          <izz>0.00022322</izz>
         </inertia>
       </inertial>
       <collision name='pitch_front_Link_collision'>
