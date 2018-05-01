@@ -15,7 +15,7 @@ Radian Azhar Gondokaryono:ragondokaryono@wpi.edu
 
 
 # Install
-* download & compile dvrk_gazebo_ros
+* download & compile dvrk_env
 
 ```sh
 # cd to catkin ws src dir
