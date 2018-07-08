@@ -21,7 +21,7 @@ Radian Azhar Gondokaryono:ragondokaryono@wpi.edu
 # cd to catkin ws src dir
 cd /PATH/TO/CATKIN_WS/src
 # clone repo
-git clone https://github.com/ankur-agrawal/Cart_PSM_ECM.git
+git clone https://github.com/WPI-AIM/dvrk_env.git
 # build
 cd ..
 catkin_make
