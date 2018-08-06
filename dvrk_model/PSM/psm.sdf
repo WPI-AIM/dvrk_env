@@ -1,5 +1,5 @@
 <sdf version='1.6'>
-  <model name='dvrk_psm'>
+  <model name='psm'>
     <pose>0 0 0 0 0 0</pose>
     <link name='base_link'>
       <pose frame=''>0 0 0 0 -0 0</pose>

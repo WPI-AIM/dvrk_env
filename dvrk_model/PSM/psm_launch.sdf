@@ -1,14 +1,14 @@
 <sdf version="1.6">
-  <model name="psm">
+  <model name="dvrk_psm">
 
   <include>
     <uri>model://PSM</uri>
-      <name>PSM</name>
+      <name>PSM1</name>
       <pose> 0 0 0.2 0 0 0</pose>
   </include>
 
-  <joint name='PSM::rev_joint' type='fixed'>
-   <child>PSM::remote_center_link</child>
+  <joint name='PSM1::rev_joint' type='fixed'>
+   <child>PSM1::base_link</child>
    <parent>world</parent>
    <axis>
      <limit>
