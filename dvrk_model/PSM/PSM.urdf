@@ -22,7 +22,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://PSM/meshes/base_link.STL" />
+          filename="package://dvrk_model/PSM/meshes/base_link.STL" />
       </geometry>
       <material
         name="">
@@ -36,7 +36,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://PSM/meshes/base_link.STL" />
+          filename="package://dvrk_model/PSM/meshes/base_link.STL" />
       </geometry>
     </collision>
   </link>
@@ -62,7 +62,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://PSM/meshes/yaw_Link.STL" />
+          filename="package://dvrk_model/PSM/meshes/yaw_Link.STL" />
       </geometry>
       <material
         name="">
@@ -76,13 +76,13 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://PSM/meshes/yaw_Link.STL" />
+          filename="package://dvrk_model/PSM/meshes/yaw_Link.STL" />
       </geometry>
     </collision>
   </link>
   <joint
     name="yaw_joint"
-    type="continuous">
+    type="revolute">
     <origin
       xyz="0 0 0"
       rpy="1.57079632679489 -1.5707963267949 0" />
@@ -92,6 +92,11 @@
       link="yaw_Link" />
     <axis
       xyz="0 0 -1" />
+    <limit
+      lower="-1.605"
+      upper="1.5994"
+      effort="1000"
+      velocity="10" />
   </joint>
   <link
     name="pitch_back_Link">
@@ -115,7 +120,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://PSM/meshes/pitch_back_Link.STL" />
+          filename="package://dvrk_model/PSM/meshes/pitch_back_Link.STL" />
       </geometry>
       <material
         name="">
@@ -129,13 +134,13 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://PSM/meshes/pitch_back_Link.STL" />
+          filename="package://dvrk_model/PSM/meshes/pitch_back_Link.STL" />
       </geometry>
     </collision>
   </link>
   <joint
     name="pitch_back_joint"
-    type="continuous">
+    type="revolute">
     <origin
       xyz="0 0 0.0295999999999997"
       rpy="-1.5707963267949 -0.290727597908961 1.77865254633244E-15" />
@@ -145,6 +150,11 @@
       link="pitch_back_Link" />
     <axis
       xyz="0 0 1" />
+    <limit
+      lower="-0.93556"
+      upper="0.94249"
+      effort="1000"
+      velocity="10" />
   </joint>
   <link
     name="pitch_bottom_Link">
@@ -168,7 +178,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://PSM/meshes/pitch_bottom_Link.STL" />
+          filename="package://dvrk_model/PSM/meshes/pitch_bottom_Link.STL" />
       </geometry>
       <material
         name="">
@@ -182,13 +192,13 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://PSM/meshes/pitch_bottom_Link.STL" />
+          filename="package://dvrk_model/PSM/meshes/pitch_bottom_Link.STL" />
       </geometry>
     </collision>
   </link>
   <joint
     name="pitch_bottom_joint"
-    type="continuous">
+    type="revolute">
     <origin
       xyz="0.15 0 0"
       rpy="0 0 1.8615" />
@@ -198,6 +208,11 @@
       link="pitch_bottom_Link" />
     <axis
       xyz="0 0 1" />
+    <limit
+      lower="-0.94249"
+      upper="0.93556"
+      effort="1000"
+      velocity="10" />
   </joint>
   <link
     name="pitch_end_Link">
@@ -221,7 +236,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://PSM/meshes/pitch_end_Link.STL" />
+          filename="package://dvrk_model/PSM/meshes/pitch_end_Link.STL" />
       </geometry>
       <material
         name="">
@@ -235,13 +250,13 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://PSM/meshes/pitch_end_Link.STL" />
+          filename="package://dvrk_model/PSM/meshes/pitch_end_Link.STL" />
       </geometry>
     </collision>
   </link>
   <joint
     name="pitch_end_joint"
-    type="continuous">
+    type="revolute">
     <origin
       xyz="0.516 0 0"
       rpy="0 0 -3.5146E-13" />
@@ -251,6 +266,11 @@
       link="pitch_end_Link" />
     <axis
       xyz="0 0 1" />
+    <limit
+      lower="-0.93556"
+      upper="0.94249"
+      effort="1000"
+      velocity="10" />
   </joint>
   <link
     name="main_insertion_Link">
@@ -274,7 +294,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://PSM/meshes/main_insertion_Link.STL" />
+          filename="package://dvrk_model/PSM/meshes/main_insertion_Link.STL" />
       </geometry>
       <material
         name="">
@@ -288,7 +308,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://PSM/meshes/main_insertion_Link.STL" />
+          filename="package://dvrk_model/PSM/meshes/main_insertion_Link.STL" />
       </geometry>
     </collision>
   </link>
@@ -304,6 +324,11 @@
       link="main_insertion_Link" />
     <axis
       xyz="0 0 -1" />
+    <limit
+      lower="0"
+      upper="0.24"
+      effort="1000"
+      velocity="1" />
   </joint>
   <link
     name="tool_roll_link">
@@ -327,7 +352,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://PSM/meshes/tool_roll_link.STL" />
+          filename="package://dvrk_model/PSM/meshes/tool_roll_link.STL" />
       </geometry>
       <material
         name="">
@@ -341,13 +366,13 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://PSM/meshes/tool_roll_link.STL" />
+          filename="package://dvrk_model/PSM/meshes/tool_roll_link.STL" />
       </geometry>
     </collision>
   </link>
   <joint
     name="tool_roll_joint"
-    type="continuous">
+    type="revolute">
     <origin
       xyz="0 0 0.416199999999902"
       rpy="0 0 3.14159265358979" />
@@ -357,6 +382,11 @@
       link="tool_roll_link" />
     <axis
       xyz="0 0 -1" />
+    <limit
+      lower="-3.14159"
+      upper="3.14159"
+      effort="1000"
+      velocity="10" />
   </joint>
   <link
     name="tool_pitch_link">
@@ -380,7 +410,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://PSM/meshes/tool_pitch_link.STL" />
+          filename="package://dvrk_model/PSM/meshes/tool_pitch_link.STL" />
       </geometry>
       <material
         name="">
@@ -394,13 +424,13 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://PSM/meshes/tool_pitch_link.STL" />
+          filename="package://dvrk_model/PSM/meshes/tool_pitch_link.STL" />
       </geometry>
     </collision>
   </link>
   <joint
     name="tool_pitch_joint"
-    type="continuous">
+    type="revolute">
     <origin
       xyz="0 0 0"
       rpy="1.5707963267949 -1.5707963267949 0" />
@@ -410,6 +440,11 @@
       link="tool_pitch_link" />
     <axis
       xyz="0 0 -1" />
+    <limit
+      lower="-1.5708"
+      upper="1.5708"
+      effort="1000"
+      velocity="10" />
   </joint>
   <link
     name="tool_yaw_link">
@@ -433,7 +468,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://PSM/meshes/tool_yaw_link.STL" />
+          filename="package://dvrk_model/PSM/meshes/tool_yaw_link.STL" />
       </geometry>
       <material
         name="">
@@ -447,13 +482,13 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://PSM/meshes/tool_yaw_link.STL" />
+          filename="package://dvrk_model/PSM/meshes/tool_yaw_link.STL" />
       </geometry>
     </collision>
   </link>
   <joint
     name="tool_yaw_joint"
-    type="continuous">
+    type="revolute">
     <origin
       xyz="0.00910000000003011 -5.00000000686063E-05 0"
       rpy="1.57079632679486 -1.5707963267949 0" />
@@ -463,6 +498,11 @@
       link="tool_yaw_link" />
     <axis
       xyz="0 0 1" />
+    <limit
+      lower="-1.5708"
+      upper="1.5708"
+      effort="1000"
+      velocity="10" />
   </joint>
   <link
     name="tool_gripper1_link">
@@ -486,7 +526,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://PSM/meshes/tool_gripper1_link.STL" />
+          filename="package://dvrk_model/PSM/meshes/tool_gripper1_link.STL" />
       </geometry>
       <material
         name="">
@@ -500,13 +540,13 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://PSM/meshes/tool_gripper1_link.STL" />
+          filename="package://dvrk_model/PSM/meshes/tool_gripper1_link.STL" />
       </geometry>
     </collision>
   </link>
   <joint
     name="tool_gripper1_joint"
-    type="continuous">
+    type="revolute">
     <origin
       xyz="0 0 0"
       rpy="0 0 1.7432292974031E-33" />
@@ -516,6 +556,11 @@
       link="tool_gripper1_link" />
     <axis
       xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="1"
+      effort="0"
+      velocity="0" />
   </joint>
   <link
     name="tool_gripper2_link">
@@ -539,7 +584,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://PSM/meshes/tool_gripper2_link.STL" />
+          filename="package://dvrk_model/PSM/meshes/tool_gripper2_link.STL" />
       </geometry>
       <material
         name="">
@@ -553,13 +598,13 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://PSM/meshes/tool_gripper2_link.STL" />
+          filename="package://dvrk_model/PSM/meshes/tool_gripper2_link.STL" />
       </geometry>
     </collision>
   </link>
   <joint
     name="tool_gripper2_joint"
-    type="continuous">
+    type="revolute">
     <origin
       xyz="0 0 0"
       rpy="0 0 1.7432292974031E-33" />
@@ -569,6 +614,11 @@
       link="tool_gripper2_link" />
     <axis
       xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="1"
+      effort="0"
+      velocity="0" />
   </joint>
   <link
     name="pitch_top_Link">
@@ -592,7 +642,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://PSM/meshes/pitch_top_Link.STL" />
+          filename="package://dvrk_model/PSM/meshes/pitch_top_Link.STL" />
       </geometry>
       <material
         name="">
@@ -606,13 +656,13 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://PSM/meshes/pitch_top_Link.STL" />
+          filename="package://dvrk_model/PSM/meshes/pitch_top_Link.STL" />
       </geometry>
     </collision>
   </link>
   <joint
     name="pitch_top_joint"
-    type="continuous">
+    type="revolute">
     <origin
       xyz="0.183657966666658 0.0141205977162999 0"
       rpy="0 0 1.86152392470386" />
@@ -622,6 +672,11 @@
       link="pitch_top_Link" />
     <axis
       xyz="0 0 1" />
+    <limit
+      lower="-0.94249"
+      upper="0.93556"
+      effort="1000"
+      velocity="10" />
   </joint>
   <link
     name="pitch_front_Link">
@@ -645,7 +700,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://PSM/meshes/pitch_front_Link.STL" />
+          filename="package://dvrk_model/PSM/meshes/pitch_front_Link.STL" />
       </geometry>
       <material
         name="">
@@ -659,13 +714,13 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://PSM/meshes/pitch_front_Link.STL" />
+          filename="package://dvrk_model/PSM/meshes/pitch_front_Link.STL" />
       </geometry>
     </collision>
   </link>
   <joint
     name="pitch_front_joint"
-    type="continuous">
+    type="revolute">
     <origin
       xyz="0 0 -0.0664000000000003"
       rpy="-1.57079632679489 -0.290727597908941 1.77865254633244E-15" />
@@ -675,5 +730,10 @@
       link="pitch_front_Link" />
     <axis
       xyz="0 0 1" />
+    <limit
+      lower="-0.93556"
+      upper="0.94249"
+      effort="1000"
+      velocity="10" />
   </joint>
 </robot>
