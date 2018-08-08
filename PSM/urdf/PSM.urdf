@@ -85,7 +85,7 @@
     type="continuous">
     <origin
       xyz="0 0 0"
-      rpy="1.57079632679489 -1.5707963267949 0" />
+      rpy="1.5708 -1.5708 0" />
     <parent
       link="base_link" />
     <child
@@ -97,10 +97,10 @@
     name="pitch_back_Link">
     <inertial>
       <origin
-        xyz="-0.012175 -0.036897 3.5213E-05"
+        xyz="-0.011651 -0.036241 3.5576E-05"
         rpy="0 0 0" />
       <mass
-        value="0.99511" />
+        value="0.98494" />
       <inertia
         ixx="0"
         ixy="0"
@@ -137,8 +137,8 @@
     name="pitch_back_joint"
     type="continuous">
     <origin
-      xyz="0 0 0.0295999999999997"
-      rpy="-1.5707963267949 -0.290727597908961 1.77865254633244E-15" />
+      xyz="0 0 0.0296"
+      rpy="-1.5708 -0.29073 1.7787E-15" />
     <parent
       link="yaw_Link" />
     <child
@@ -203,7 +203,7 @@
     name="pitch_end_Link">
     <inertial>
       <origin
-        xyz="-0.0019293 -0.13613 -5.9704E-08"
+        xyz="-0.0019293 -0.13613 -5.9688E-08"
         rpy="0 0 0" />
       <mass
         value="2.091" />
@@ -256,16 +256,16 @@
     name="main_insertion_Link">
     <inertial>
       <origin
-        xyz="0.0040563 -0.00010934 0.010292"
+        xyz="0.0040563 -0.00010934 0.0098616"
         rpy="0 0 0" />
       <mass
         value="0.22491" />
       <inertia
-        ixx="1.7667E-05"
+        ixx="1.6985E-05"
         ixy="-6.2173E-08"
-        ixz="1.2562E-05"
-        iyy="2.6598E-05"
-        iyz="8.744E-08"
+        ixz="1.2317E-05"
+        iyy="2.5916E-05"
+        iyz="8.5735E-08"
         izz="8.9322E-06" />
     </inertial>
     <visual>
@@ -296,20 +296,23 @@
     name="main_insertion_joint"
     type="prismatic">
     <origin
-      xyz="0.0430000000019171 -0.288089999999913 0"
-      rpy="1.5707963267949 0 3.14159265358979" />
+      xyz="0.043 -0.28809 0"
+      rpy="1.5708 0 3.1416" />
     <parent
       link="pitch_end_Link" />
     <child
       link="main_insertion_Link" />
     <axis
       xyz="0 0 -1" />
+    <limit
+      effort="0"
+      velocity="0" />
   </joint>
   <link
     name="tool_roll_link">
     <inertial>
       <origin
-        xyz="-1.1311E-08 -7.4559E-09 -0.0058234"
+        xyz="-1.1313E-08 -7.4597E-09 -0.0058234"
         rpy="0 0 0" />
       <mass
         value="0.00033225" />
@@ -349,8 +352,8 @@
     name="tool_roll_joint"
     type="continuous">
     <origin
-      xyz="0 0 0.416199999999902"
-      rpy="0 0 3.14159265358979" />
+      xyz="0 0 0.4162"
+      rpy="0 0 3.1416" />
     <parent
       link="main_insertion_Link" />
     <child
@@ -362,17 +365,17 @@
     name="tool_pitch_link">
     <inertial>
       <origin
-        xyz="0.0035766 -4.8675E-05 4.4413E-06"
+        xyz="0.0035763 -7.363E-08 4.4763E-06"
         rpy="0 0 0" />
       <mass
-        value="0.00025977" />
+        value="0.00025784" />
       <inertia
-        ixx="1.4998E-13"
-        ixy="1.9324E-12"
-        ixz="4.1907E-12"
-        iyy="1.4212E-10"
-        iyz="-5.7032E-14"
-        izz="1.4202E-10" />
+        ixx="1.2364E-13"
+        ixy="2.9238E-15"
+        ixz="4.1903E-12"
+        iyy="1.4213E-10"
+        iyz="-8.6271E-17"
+        izz="1.4201E-10" />
     </inertial>
     <visual>
       <origin
@@ -403,7 +406,7 @@
     type="continuous">
     <origin
       xyz="0 0 0"
-      rpy="1.5707963267949 -1.5707963267949 0" />
+      rpy="1.5708 -1.5708 0" />
     <parent
       link="tool_roll_link" />
     <child
@@ -415,7 +418,7 @@
     name="tool_yaw_link">
     <inertial>
       <origin
-        xyz="-8.7349E-16 6.7391E-14 -5E-05"
+        xyz="-1.0567E-14 -2.3287E-14 -5E-05"
         rpy="0 0 0" />
       <mass
         value="6.6366E-06" />
@@ -455,8 +458,8 @@
     name="tool_yaw_joint"
     type="continuous">
     <origin
-      xyz="0.00910000000003011 -5.00000000686063E-05 0"
-      rpy="1.57079632679486 -1.5707963267949 0" />
+      xyz="0.0091 0 0"
+      rpy="1.5708 -1.5708 0" />
     <parent
       link="tool_pitch_link" />
     <child
@@ -468,10 +471,10 @@
     name="tool_gripper1_link">
     <inertial>
       <origin
-        xyz="0.00018874 0.0013526 -0.00091695"
+        xyz="0.00019605 0.001435 -0.00088478"
         rpy="0 0 0" />
       <mass
-        value="3.907E-05" />
+        value="3.7467E-05" />
       <inertia
         ixx="0"
         ixy="0"
@@ -509,7 +512,7 @@
     type="continuous">
     <origin
       xyz="0 0 0"
-      rpy="0 0 1.7432292974031E-33" />
+      rpy="0 0 0" />
     <parent
       link="tool_yaw_link" />
     <child
@@ -521,10 +524,10 @@
     name="tool_gripper2_link">
     <inertial>
       <origin
-        xyz="-0.00018874 0.0013526 0.00090695"
+        xyz="-0.00019605 0.001435 0.00088478"
         rpy="0 0 0" />
       <mass
-        value="3.907E-05" />
+        value="3.7467E-05" />
       <inertia
         ixx="0"
         ixy="0"
@@ -562,7 +565,7 @@
     type="continuous">
     <origin
       xyz="0 0 0"
-      rpy="0 0 1.7432292974031E-33" />
+      rpy="0 0 0" />
     <parent
       link="tool_yaw_link" />
     <child
@@ -614,8 +617,8 @@
     name="pitch_top_joint"
     type="continuous">
     <origin
-      xyz="0.183657966666658 0.0141205977162999 0"
-      rpy="0 0 1.86152392470386" />
+      xyz="0.18366 0.014121 0"
+      rpy="0 0 1.8615" />
     <parent
       link="pitch_back_Link" />
     <child
@@ -627,7 +630,7 @@
     name="pitch_front_Link">
     <inertial>
       <origin
-        xyz="0.096269 2.3259E-14 0.047551"
+        xyz="0.096269 1.1116E-12 0.047551"
         rpy="0 0 0" />
       <mass
         value="0.074425" />
@@ -667,8 +670,8 @@
     name="pitch_front_joint"
     type="continuous">
     <origin
-      xyz="0 0 -0.0664000000000003"
-      rpy="-1.57079632679489 -0.290727597908941 1.77865254633244E-15" />
+      xyz="0 0 -0.0664"
+      rpy="-1.5708 -0.29073 1.7787E-15" />
     <parent
       link="yaw_Link" />
     <child
