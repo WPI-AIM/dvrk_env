@@ -13,13 +13,13 @@ dvrk_psm:
       i: 0.01
       d: 10
     tool_roll_joint_controller:
-      p: 500
+      p: 200
       i: 0.1
-      d: 1
+      d: 10
     tool_pitch_joint_controller:
-      p: 500
+      p: 50
       i: 0.1
-      d: 1
+      d: 10
     tool_yaw_joint_controller:
       p: 100
       i: 0.1
