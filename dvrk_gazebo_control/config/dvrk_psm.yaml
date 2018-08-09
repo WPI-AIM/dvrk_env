@@ -13,22 +13,22 @@ dvrk_psm:
       i: 0.01
       d: 10
     tool_roll_joint_controller:
-      p: 200
+      p: 10
       i: 0.1
-      d: 10
+      d: 1
     tool_pitch_joint_controller:
-      p: 50
+      p: 10
       i: 0.1
-      d: 10
+      d: 1
     tool_yaw_joint_controller:
+      p: 10
+      i: 0.1
+      d: 1
+    tool_gripper1_joint_controller:
       p: 100
       i: 0.1
-      d: 10
-    gripper1_joint_controller:
+      d: 1
+    tool_gripper2_joint_controller:
       p: 100
       i: 0.1
-      d: 10
-    gripper2_joint_controller:
-      p: 100
-      i: 0.1
-      d: 10
+      d: 1
