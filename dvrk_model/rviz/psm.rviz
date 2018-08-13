@@ -9,16 +9,8 @@ Panels:
         - /Grid1
         - /Grid1/Offset1
         - /RobotModel1
-        - /RobotModel1/Links1
         - /TF1
         - /TF1/Frames1
-        - /TF1/Frames1/gripper1_link1
-        - /TF1/Frames1/main_insertion_Link1
-        - /TF1/Frames1/tool_pitch_link1
-        - /TF1/Frames1/tool_roll_link1
-        - /TF1/Frames1/yaw_Link1
-        - /TF1/Frames1/yaw_Link1/Position1
-        - /TF1/Frames1/yaw_Link1/Relative Position1
         - /TF1/Tree1
       Splitter Ratio: 0.419491529
     Tree Height: 739
@@ -65,90 +57,111 @@ Visualization Manager:
     - Alpha: 1
       Class: rviz/RobotModel
       Collision Enabled: false
-      Enabled: false
+      Enabled: true
       Links:
-        All Links Enabled: false
+        All Links Enabled: true
         Expand Joint Details: false
         Expand Link Details: false
         Expand Tree: false
         Link Tree Style: Links in Alphabetic Order
+        base_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        main_insertion_Link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        pitch_back_Link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        pitch_bottom_Link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        pitch_end_Link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        pitch_front_Link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        pitch_top_Link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        remote_center_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        tool_gripper1_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        tool_gripper2_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        tool_pitch_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        tool_roll_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        tool_yaw_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        world:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        yaw_Link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
       Name: RobotModel
       Robot Description: robot_description
       TF Prefix: ""
       Update Interval: 0
-      Value: false
+      Value: true
       Visual Enabled: true
     - Class: rviz/TF
-      Enabled: true
+      Enabled: false
       Frame Timeout: 15
       Frames:
         All Enabled: false
-        base_link:
-          Value: true
-        gripper1_link:
-          Value: false
-        gripper2_link:
-          Value: false
-        main_insertion_Link:
-          Value: true
-        pitch_back_Link:
-          Value: true
-        pitch_bottom_Link:
-          Value: true
-        pitch_end_Link:
-          Value: true
-        pitch_front_Link:
-          Value: false
-        pitch_top_Link:
-          Value: false
-        remote_center_link:
-          Value: false
-        tool_main_link:
-          Value: true
-        tool_pitch_link:
-          Value: true
-        tool_roll_link:
-          Value: true
-        tool_yaw_link:
-          Value: false
-        world:
-          Value: false
-        yaw_Link:
-          Value: true
       Marker Scale: 0.5
       Name: TF
       Show Arrows: false
       Show Axes: true
       Show Names: true
       Tree:
-        world:
-          base_link:
-            remote_center_link:
-              {}
-            yaw_Link:
-              pitch_back_Link:
-                pitch_bottom_Link:
-                  pitch_end_Link:
-                    main_insertion_Link:
-                      tool_main_link:
-                        tool_roll_link:
-                          tool_pitch_link:
-                            tool_yaw_link:
-                              gripper1_link:
-                                {}
-                              gripper2_link:
-                                {}
-                pitch_top_Link:
-                  {}
-              pitch_front_Link:
-                {}
+        {}
       Update Interval: 0
-      Value: true
+      Value: false
   Enabled: true
   Global Options:
     Background Color: 48; 48; 48
     Default Light: true
-    Fixed Frame: base_link
+    Fixed Frame: world
     Frame Rate: 30
   Name: root
   Tools:
@@ -169,7 +182,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 1.05172086
+      Distance: 1.74903381
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.0599999987
         Stereo Focal Distance: 1
@@ -184,10 +197,10 @@ Visualization Manager:
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.00999999978
-      Pitch: 0.220396936
+      Pitch: 0.000396430492
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 1.27859318
+      Yaw: 2.55356574
     Saved: ~
 Window Geometry:
   Displays:
@@ -206,4 +219,4 @@ Window Geometry:
     collapsed: false
   Width: 1615
   X: 305
-  Y: 59
+  Y: 26

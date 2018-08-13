@@ -2,10 +2,9 @@
 <robot name="master" xmlns:xacro="http://www.ros.org/wiki/xacro">
 
 <xacro:include filename="$(find dvrk_model)/PSM/psm.urdf.xacro"/>
-<xacro:include filename="$(find dvrk_model)/Tool_LND/tool_lnd.urdf.xacro"/>
 
 <link name="world"/>
-<xacro:psm prefix="" parent_link="world" xyz="0 0 0" rpy="0 0 0"/>
-<xacro:tool_lnd prefix="" parent_link="main_insertion_Link" xyz="0 0 0" rpy="0 0 0"/>
+<xacro:psm prefix="" parent_link="world" xyz="0 0 0.1524" rpy="0 0 0"/>
+<!--xacro:tool_lnd prefix="" parent_link="main_insertion_Link" xyz="0 0 0" rpy="0 0 0"/-->
 
 </robot>

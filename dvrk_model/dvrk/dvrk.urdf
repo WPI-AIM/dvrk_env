@@ -22,18 +22,15 @@
   <xacro:ecm prefix="ECM_" parent_link="SUJ_ECM_L3" xyz="0.103 0.173 0" rpy="-1.5708 0 ${-0.735398+3.14}"  />
  </xacro:if>
  <xacro:if value="${psm_num_1}">
-	<xacro:psm prefix="PSM1_" parent_link="SUJ_PSM1_L4" xyz= "0 0.3479 0.1029" rpy="0 3.14159 -1.5708"/>
-  <xacro:tool_lnd prefix="PSM1" parent_link="PSM1_main_insertion_Link" xyz="0 0 0" rpy="0 0 0"/>
+	<xacro:psm prefix="PSM1_" parent_link="SUJ_PSM1_L4" xyz= "0 0.3479 -0.0495" rpy="0 3.14159 0"/>
  </xacro:if>
 
  <xacro:if value="${psm_num_2}">
-	<xacro:psm prefix="PSM2_" parent_link="SUJ_PSM2_L4" xyz= "0 0.3479 0.1029" rpy="0 3.14159 -1.5708"/>
-  <xacro:tool_lnd prefix="PSM2" parent_link="PSM2_main_insertion_Link" xyz="0 0 0" rpy="0 0 0"/>
+	<xacro:psm prefix="PSM2_" parent_link="SUJ_PSM2_L4" xyz= "0 0.3479 -0.0495" rpy="0 3.14159 0"/>
  </xacro:if>
 
  <xacro:if value="${psm_num_3}">
-	<xacro:psm prefix="PSM3_" parent_link="SUJ_PSM3_L4" xyz= "0 0.3479 0.1029" rpy="0 3.14159 -1.5708"/>
-  <xacro:tool_lnd prefix="PSM3" parent_link="PSM3_main_insertion_Link" xyz="0 0 0" rpy="0 0 0"/>
+	<xacro:psm prefix="PSM3_" parent_link="SUJ_PSM3_L4" xyz= "0 0.3479 -0.0495" rpy="0 3.14159 0"/>
  </xacro:if>
 
 </robot>

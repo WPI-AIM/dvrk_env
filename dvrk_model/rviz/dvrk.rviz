@@ -64,6 +64,10 @@ Visualization Manager:
           Show Axes: false
           Show Trail: false
           Value: true
+        ECM__end_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
         ECM__main_insertion_link:
           Alpha: 1
           Show Axes: false
@@ -113,6 +117,213 @@ Visualization Manager:
         Expand Link Details: false
         Expand Tree: false
         Link Tree Style: Links in Alphabetic Order
+        PSM1_base_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        PSM1_main_insertion_Link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        PSM1_pitch_back_Link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        PSM1_pitch_bottom_Link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        PSM1_pitch_end_Link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        PSM1_pitch_front_Link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        PSM1_pitch_top_Link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        PSM1_remote_center_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        PSM1_tool_gripper1_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        PSM1_tool_gripper2_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        PSM1_tool_pitch_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        PSM1_tool_roll_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        PSM1_tool_yaw_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        PSM1_yaw_Link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        PSM2_base_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        PSM2_main_insertion_Link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        PSM2_pitch_back_Link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        PSM2_pitch_bottom_Link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        PSM2_pitch_end_Link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        PSM2_pitch_front_Link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        PSM2_pitch_top_Link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        PSM2_remote_center_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        PSM2_tool_gripper1_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        PSM2_tool_gripper2_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        PSM2_tool_pitch_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        PSM2_tool_roll_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        PSM2_tool_yaw_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        PSM2_yaw_Link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        PSM3_base_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        PSM3_main_insertion_Link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        PSM3_pitch_back_Link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        PSM3_pitch_bottom_Link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        PSM3_pitch_end_Link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        PSM3_pitch_front_Link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        PSM3_pitch_top_Link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        PSM3_remote_center_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        PSM3_tool_gripper1_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        PSM3_tool_gripper2_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        PSM3_tool_pitch_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        PSM3_tool_roll_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        PSM3_tool_yaw_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        PSM3_yaw_Link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
         SUJ_ECM_L0:
           Alpha: 1
           Show Axes: false
@@ -262,7 +473,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 3.59006405
+      Distance: 3.57461596
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.0599999987
         Stereo Focal Distance: 1
@@ -277,10 +488,10 @@ Visualization Manager:
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.00999999978
-      Pitch: 0.440397024
+      Pitch: 0.430397063
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 2.77857494
+      Yaw: 2.69357824
     Saved: ~
 Window Geometry:
   Displays:
