@@ -10,19 +10,19 @@
   <include>
     <uri>model://PSM</uri>
       <name>PSM1</name>
-      <pose> -1.4637 -0.1016 0.92386 0 0 3.14159</pose>
+      <pose> -1.4637 -0.1016 1.07626 0 0 1.5708</pose> 
   </include>
 
   <include>
     <uri>model://PSM</uri>
     <name>PSM2</name>
-    <pose> 1.4637 -0.1016 0.92386 0 0 0</pose>
+    <pose> 1.4637 -0.1016 1.07626 0 0 -1.5708</pose>
   </include>
 
   <include>
     <uri>model://PSM</uri>
     <name>PSM3</name>
-    <pose> 0 1.5145 0.64556 0 0 1.5708</pose>
+    <pose> 0 1.5145 0.79796 0 0 0</pose>
   </include>
 
   <include>
