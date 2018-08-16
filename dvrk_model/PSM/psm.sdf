@@ -6,18 +6,12 @@
         <pose frame=''>-0 -0.17016 -0.085607 0 -0 0</pose>
         <mass>2.0161</mass>
         <inertia>
-<<<<<<< HEAD
           <ixx>0.03342853</ixx>
           <ixy>0.00942520</ixy>
           <ixz>-0.00334012</ixz>
-=======
-          <ixx>0</ixx>
-          <ixy>0</ixy>
-          <ixz>0</ixz>
->>>>>>> 890bbc04ab3574e67765352e68777d6e11ba5d40
           <iyy>0</iyy>
           <iyz>0</iyz>
-          <izz>0</izz>
+          <izz>0.02897334</izz>
         </inertia>
       </inertial>
       <collision name='base_link_collision'>
@@ -40,30 +34,17 @@
       </visual>
     </link>
     <link name='yaw_Link'>
-<<<<<<< HEAD
       <pose frame=''>0 0 0 -1.57079 -1.57079 3.14159</pose>
-=======
-      <pose frame=''>0 0 0 1.58642 -1.57079 -3e-06</pose>
->>>>>>> 890bbc04ab3574e67765352e68777d6e11ba5d40
       <inertial>
         <pose frame=''>-0.038769 7.8e-05 0.041596 0 -0 0</pose>
         <mass>1.4705</mass>
         <inertia>
-<<<<<<< HEAD
           <ixx>0.01814321</ixx>
           <ixy>0.0000043</ixy>
           <ixz>0.00000728</ixz>
           <iyy>0.0157145</iyy>
           <iyz>-0.00048589</iyz>
           <izz>0.00824930</izz>
-=======
-          <ixx>0</ixx>
-          <ixy>0</ixy>
-          <ixz>0</ixz>
-          <iyy>0</iyy>
-          <iyz>0</iyz>
-          <izz>0</izz>
->>>>>>> 890bbc04ab3574e67765352e68777d6e11ba5d40
         </inertia>
       </inertial>
       <collision name='yaw_Link_collision'>
@@ -89,11 +70,7 @@
       <child>yaw_Link</child>
       <parent>base_link</parent>
       <axis>
-<<<<<<< HEAD
         <xyz>-4e-06 1 -0</xyz>
-=======
-        <xyz>0 -1 -0</xyz>
->>>>>>> 890bbc04ab3574e67765352e68777d6e11ba5d40
         <limit>
           <lower>-1.605</lower>
           <upper>1.5994</upper>
@@ -108,25 +85,18 @@
       </axis>
     </joint>
     <link name='pitch_back_Link'>
-<<<<<<< HEAD
       <pose frame=''>0 -0.0296 0 1.57081 -1.28007 -1.5708</pose>
       <inertial>
         <pose frame=''>-0.011651 -0.036241 3.6e-05 0 -0 0</pose>
         <!--mass>0.98494</mass-->
         <mass>0.7</mass>
-=======
-      <pose frame=''>-0 -0.0296 0 1.5708 -1.28007 -1.5708</pose>
-      <inertial>
-        <pose frame=''>-0.012175 -0.036897 3.5e-05 0 -0 0</pose>
-        <mass>0.99511</mass>
->>>>>>> 890bbc04ab3574e67765352e68777d6e11ba5d40
         <inertia>
-          <ixx>0</ixx>
-          <ixy>0</ixy>
-          <ixz>0</ixz>
-          <iyy>0</iyy>
-          <iyz>0</iyz>
-          <izz>0</izz>
+          <ixx>0.00202417</ixx>
+          <ixy>0.00047511</ixy>
+          <ixz>0.00000043</ixz>
+          <iyy>0.00564963</iyy>
+          <iyz>0.00000129</iyz>
+          <izz>0.00564716</izz>
         </inertia>
       </inertial>
       <collision name='pitch_back_Link_collision'>
@@ -152,11 +122,7 @@
       <child>pitch_back_Link</child>
       <parent>yaw_Link</parent>
       <axis>
-<<<<<<< HEAD
         <xyz>-1 -0 -3e-06</xyz>
-=======
-        <xyz>-1 0 -0</xyz>
->>>>>>> 890bbc04ab3574e67765352e68777d6e11ba5d40
         <limit>
           <lower>-0.93556</lower>
           <upper>0.94249</upper>
@@ -171,30 +137,17 @@
       </axis>
     </joint>
     <link name='pitch_bottom_Link'>
-<<<<<<< HEAD
       <pose frame=''>-0 -0.072598 0.143705 -1.5708 -2.6e-05 1.5708</pose>
-=======
-      <pose frame=''>-0 -0.072597 0.143705 -1.5708 -2.4e-05 1.5708</pose>
->>>>>>> 890bbc04ab3574e67765352e68777d6e11ba5d40
       <inertial>
         <pose frame=''>0.25683 -0.010348 -6e-06 0 -0 0</pose>
         <mass>0.44569</mass>
         <inertia>
-<<<<<<< HEAD
           <ixx>0.00045979</ixx>
           <ixy>-0.00031801</ixy>
           <ixz>0.00000003</ixz>
           <iyy>0.01127103</iyy>
           <iyz>-0.00000040</iyz>
           <izz>0.01110239</izz>
-=======
-          <ixx>0</ixx>
-          <ixy>0</ixy>
-          <ixz>0</ixz>
-          <iyy>0</iyy>
-          <iyz>0</iyz>
-          <izz>0</izz>
->>>>>>> 890bbc04ab3574e67765352e68777d6e11ba5d40
         </inertia>
       </inertial>
       <collision name='pitch_bottom_Link_collision'>
@@ -220,11 +173,7 @@
       <child>pitch_bottom_Link</child>
       <parent>pitch_back_Link</parent>
       <axis>
-<<<<<<< HEAD
         <xyz>-1 -0 -3e-06</xyz>
-=======
-        <xyz>-1 0 -0</xyz>
->>>>>>> 890bbc04ab3574e67765352e68777d6e11ba5d40
         <limit>
           <lower>-0.94249</lower>
           <upper>0.93556</upper>
@@ -239,7 +188,6 @@
       </axis>
     </joint>
     <link name='pitch_end_Link'>
-<<<<<<< HEAD
       <pose frame=''>-0 0.443402 0.143719 -1.5708 -2.6e-05 1.5708</pose>
       <inertial>
         <pose frame=''>-0.001929 -0.13613 -0 0 -0 0</pose>
@@ -252,19 +200,6 @@
           <iyy>0.00156905</iyy>
           <iyz>0</iyz>
           <izz>0.03227453</izz>
-=======
-      <pose frame=''>0 0.443403 0.143718 -1.5708 -2.4e-05 1.5708</pose>
-      <inertial>
-        <pose frame=''>-0.001929 -0.13613 -0 0 -0 0</pose>
-        <mass>2.091</mass>
-        <inertia>
-          <ixx>0</ixx>
-          <ixy>0</ixy>
-          <ixz>0</ixz>
-          <iyy>0</iyy>
-          <iyz>0</iyz>
-          <izz>0</izz>
->>>>>>> 890bbc04ab3574e67765352e68777d6e11ba5d40
         </inertia>
       </inertial>
       <collision name='pitch_end_Link_collision'>
@@ -290,11 +225,7 @@
       <child>pitch_end_Link</child>
       <parent>pitch_bottom_Link</parent>
       <axis>
-<<<<<<< HEAD
         <xyz>-1 -0 -3e-06</xyz>
-=======
-        <xyz>-1 0 -0</xyz>
->>>>>>> 890bbc04ab3574e67765352e68777d6e11ba5d40
         <limit>
           <lower>-0.93556</lower>
           <upper>0.94249</upper>
@@ -309,7 +240,6 @@
       </axis>
     </joint>
     <link name='main_insertion_Link'>
-<<<<<<< HEAD
       <pose frame=''>-1e-06 0.486395 0.43181 -3.14159 1.9e-05 -1.5708</pose>
       <inertial>
         <pose frame=''>0.004056 -0.000109 0.009862 0 -0 0</pose>
@@ -328,19 +258,6 @@
           <iyy>0.001</iyy>
           <iyz>0.00001</iyz>
           <izz>0.001</izz>
-=======
-      <pose frame=''>0 0.486396 0.431809 -3.14159 2.4e-05 -1.5708</pose>
-      <inertial>
-        <pose frame=''>0.004056 -0.000109 0.010292 0 -0 0</pose>
-        <mass>0.22491</mass>
-        <inertia>
-          <ixx>1.7667e-05</ixx>
-          <ixy>-6.2173e-08</ixy>
-          <ixz>1.2562e-05</ixz>
-          <iyy>2.6598e-05</iyy>
-          <iyz>8.744e-08</iyz>
-          <izz>8.9322e-06</izz>
->>>>>>> 890bbc04ab3574e67765352e68777d6e11ba5d40
         </inertia>
       </inertial>
       <collision name='main_insertion_Link_collision'>
@@ -366,11 +283,7 @@
       <child>main_insertion_Link</child>
       <parent>pitch_end_Link</parent>
       <axis>
-<<<<<<< HEAD
         <xyz>-6e-06 -1.9e-05 -1</xyz>
-=======
-        <xyz>0 -2.4e-05 -1</xyz>
->>>>>>> 890bbc04ab3574e67765352e68777d6e11ba5d40
         <limit>
           <lower>0</lower>
           <upper>0.24</upper>
@@ -385,7 +298,6 @@
       </axis>
     </joint>
     <link name='tool_roll_link'>
-<<<<<<< HEAD
       <pose frame=''>2e-06 0.486403 0.01561 3.14159 -1.9e-05 1.57079</pose>
       <inertial>
         <pose frame=''>-0 -0 -0.005823 0 -0 0</pose>
@@ -398,19 +310,6 @@
           <iyy>0.001</iyy>
           <iyz>0.00001</iyz>
           <izz>0.001</izz>
-=======
-      <pose frame=''>0 0.486406 0.015609 3.14159 -2.4e-05 1.5708</pose>
-      <inertial>
-        <pose frame=''>-0 -0 -0.005823 0 -0 0</pose>
-        <mass>0.00033225</mass>
-        <inertia>
-          <ixx>0</ixx>
-          <ixy>0</ixy>
-          <ixz>0</ixz>
-          <iyy>0</iyy>
-          <iyz>0</iyz>
-          <izz>0</izz>
->>>>>>> 890bbc04ab3574e67765352e68777d6e11ba5d40
         </inertia>
       </inertial>
       <collision name='tool_roll_link_collision'>
@@ -436,11 +335,7 @@
       <child>tool_roll_link</child>
       <parent>main_insertion_Link</parent>
       <axis>
-<<<<<<< HEAD
         <xyz>-6e-06 -1.9e-05 -1</xyz>
-=======
-        <xyz>-0 -2.4e-05 1</xyz>
->>>>>>> 890bbc04ab3574e67765352e68777d6e11ba5d40
         <limit>
           <lower>-3.14159</lower>
           <upper>3.14159</upper>
@@ -455,7 +350,6 @@
       </axis>
     </joint>
     <link name='tool_pitch_link'>
-<<<<<<< HEAD
       <pose frame=''>2e-06 0.486403 0.01561 -1.96086 1.57078 1.18072</pose>
       <inertial>
         <pose frame=''>0.003576 -0 4e-06 0 -0 0</pose>
@@ -475,19 +369,6 @@
           <iyy>0.001</iyy>
           <iyz>0.00001</iyz>
           <izz>0.001</izz>
-=======
-      <pose frame=''>0 0.486406 0.015609 -1.5708 1.57077 1.5708</pose>
-      <inertial>
-        <pose frame=''>0.003577 -4.9e-05 4e-06 0 -0 0</pose>
-        <mass>0.00025977</mass>
-        <inertia>
-          <ixx>0</ixx>
-          <ixy>0</ixy>
-          <ixz>0</ixz>
-          <iyy>0</iyy>
-          <iyz>0</iyz>
-          <izz>0</izz>
->>>>>>> 890bbc04ab3574e67765352e68777d6e11ba5d40
         </inertia>
       </inertial>
       <collision name='tool_pitch_link_collision'>
@@ -513,11 +394,7 @@
       <child>tool_pitch_link</child>
       <parent>tool_roll_link</parent>
       <axis>
-<<<<<<< HEAD
         <xyz>1 -1.1e-05 6e-06</xyz>
-=======
-        <xyz>1 -0 0</xyz>
->>>>>>> 890bbc04ab3574e67765352e68777d6e11ba5d40
         <limit>
           <lower>-1.5708</lower>
           <upper>1.5708</upper>
@@ -532,7 +409,6 @@
       </axis>
     </joint>
     <link name='tool_yaw_link'>
-<<<<<<< HEAD
       <pose frame=''>2e-06 0.486403 0.00651 1.57078 3e-06 3.14158</pose>
       <inertial>
         <pose frame=''>-0 -0 -5e-05 0 -0 0</pose>
@@ -546,19 +422,6 @@
           <iyy>0.001</iyy>
           <iyz>0.00001</iyz>
           <izz>0.001</izz>
-=======
-      <pose frame=''>0 0.486456 0.006509 1.57077 0 3.14159</pose>
-      <inertial>
-        <pose frame=''>-0 0 -5e-05 0 -0 0</pose>
-        <mass>6.6366e-06</mass>
-        <inertia>
-          <ixx>0</ixx>
-          <ixy>0</ixy>
-          <ixz>0</ixz>
-          <iyy>0</iyy>
-          <iyz>0</iyz>
-          <izz>0</izz>
->>>>>>> 890bbc04ab3574e67765352e68777d6e11ba5d40
         </inertia>
       </inertial>
       <collision name='tool_yaw_link_collision'>
@@ -584,11 +447,7 @@
       <child>tool_yaw_link</child>
       <parent>tool_pitch_link</parent>
       <axis>
-<<<<<<< HEAD
         <xyz>1.1e-05 1 1.2e-05</xyz>
-=======
-        <xyz>0 1 2.4e-05</xyz>
->>>>>>> 890bbc04ab3574e67765352e68777d6e11ba5d40
         <limit>
           <lower>-1.5708</lower>
           <upper>1.5708</upper>
@@ -602,7 +461,6 @@
         <use_parent_model_frame>1</use_parent_model_frame>
       </axis>
     </joint>
-<<<<<<< HEAD
 
     <link name='tool_gripper1_link'>
       <!--pose frame=''>2e-06 0.486403 0.00651 1.57078 3e-06 3.14158</pose-->
@@ -619,20 +477,6 @@
           <iyy>0.001</iyy>
           <iyz>0.00001</iyz>
           <izz>0.001</izz>
-=======
-    <link name='tool_gripper1_link'>
-      <pose frame=''>0 0.486456 0.006509 1.57077 0 3.14159</pose>
-      <inertial>
-        <pose frame=''>0.000189 0.001353 -0.000917 0 -0 0</pose>
-        <mass>3.907e-05</mass>
-        <inertia>
-          <ixx>0</ixx>
-          <ixy>0</ixy>
-          <ixz>0</ixz>
-          <iyy>0</iyy>
-          <iyz>0</iyz>
-          <izz>0</izz>
->>>>>>> 890bbc04ab3574e67765352e68777d6e11ba5d40
         </inertia>
       </inertial>
       <collision name='tool_gripper1_link_collision'>
@@ -658,11 +502,7 @@
       <child>tool_gripper1_link</child>
       <parent>tool_yaw_link</parent>
       <axis>
-<<<<<<< HEAD
         <xyz>1.1e-05 -1 1.2e-05</xyz>
-=======
-        <xyz>0 1 2.4e-05</xyz>
->>>>>>> 890bbc04ab3574e67765352e68777d6e11ba5d40
         <limit>
           <lower>0</lower>
           <upper>1</upper>
@@ -677,7 +517,6 @@
       </axis>
     </joint>
     <link name='tool_gripper2_link'>
-<<<<<<< HEAD
       <!--pose frame=''>2e-06 0.486403 0.00651 1.57078 3e-06 3.14158</pose-->
       <pose frame=''>2e-06 0.486403 0.00651 1.57078 3.14158 3.14158</pose>
       <inertial>
@@ -691,19 +530,6 @@
           <iyy>0.001</iyy>
           <iyz>0.00001</iyz>
           <izz>0.001</izz>
-=======
-      <pose frame=''>0 0.486456 0.006509 1.57077 0 3.14159</pose>
-      <inertial>
-        <pose frame=''>-0.000189 0.001353 0.000907 0 -0 0</pose>
-        <mass>3.907e-05</mass>
-        <inertia>
-          <ixx>0</ixx>
-          <ixy>0</ixy>
-          <ixz>0</ixz>
-          <iyy>0</iyy>
-          <iyz>0</iyz>
-          <izz>0</izz>
->>>>>>> 890bbc04ab3574e67765352e68777d6e11ba5d40
         </inertia>
       </inertial>
       <collision name='tool_gripper2_link_collision'>
@@ -729,11 +555,7 @@
       <child>tool_gripper2_link</child>
       <parent>tool_yaw_link</parent>
       <axis>
-<<<<<<< HEAD
         <xyz>1.1e-05 1 1.2e-05</xyz>
-=======
-        <xyz>0 1 2.4e-05</xyz>
->>>>>>> 890bbc04ab3574e67765352e68777d6e11ba5d40
         <limit>
           <lower>0</lower>
           <upper>1</upper>
@@ -748,30 +570,17 @@
       </axis>
     </joint>
     <link name='pitch_top_Link'>
-<<<<<<< HEAD
       <pose frame=''>-0 -0.068718 0.18 -1.5708 -2.6e-05 1.5708</pose>
-=======
-      <pose frame=''>-0 -0.068717 0.179999 -1.5708 0 1.5708</pose>
->>>>>>> 890bbc04ab3574e67765352e68777d6e11ba5d40
       <inertial>
         <pose frame=''>0.31246 -0.000566 -0 0 -0 0</pose>
         <mass>0.17841</mass>
         <inertia>
-<<<<<<< HEAD
           <ixx>0.00014989</ixx>
           <ixy>0.00001128</ixy>
           <ixz>0</ixz>
           <iyy>0.00463460</iyy>
           <iyz>0</iyz>
           <izz>0.00449516</izz>
-=======
-          <ixx>0</ixx>
-          <ixy>0</ixy>
-          <ixz>0</ixz>
-          <iyy>0</iyy>
-          <iyz>0</iyz>
-          <izz>0</izz>
->>>>>>> 890bbc04ab3574e67765352e68777d6e11ba5d40
         </inertia>
       </inertial>
       <collision name='pitch_top_Link_collision'>
@@ -797,11 +606,7 @@
       <child>pitch_top_Link</child>
       <parent>pitch_back_Link</parent>
       <axis>
-<<<<<<< HEAD
         <xyz>-1 -0 -3e-06</xyz>
-=======
-        <xyz>-1 0 -0</xyz>
->>>>>>> 890bbc04ab3574e67765352e68777d6e11ba5d40
         <limit>
           <lower>-0.94249</lower>
           <upper>0.93556</upper>
@@ -816,30 +621,17 @@
       </axis>
     </joint>
     <link name='pitch_front_Link'>
-<<<<<<< HEAD
       <pose frame=''>-0 0.0664 -0 1.57081 -1.28007 -1.5708</pose>
-=======
-      <pose frame=''>0 0.0664 0 1.5708 -1.28007 -1.5708</pose>
->>>>>>> 890bbc04ab3574e67765352e68777d6e11ba5d40
       <inertial>
         <pose frame=''>0.096269 0 0.047551 0 -0 0</pose>
         <mass>0.074425</mass>
         <inertia>
-<<<<<<< HEAD
           <ixx>0.00000876</ixx>
           <ixy>0</ixy>
           <ixz>-0.00001711</ixz>
           <iyy>0.00022654</iyy>
           <iyz>0</iyz>
           <izz>00.00022322</izz>
-=======
-          <ixx>0</ixx>
-          <ixy>0</ixy>
-          <ixz>0</ixz>
-          <iyy>0</iyy>
-          <iyz>0</iyz>
-          <izz>0</izz>
->>>>>>> 890bbc04ab3574e67765352e68777d6e11ba5d40
         </inertia>
       </inertial>
       <collision name='pitch_front_Link_collision'>
@@ -865,11 +657,7 @@
       <child>pitch_front_Link</child>
       <parent>yaw_Link</parent>
       <axis>
-<<<<<<< HEAD
         <xyz>-1 -0 -3e-06</xyz>
-=======
-        <xyz>-1 0 -0</xyz>
->>>>>>> 890bbc04ab3574e67765352e68777d6e11ba5d40
         <limit>
           <lower>-0.93556</lower>
           <upper>0.94249</upper>
