@@ -5,7 +5,7 @@ This work is unofficial, unsupported and in progress in the current location.
 
 Description
 ====================
-This repository has code for using daVinci research kit on Gazebo 7 and controlled using ROS.
+This repository contains RViz and Gazebo simulations of the da Vinci Surgical System controlled using ROS. 
 
 # Author
 
