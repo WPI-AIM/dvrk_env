@@ -40,7 +40,11 @@ dvrk_plugins: Has the model plugin which provides interface between the dvrk sim
 
 laprotek_comm: Provides interface between Laprotek and ROS.
 
-
+# Launching 
+```sh
+# Run the Surgical System simulation
+roslaunch dvrk_gazebo dvrk_gazebo.launch
+```
 # Dependencies
 
 Gazebo 7, ROS kinetic or ROS indigo, gazebo_ros_pkgs. If ROS-indigo is to be used with Gazebo 7, keep gazebo_ros_pkgs (https://github.com/ros-simulation/gazebo_ros_pkgs/tree/indigo-devel) in your src folder.
