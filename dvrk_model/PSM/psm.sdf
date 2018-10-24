@@ -31,6 +31,12 @@
             <uri>model://PSM/meshes/base_link.STL</uri>
           </mesh>
         </geometry>
+        <material>
+          <ambient>0.6 0.6 0.6 1</ambient>
+          <diffuse>0.6 0.6 0.6 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+          <emissive>0 0 0 1</emissive>
+        </material>
       </visual>
     </link>
     <link name='yaw_Link'>
@@ -64,6 +70,12 @@
             <uri>model://PSM/meshes/yaw_Link.STL</uri>
           </mesh>
         </geometry>
+        <material>
+          <ambient>0.6 0.6 0.6 1</ambient>
+          <diffuse>0.6 0.6 0.6 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+          <emissive>0 0 0 1</emissive>
+        </material>
       </visual>
     </link>
     <joint name='yaw_joint' type='revolute'>
@@ -116,6 +128,12 @@
             <uri>model://PSM/meshes/pitch_back_Link.STL</uri>
           </mesh>
         </geometry>
+        <material>
+          <ambient>0 0 0 1</ambient>
+          <diffuse>0 0 0 1</diffuse>
+          <specular>0.8 0.8 0.8 1</specular>
+          <emissive>0 0 0 1</emissive>
+        </material>
       </visual>
     </link>
     <joint name='pitch_back_joint' type='revolute'>
@@ -167,6 +185,12 @@
             <uri>model://PSM/meshes/pitch_bottom_Link.STL</uri>
           </mesh>
         </geometry>
+        <material>
+          <ambient>0 0 0 1</ambient>
+          <diffuse>0 0 0 1</diffuse>
+          <specular>0.8 0.8 0.8 1</specular>
+          <emissive>0 0 0 1</emissive>
+        </material>
       </visual>
     </link>
     <joint name='pitch_bottom_joint' type='revolute'>
@@ -219,6 +243,12 @@
             <uri>model://PSM/meshes/pitch_end_Link.STL</uri>
           </mesh>
         </geometry>
+        <material>
+          <ambient>0 0 0 1</ambient>
+          <diffuse>0 0 0 1</diffuse>
+          <specular>0.8 0.8 0.8 1</specular>
+          <emissive>0 0 0 1</emissive>
+        </material>
       </visual>
     </link>
     <joint name='pitch_end_joint' type='revolute'>
@@ -277,6 +307,12 @@
             <uri>model://PSM/meshes/main_insertion_Link.STL</uri>
           </mesh>
         </geometry>
+        <material>
+          <ambient>0 0 0 1</ambient>
+          <diffuse>0 0 0 1</diffuse>
+          <specular>0.8 0.8 0.8 1</specular>
+          <emissive>0 0 0 1</emissive>
+        </material>
       </visual>
     </link>
     <joint name='main_insertion_joint' type='prismatic'>
@@ -329,6 +365,12 @@
             <uri>model://PSM/meshes/tool_roll_link.STL</uri>
           </mesh>
         </geometry>
+        <material>
+          <ambient>0.8 0.8 0.8 1</ambient>
+          <diffuse>0.8 0.8 0.8 1</diffuse>
+          <specular>1 1 1 1</specular>
+          <emissive>0 0 0 1</emissive>
+        </material>
       </visual>
     </link>
     <joint name='tool_roll_joint' type='revolute'>
@@ -362,7 +404,7 @@
           <iyy>1.4213e-10</iyy>
           <iyz>-8.6271e-17</iyz>
           <izz>1.4201e-10</izz-->
-    
+
           <ixx>0.001</ixx>
           <ixy>0.00001</ixy>
           <ixz>0.00001</ixz>
@@ -388,6 +430,12 @@
             <uri>model://PSM/meshes/tool_pitch_link.STL</uri>
           </mesh>
         </geometry>
+        <material>
+          <ambient>0.8 0.8 0.8 1</ambient>
+          <diffuse>0.8 0.8 0.8 1</diffuse>
+          <specular>1 1 1 1</specular>
+          <emissive>0 0 0 1</emissive>
+        </material>
       </visual>
     </link>
     <joint name='tool_pitch_joint' type='revolute'>
@@ -441,6 +489,12 @@
             <uri>model://PSM/meshes/tool_yaw_link.STL</uri>
           </mesh>
         </geometry>
+        <material>
+          <ambient>0.8 0.8 0.8 1</ambient>
+          <diffuse>0.8 0.8 0.8 1</diffuse>
+          <specular>1 1 1 1</specular>
+          <emissive>0 0 0 1</emissive>
+        </material>
       </visual>
     </link>
     <joint name='tool_yaw_joint' type='revolute'>
@@ -469,7 +523,7 @@
         <pose frame=''>0.000196 0.001435 -0.000885 0 -0 0</pose>
         <!--mass>3.7467e-05</mass-->
         <mass>0.010491</mass>
-        
+
         <inertia>
           <ixx>0.001</ixx>
           <ixy>0.00001</ixy>
@@ -496,6 +550,12 @@
             <uri>model://PSM/meshes/tool_gripper1_link.STL</uri>
           </mesh>
         </geometry>
+        <material>
+          <ambient>0.8 0.8 0.8 1</ambient>
+          <diffuse>0.8 0.8 0.8 1</diffuse>
+          <specular>1 1 1 1</specular>
+          <emissive>0 0 0 1</emissive>
+        </material>
       </visual>
     </link>
     <joint name='tool_gripper1_joint' type='revolute'>
@@ -549,6 +609,12 @@
             <uri>model://PSM/meshes/tool_gripper2_link.STL</uri>
           </mesh>
         </geometry>
+        <material>
+          <ambient>0.8 0.8 0.8 1</ambient>
+          <diffuse>0.8 0.8 0.8 1</diffuse>
+          <specular>1 1 1 1</specular>
+          <emissive>0 0 0 1</emissive>
+        </material>
       </visual>
     </link>
     <joint name='tool_gripper2_joint' type='revolute'>
@@ -600,6 +666,12 @@
             <uri>model://PSM/meshes/pitch_top_Link.STL</uri>
           </mesh>
         </geometry>
+        <material>
+          <ambient>0 0 0 1</ambient>
+          <diffuse>0 0 0 1</diffuse>
+          <specular>0.8 0.8 0.8 1</specular>
+          <emissive>0 0 0 1</emissive>
+        </material>
       </visual>
     </link>
     <joint name='pitch_top_joint' type='revolute'>
@@ -651,6 +723,12 @@
             <uri>model://PSM/meshes/pitch_front_Link.STL</uri>
           </mesh>
         </geometry>
+        <material>
+          <ambient>0 0 0 1</ambient>
+          <diffuse>0 0 0 1</diffuse>
+          <specular>0.8 0.8 0.8 1</specular>
+          <emissive>0 0 0 1</emissive>
+        </material>
       </visual>
     </link>
     <joint name='pitch_front_joint' type='revolute'>

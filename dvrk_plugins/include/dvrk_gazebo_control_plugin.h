@@ -51,7 +51,7 @@ public:
     jointPtr=joint;
     setJointStrings();
     setController();
-    joint_pos=0;
+    joint_pos=init_joint;
     parent_model=model_;
     dynamic_init=0;
     // setPosition();
@@ -78,6 +78,7 @@ private:
   gazebo::physics::JointPtr jointPtr;
   double p, i, d;
   double joint_pos;
+  double init_joint;
   bool mode;
   int dynamic_init;
 };

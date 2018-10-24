@@ -185,6 +185,7 @@ void joint_class::setController()
   model_nh_.param(std::string("/"+joint_name+"_controller/p"), p, p_def);
   model_nh_.param(std::string("/"+joint_name+"_controller/i"), i, i_def);
   model_nh_.param(std::string("/"+joint_name+"_controller/d"), d, d_def);
+  model_nh_.param(std::string("/"+joint_name+"_controller/init_joint"), init_joint, 0.0);
 }
 
 //Function to access pid values from the private variables of joint class
