@@ -34,7 +34,7 @@ dvrk_gazebo: Provides launch files to launch PSM, MTM, ECM, SUJ Cart and the ful
 
 dvrk_gazebo_control: Provides example codes to control the gazebo simulation.
 
-dvrk_model: Provides CAD models, URDFs, SDFs of PSM, ECM, MTM, Laprotek Master and the SUJ Cart. Additionally it has launch files for all of the models in RViz. The contents of this folder should be pasted in .gazebo folder for nested model simulation in Gazebo.
+dvrk_model: Provides CAD models, URDFs, SDFs of PSM, ECM, MTM, Laprotek Master and the SUJ Cart. Additionally it has launch files for all of the models in RViz. **Copy and Paste the Folders: Cart, dvrk, ECM, MTM, and PSM to ~/.gazebo/**
 
 dvrk_plugins: Has the model plugin which provides interface between the dvrk simulation in Gazebo and ROS.
 
