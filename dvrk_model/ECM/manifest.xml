@@ -1,6 +1,0 @@
-<package>
-  <description brief="dvrk_model">PSM</description>
-  <depend package="gazebo" />
-  <author>me</author>
-  <license>BSD</license>
-</package>
