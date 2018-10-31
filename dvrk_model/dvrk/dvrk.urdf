@@ -5,7 +5,7 @@
 <xacro:include filename="$(find dvrk_model)/cart/suj.xacro"/>
 <xacro:include filename="$(find dvrk_model)/psm/psm.urdf.xacro"/>
 <xacro:include filename="$(find dvrk_model)/ecm/ecm.urdf.xacro"/>
-<xacro:include filename="$(find dvrk_model)/Tool_LND/tool_lnd.urdf.xacro"/>
+<xacro:include filename="$(find dvrk_model)/tool_lnd/tool_lnd.urdf.xacro"/>
 
 
 <!--change true to specify which psm or ecm you want -->
