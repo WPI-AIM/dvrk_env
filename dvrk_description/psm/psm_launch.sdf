@@ -1,0 +1,28 @@
+<sdf version="1.6">
+  <model name="dvrk_psm">
+
+  <include>
+    <uri>model://psm</uri>
+      <name>psm1</name>
+      <pose> 0 0 1 0 0 0</pose>
+  </include>
+
+  <joint name='psm1::rev_joint' type='fixed'>
+   <child>psm1::base_link</child>
+   <parent>world</parent>
+   <axis>
+     <limit>
+       <lower>-1.57</lower>
+       <upper>1.57</upper>
+     </limit>
+     <dynamics>
+       <damping>0</damping>
+     </dynamics>
+     <xyz>0 0 1</xyz>
+   </axis>
+ </joint>
+
+
+ <plugin name='dvrk_plugin' filename='libdvrk_plugin.so'/>
+ </model>
+</sdf>

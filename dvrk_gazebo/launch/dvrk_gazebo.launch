@@ -20,7 +20,7 @@
 
   <rosparam file="$(find dvrk_gazebo_control)/config/dvrk.yaml" command="load"/>
 
-  <param name="robot_description" command="$(find xacro)/xacro.py $(find dvrk_model)/dvrk/dvrk_full.sdf" />
+  <param name="robot_description" command="$(find xacro)/xacro.py $(find dvrk_description)/dvrk/dvrk_full.sdf" />
 
 
   <node name="sdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"

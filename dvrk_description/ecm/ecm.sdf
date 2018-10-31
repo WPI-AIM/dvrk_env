@@ -1,0 +1,663 @@
+<sdf version='1.6'>
+  <model name='ecm'>
+    <link name='base_link'>
+      <pose frame=''>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose frame=''>-0.003775 -3e-05 0.069014 0 -0 0</pose>
+        <mass>2.64078</mass>
+        <inertia>
+          <ixx>4.76582e-06</ixx>
+          <ixy>-8.19632e-08</ixy>
+          <ixz>-9.01608e-05</ixz>
+          <iyy>0.00171045</iyy>
+          <iyz>-4.3325e-09</iyz>
+          <izz>0.00170568</izz>
+        </inertia>
+      </inertial>
+      <collision name='base_link_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://ecm//meshes/base_link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name='base_link_fixed_joint_lump__remote_center_link_collision_1'>
+        <pose frame=''>0.612599 0 0.101595 -0 0 -1.5708</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://ecm//meshes/remote_center_link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='base_link_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://ecm//meshes/base_link.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='base_link_fixed_joint_lump__remote_center_link_visual_1'>
+        <pose frame=''>0.612599 0 0.101595 -0 0 -1.5708</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://ecm//meshes/remote_center_link.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.5 0.5 0.5 1</ambient>
+          <diffuse>0.5 0.5 0.5 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+          <emissive>0.5 0.5 0.5 1</emissive>
+        </material>
+      </visual>
+    </link>
+    <link name='yaw_link'>
+      <pose frame=''>0.0732 0 0.10146 1.5708 -0 1.5708</pose>
+      <inertial>
+        <!-- <pose frame=''>0 -0.029045 0.10669 0 -0 0</pose> -->
+        <pose frame=''>0 0 0.10669 0 -0 0</pose>
+        <mass>6.4168</mass>
+        <inertia>
+          <ixx>0.1181</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.1133</iyy>
+          <iyz>-0.0249</iyz>
+          <izz>0.0286</izz>
+        </inertia>
+      </inertial>
+      <collision name='yaw_link_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://ecm//meshes/yaw_link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='yaw_link_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://ecm//meshes/yaw_link.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.5 0.5 0.5 1</ambient>
+          <diffuse>0.5 0.5 0.5 1</diffuse>
+          <specular>0.5 0.5 0.5 1</specular>
+          <emissive>0.5 0.5 0.5 1</emissive>
+        </material>
+      </visual>
+    </link>
+    <joint name='yaw_joint' type='revolute'>
+      <child>yaw_link</child>
+      <parent>base_link</parent>
+      <axis>
+        <xyz>-1 0 0</xyz>
+        <limit>
+          <lower>-1.5708</lower>
+          <upper>1.5708</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0.1</spring_stiffness>
+          <damping>0</damping>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='pitch_back_link'>
+      <pose frame=''>0.23563 0 0.09166 -1.57239 0 0</pose>
+      <inertial>
+        <pose frame=''>-0.032853 -0.14997 -0.008061 0 -0 0</pose>
+        <mass>0.4214</mass>
+        <inertia>
+          <ixx>0.0119</ixx>
+          <ixy>0.0051</ixy>
+          <ixz>-0.0003</ixz>
+          <iyy>0.0025</iyy>
+          <iyz>-0.0006</iyz>
+          <izz>0.0141</izz>
+        </inertia>
+      </inertial>
+      <collision name='pitch_back_link_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://ecm//meshes/pitch_back_link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='pitch_back_link_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://ecm//meshes/pitch_back_link.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.85 0.64 0.125 1</ambient>
+          <diffuse>0.85 0.64 0.125 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+          <emissive>0.85 0.64 0.125 1</emissive>
+        </material>
+      </visual>
+    </link>
+    <joint name='pitch_back_joint' type='revolute'>
+      <child>pitch_back_link</child>
+      <parent>yaw_link</parent>
+      <axis>
+        <xyz>-0 0.999999 -0.001593</xyz>
+        <limit>
+          <lower>-0.785398</lower>
+          <upper>1.157657</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0.1</spring_stiffness>
+          <damping>0</damping>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='pitch_front_link'>
+      <pose frame=''>0.2722 0 0.10146 -1.57239 0 0</pose>
+      <inertial>
+        <pose frame=''>-0.030619 -0.13578 -0 0 -0 0</pose>
+        <mass>1.6069</mass>
+        <inertia>
+          <ixx>0.0515</ixx>
+          <ixy>-0.0158</ixy>
+          <ixz>-0.0022</ixz>
+          <iyy>-0.0152</iyy>
+          <iyz>0.0111</iyz>
+          <izz>0.0546</izz>
+        </inertia>
+      </inertial>
+      <collision name='pitch_front_link_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://ecm//meshes/pitch_front_link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='pitch_front_link_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://ecm//meshes/pitch_front_link.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0 0 0 1</ambient>
+          <diffuse>0 0 0 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+          <emissive>0 0 0 1</emissive>
+        </material>
+      </visual>
+    </link>
+    <joint name='pitch_front_joint' type='revolute'>
+      <child>pitch_front_link</child>
+      <parent>yaw_link</parent>
+      <axis>
+        <xyz>-0 0.999999 -0.001593</xyz>
+        <limit>
+          <lower>-0.785398</lower>
+          <upper>1.157657</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0.1</spring_stiffness>
+          <damping>0</damping>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='pitch_bottom_link'>
+      <pose frame=''>0.169199 0.000457 0.388265 -1.57239 0 0</pose>
+      <inertial>
+        <pose frame=''>0.14594 -0.026715 -0.000165 0 -0 0</pose>
+        <mass>0.35928</mass>
+        <inertia>
+          <ixx>0.00023901</ixx>
+          <ixy>0.00022767</ixy>
+          <ixz>-3.8706e-06</ixz>
+          <iyy>0.0030096</iyy>
+          <iyz>-7.279e-07</iyz>
+          <izz>0.0029617</izz>
+        </inertia>
+      </inertial>
+      <collision name='pitch_bottom_link_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://ecm//meshes/pitch_bottom_link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='pitch_bottom_link_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://ecm//meshes/pitch_bottom_link.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0 0 0 1</ambient>
+          <diffuse>0 0 0 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+          <emissive>0 0 0 1</emissive>
+        </material>
+      </visual>
+    </link>
+    <joint name='pitch_bottom_joint' type='revolute'>
+      <child>pitch_bottom_link</child>
+      <parent>pitch_front_link</parent>
+      <axis>
+        <xyz>-0 0.999999 -0.001593</xyz>
+        <limit>
+          <lower>-0.785398</lower>
+          <upper>1.157657</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0.1</spring_stiffness>
+          <damping>0</damping>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='pitch_end_link'>
+      <pose frame=''>0.509599 0.000457 0.3884 -1.57239 0 0</pose>
+      <inertial>
+        <pose frame=''>0.018122 -0.027143 0.000789 0 -0 0</pose>
+        <mass>0.7526</mass>
+        <inertia>
+          <ixx>0.0981</ixx>
+          <ixy>0.0622</ixy>
+          <ixz>0.0050</ixz>
+          <iyy>0.0531</iyy>
+          <iyz>0.0061</iyz>
+          <izz>0.1499</izz>
+        </inertia>
+      </inertial>
+      <collision name='pitch_end_link_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://ecm//meshes/pitch_end_link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='pitch_end_link_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://ecm//meshes/pitch_end_link.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0 0 0 1</ambient>
+          <diffuse>0 0 0 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+          <emissive>0 0 0 1</emissive>
+        </material>
+      </visual>
+    </link>
+    <joint name='pitch_end_joint' type='revolute'>
+      <child>pitch_end_link</child>
+      <parent>pitch_bottom_link</parent>
+      <axis>
+        <xyz>-0 0.999999 -0.001593</xyz>
+        <limit>
+          <lower>-0.785398</lower>
+          <upper>1.157657</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0.1</spring_stiffness>
+          <damping>0</damping>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='main_insertion_link'>
+      <pose frame=''>0.551599 0.000594 0.474543 3.14 0 0</pose>
+      <inertial>
+        <pose frame=''>0.008617 -0.000792 -0.047928 0 -0 0</pose>
+        <mass>0.23108</mass>
+        <inertia>
+          <ixx>0.0398</ixx>
+          <ixy>0.0284</ixy>
+          <ixz>0</ixz>
+          <iyy>0.0206</iyy>
+          <iyz>0</iyz>
+          <izz>0.0602</izz>
+        </inertia>
+      </inertial>
+      <collision name='main_insertion_link_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://ecm//meshes/main_insertion_link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='main_insertion_link_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://ecm//meshes/main_insertion_link.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0 0 0 1</ambient>
+          <diffuse>0 0 0 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+          <emissive>0 0 0 1</emissive>
+        </material>
+      </visual>
+    </link>
+    <joint name='main_insertion_joint' type='prismatic'>
+      <child>main_insertion_link</child>
+      <parent>pitch_end_link</parent>
+      <axis>
+        <xyz>-0 -0.001596 -0.999999</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>0.35</upper>
+          <effort>50</effort>
+          <velocity>100</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0.1</spring_stiffness>
+          <damping>0</damping>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='tool_link'>
+      <pose frame=''>0.612599 0.000594 0.474543 3.14 0 0</pose>
+      <inertial>
+        <pose frame=''>0 -0.000793 -0.10732 0 -0 0</pose>
+        <mass>1.9074</mass>
+        <inertia>
+          <ixx>0.4617</ixx>
+          <ixy>0.3228</ixy>
+          <ixz>0</ixz>
+          <iyy>0.2372</iyy>
+          <iyz>0</iyz>
+          <izz>0.6977</izz>
+        </inertia>
+      </inertial>
+      <collision name='tool_link_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://ecm//meshes/tool_link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='tool_link_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://ecm//meshes/tool_link.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0 0 0 1</ambient>
+          <diffuse>0 0 0 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+          <emissive>0 0 0 1</emissive>
+        </material>
+      </visual>
+    </link>
+    <joint name='tool_joint' type='revolute'>
+      <child>tool_link</child>
+      <parent>main_insertion_link</parent>
+      <axis>
+        <xyz>0 0.001596 0.999999</xyz>
+        <limit>
+          <lower>-3.1415</lower>
+          <upper>3.1415</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0.1</spring_stiffness>
+          <damping>0</damping>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='pitch_top_link'>
+      <pose frame=''>0.163728 0.000516 0.425717 -1.57239 0 0</pose>
+      <inertial>
+        <pose frame=''>0.1702 -6.8e-05 0.000793 0 -0 0</pose>
+        <mass>0.43851</mass>
+        <inertia>
+          <ixx>0.000027</ixx>
+          <ixy>0</ixy>
+          <ixz>0.000448</ixz>
+          <iyy>0.017408</iyy>
+          <iyz>0</iyz>
+          <izz>0.017393</izz>
+        </inertia>
+      </inertial>
+      <collision name='pitch_top_link_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://ecm//meshes/pitch_top_link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='pitch_top_link_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://ecm//meshes/pitch_top_link.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.85 0.64 0.125 1</ambient>
+          <diffuse>0.85 0.64 0.125 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+          <emissive>0.85 0.64 0.125 1</emissive>
+        </material>
+      </visual>
+    </link>
+    <joint name='pitch_top_joint' type='revolute'>
+      <child>pitch_top_link</child>
+      <parent>pitch_front_link</parent>
+      <axis>
+        <xyz>-0 0.999999 -0.001593</xyz>
+        <limit>
+          <lower>-0.785398</lower>
+          <upper>1.157657</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0.1</spring_stiffness>
+          <damping>0</damping>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <joint name='pitch_bottom_back_joint' type='revolute'>
+      <child>pitch_bottom_link</child>
+      <parent>pitch_back_link</parent>
+      <pose> -0.0365687 0.0097841 0 0 0 0</pose>
+      <axis>
+        <xyz>-0 0.999999 -0.001593</xyz>
+        <limit>
+          <lower>-0.785398</lower>
+          <upper>1.157657</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <joint name='pitch_top_end_joint' type='revolute'>
+      <child>pitch_end_link</child>
+      <parent>pitch_top_link</parent>
+      <pose> -0.0045766 -0.0375723 0 0 0 0</pose>
+      <axis>
+        <xyz>-0 0.999999 -0.001593</xyz>
+        <limit>
+          <lower>-0.785398</lower>
+          <upper>1.157657</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0.1</spring_stiffness>
+          <damping>0</damping>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='camera_link'>
+      <pose frame=''>0.612599 0 0.100895 0 0 -1.5708</pose>
+      <inertial>
+        <pose frame=''>0 0 0 0 0 0</pose>
+        <mass>0.00001</mass>
+        <inertia>
+          <ixx>0</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0</iyy>
+          <iyz>0</iyz>
+          <izz>0</izz>
+        </inertia>
+      </inertial>
+
+      <!-- <sensor type="camera" name="camera1">
+        <update_rate>30.0</update_rate>
+        <camera name="head">
+          <horizontal_fov>1.3962634</horizontal_fov>
+          <image>
+            <width>800</width>
+            <height>800</height>
+            <format>R8G8B8</format>
+          </image>
+          <clip>
+            <near>0.005</near>
+            <far>300</far>
+          </clip>
+          <noise>
+            <type>gaussian</type>
+            <mean>0.0</mean>
+            <stddev>0.007</stddev>
+          </noise>
+        </camera>
+        <plugin name="camera_controller" filename="libgazebo_ros_camera.so">
+          <alwaysOn>true</alwaysOn>
+          <updateRate>0.0</updateRate>
+          <cameraName>/ecm/camera</cameraName>
+          <imageTopicName>image_raw</imageTopicName>
+          <cameraInfoTopicName>camera_info</cameraInfoTopicName>
+          <robotNamespace></robotNamespace>
+          <frameName>camera_link</frameName>
+          <hackBaseline>0.07</hackBaseline>
+          <distortionK1>0.0</distortionK1>
+          <distortionK2>0.0</distortionK2>
+          <distortionK3>0.0</distortionK3>
+          <distortionT1>0.0</distortionT1>
+          <distortionT2>0.0</distortionT2>
+        </plugin>
+      </sensor> -->
+
+      <sensor type="multicamera" name="stereo_camera">
+        <update_rate>30.0</update_rate>
+        <camera name="left">
+          <pose>0 0.01 0 0 0 0</pose>
+          <horizontal_fov>1.3962634</horizontal_fov>
+          <image>ostopu
+            <width>800</width>
+            <height>800</height>
+            <format>R8G8B8</format>
+          </image>
+          <clip>
+            <near>0.02</near>
+            <far>300</far>
+          </clip>
+          <noise>
+            <type>gaussian</type>
+            <mean>0.0</mean>
+            <stddev>0.007</stddev>
+          </noise>
+        </camera>
+        <camera name="right">
+          <pose>0 -0.01 0 0 0 0</pose>
+          <horizontal_fov>1.3962634</horizontal_fov>
+          <image>
+            <width>800</width>
+            <height>800</height>
+            <format>R8G8B8</format>
+          </image>
+          <clip>
+            <near>0.02</near>
+            <far>300</far>
+          </clip>
+          <noise>
+            <type>gaussian</type>
+            <mean>0.0</mean>
+            <stddev>0.007</stddev>
+          </noise>
+        </camera>
+        <plugin name="stereo_camera_controller" filename="libgazebo_ros_multicamera.so">
+          <alwaysOn>true</alwaysOn>
+          <updateRate>0.0</updateRate>
+          <cameraName>/ecm/camera</cameraName>
+          <imageTopicName>image_raw</imageTopicName>
+          <cameraInfoTopicName>camera_info</cameraInfoTopicName>
+          <robotNamespace></robotNamespace>
+          <frameName>left_camera_optical_frame</frameName>
+          <hackBaseline>0.07</hackBaseline>
+          <distortionK1>0.0</distortionK1>
+          <distortionK2>0.0</distortionK2>
+          <distortionK3>0.0</distortionK3>
+          <distortionT1>0.0</distortionT1>
+          <distortionT2>0.0</distortionT2>
+        </plugin>
+      </sensor>
+
+    </link>
+    <joint name='camera_joint' type='fixed'>
+      <child>camera_link</child>
+      <parent>tool_link</parent>
+      <!-- <parent>pitch_end_link</parent> -->
+    </joint>
+
+
+
+    <!-- <plugin name='dvrk_plugin'  filename='libdvrk_plugin.so'/> -->
+  </model>
+</sdf>

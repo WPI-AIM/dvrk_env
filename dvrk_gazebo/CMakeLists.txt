@@ -6,6 +6,8 @@ find_package(catkin REQUIRED COMPONENTS
   roscpp
 )
 
+set (LIB_NAME dvrk_plugin)
+
 # Depend on system install of Gazebo
 find_package(gazebo REQUIRED)
 
@@ -16,8 +18,8 @@ link_directories(${GAZEBO_LIBRARY_DIRS})
 include_directories(include)
 include_directories(${Boost_INCLUDE_DIR} ${catkin_INCLUDE_DIRS} ${GAZEBO_INCLUDE_DIRS})
 
-add_library(${PROJECT_NAME} src/control_plugin.cpp)
-target_link_libraries(${PROJECT_NAME} ${catkin_LIBRARIES} ${GAZEBO_LIBRARIES})
+add_library(${LIB_NAME} src/control_plugin.cpp)
+target_link_libraries(${LIB_NAME} ${catkin_LIBRARIES} ${GAZEBO_LIBRARIES})
 
 catkin_package(
   DEPENDS
