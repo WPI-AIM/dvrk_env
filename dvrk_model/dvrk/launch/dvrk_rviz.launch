@@ -28,6 +28,6 @@
     args="-d $(arg rvizconfig)"
     required="true"    />
 
-<!--d $(find Cart)/urdf.rviz" -->
+<!--d $(find cart)/urdf.rviz" -->
 
 </launch>

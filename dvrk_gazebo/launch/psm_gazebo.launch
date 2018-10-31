@@ -16,11 +16,11 @@
     <arg name="verbose" value="true" />
   </include>
 
- <rosparam file="$(find dvrk_gazebo_control)/config/dvrk_psm.yaml" command="load"/>
+ <rosparam file="$(find dvrk_gazebo_control)/config/psm.yaml" command="load"/>
 
-<param name="robot_description" command="$(find xacro)/xacro.py '$(find dvrk_model)/PSM/psm_launch.sdf'"/>
+<param name="robot_description" command="$(find xacro)/xacro.py '$(find dvrk_model)/psm/psm_launch.sdf'"/>
 
 <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
-args="-sdf -model dvrk_psm -param robot_description"/>
+args="-sdf -model dvrk -param robot_description"/>
 
 </launch>

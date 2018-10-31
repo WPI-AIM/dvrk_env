@@ -1,9 +1,9 @@
 # Description
 
-Solidworks 2017 CAD Models of ECM, PSM, MTM, and SUJ_Cart
+Solidworks 2017 CAD Models of ecm, psm, mtm, and suj_cart
 
 Download and install SolidWorks to URDF Exporter: http://wiki.ros.org/sw_urdf_exporter
 
-ECM, SUJ Cart: Mates with the name "_zero" are zero position of joint angles for urdf export of robot.  
+ecm, suj cart: Mates with the name "_zero" are zero position of joint angles for urdf export of robot.  
 
 

@@ -1,0 +1,240 @@
+dvrk:
+  suj:
+    suj_psm2_J0_controller:
+      p: 2000
+      i: 0
+      d: 10
+      init_joint: 0.1
+
+    suj_psm2_J1_controller:
+      p: 2000
+      i: 0
+      d: 10
+      init_joint: -0.9
+
+    suj_psm2_J2_controller:
+      p: 2000
+      i: 0
+      d: 10
+      init_joint: 0.25
+
+    suj_psm2_J3_controller:
+      p: 2000
+      i: 0
+      d: 10
+      init_joint: -1.1
+
+    suj_psm2_J4_controller:
+      p: 2000
+      i: 0
+      d: 10
+      init_joint: 0.57
+
+    suj_ecm_J0_controller:
+      p: 2000
+      i: 0
+      d: 10
+      init_joint: 0.7
+
+    suj_ecm_J1_controller:
+      p: 2000
+      i: 0
+      d: 10
+      init_joint: 0
+
+    suj_ecm_J2_controller:
+      p: 2000
+      i: 0
+      d: 10
+      init_joint: 0.0
+
+    suj_ecm_J3_controller:
+      p: 2000
+      i: 0
+      d: 10
+      init_joint: 0.0
+
+    suj_psm1_J0_controller:
+      p: 2000
+      i: 0
+      d: 10
+      init_joint: 0.23
+
+    suj_psm1_J1_controller:
+      p: 2000
+      i: 0
+      d: 10
+      init_joint: 0.33
+
+    suj_psm1_J2_controller:
+      p: 2000
+      i: 0
+      d: 10
+      init_joint: -1.52
+
+    suj_psm1_J3_controller:
+      p: 2000
+      i: 0
+      d: 10
+      init_joint: -0.23
+
+    suj_psm1_J4_controller:
+      p: 2000
+      i: 0
+      d: 10
+      init_joint: -0.64
+
+    suj_psm3_J0_controller:
+      p: 2000
+      i: 0
+      d: 10
+      init_joint: 0.35
+
+    suj_psm3_J1_controller:
+      p: 2000
+      i: 0
+      d: 10
+      init_joint: 1.61
+
+    suj_psm3_J2_controller:
+      p: 2000
+      i: 0
+      d: 10
+      init_joint: 1.70
+
+    suj_psm3_J3_controller:
+      p: 2000
+      i: 0
+      d: 10
+      init_joint: 0.46
+
+    suj_psm3_J4_controller:
+      p: 2000
+      i: 0
+      d: 10
+      init_joint: 0.91
+  psm1:
+    yaw_joint_controller:
+      p: 800
+      i: 0.1
+      d: 10
+    pitch_back_joint_controller:
+      p: 800
+      i: 0.1
+      d: 30
+      init_joint: -0.3
+    main_insertion_joint_controller:
+      p: 600
+      i: 0.01
+      d: 10
+      init_joint: 0.1
+    tool_roll_joint_controller:
+      p: 10
+      i: 0.1
+      d: 1
+    tool_pitch_joint_controller:
+      p: 10
+      i: 0.1
+      d: 1
+    tool_yaw_joint_controller:
+      p: 10
+      i: 0.1
+      d: 1
+    tool_gripper1_joint_controller:
+      p: 100
+      i: 0.1
+      d: 1
+    tool_gripper2_joint_controller:
+      p: 100
+      i: 0.1
+      d: 1
+  psm2:
+    yaw_joint_controller:
+      p: 800
+      i: 0.1
+      d: 10
+    pitch_back_joint_controller:
+      p: 800
+      i: 0.1
+      d: 30
+      init_joint: -0.3
+    main_insertion_joint_controller:
+      p: 600
+      i: 0.01
+      d: 10
+      init_joint: 0.15
+    tool_roll_joint_controller:
+      p: 10
+      i: 0.1
+      d: 1
+    tool_pitch_joint_controller:
+      p: 10
+      i: 0.1
+      d: 1
+    tool_yaw_joint_controller:
+      p: 10
+      i: 0.1
+      d: 1
+    tool_gripper1_joint_controller:
+      p: 100
+      i: 0.1
+      d: 1
+    tool_gripper2_joint_controller:
+      p: 100
+      i: 0.1
+      d: 1
+  psm3:
+    yaw_joint_controller:
+      p: 800
+      i: 0.1
+      d: 10
+    pitch_back_joint_controller:
+      p: 800
+      i: 0.1
+      d: 30
+      init_joint: -0.5
+    main_insertion_joint_controller:
+      p: 600
+      i: 0.01
+      d: 10
+      init_joint: 0.15
+    tool_roll_joint_controller:
+      p: 10
+      i: 0.1
+      d: 1
+    tool_pitch_joint_controller:
+      p: 10
+      i: 0.1
+      d: 1
+    tool_yaw_joint_controller:
+      p: 10
+      i: 0.1
+      d: 1
+    tool_gripper1_joint_controller:
+      p: 100
+      i: 0.1
+      d: 1
+    tool_gripper2_joint_controller:
+      p: 100
+      i: 0.1
+      d: 1
+  ecm:
+    yaw_joint_controller:
+      p: 700
+      i: 1
+      d: 90
+      init_joint: -0.1
+    pitch_front_joint_controller:
+      p: 700
+      i: 1
+      d: 50
+      init_joint: -0.75
+    main_insertion_joint_controller:
+      p: 500
+      i: 0.1
+      d: 20
+      init_joint: 0.05
+    tool_joint_controller:
+      p: 200
+      i: 0.1
+      d: 10

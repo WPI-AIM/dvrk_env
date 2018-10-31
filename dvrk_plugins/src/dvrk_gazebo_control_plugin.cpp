@@ -44,7 +44,7 @@ void dvrkGazeboControlPlugin::Load(gazebo::physics::ModelPtr _model, sdf::Elemen
       continue;
 
     //Checking if the joint is the active pitch joint of the kinematic chain for PSM
-    if (joint_name.find("PSM")!=std::string::npos)
+    if (joint_name.find("psm")!=std::string::npos)
     {
       if ((joint_name.find("pitch_")!=std::string::npos) && joint_name.find("pitch_back")==std::string::npos && joint_name.find("tool_pitch_")==std::string::npos)
         continue;
@@ -131,7 +131,7 @@ void dvrkGazeboControlPlugin::PublishStates()
     if (joint->GetType()==16448)
       continue;
 
-    if (joint_name.find("PSM")!=std::string::npos)
+    if (joint_name.find("psm")!=std::string::npos)
     {
       if ((joint_name.find("outer_pitch_joint")!=std::string::npos) && joint_name.find("pitch_back")==std::string::npos && joint_name.find("tool_pitch_")==std::string::npos)
         continue;

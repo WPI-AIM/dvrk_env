@@ -1,0 +1,128 @@
+<?xml version="1.0" ?>
+<sdf version='1.4'>
+
+  <model name='psm'>
+  <pose> 0 0 0 0 0 0 </pose>
+
+    <link name='remote_center_link'>
+    <pose>0.4864 0 0.1524 0 0 -1.5708</pose>
+    <!--<pose>-0.5 0.485 0.845 0 -0 3.14159</pose> -->
+    <visual name='rcm_visual'>
+      <!--<pose>0.039 0.075 0.07879 1.5708 -4.23516e-22 -3.14159</pose>-->
+      <geometry>
+        <sphere>
+          <radius>.01</radius>
+        </sphere>
+      </geometry>
+      <transparency>0.7</transparency>
+    </visual>
+    </link>
+
+
+    <link name='base_link'>
+      <!--<pose>-0.5 0 1 0 -0 3.14159</pose> -->
+      <pose>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0.075 -0.039 0.07879 1.5708 -4.23516e-22 1.5708</pose>
+        <mass>0.1</mass>
+        <inertia>
+          <ixx>0.001</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.001</iyy>
+          <iyz>0</iyz>
+          <izz>0.001</izz>
+        </inertia>
+      </inertial>
+      <collision name='remote_center_link_collision_psm_base_link'>
+        <pose>0.075 -0.039 0.07879 1.5708 -4.23516e-22 1.5708</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://psm/meshes/psm_base.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='remote_center_link_visual_psm_base_link'>
+        <!-- <pose>0.039 -0.77688 -0.07879 1.5708 -4.23516e-22 -3.14159</pose> -->
+        <pose>0.075 -0.039 0.07879 1.5708 -4.23516e-22 1.5708</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://psm/meshes/psm_base.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+    </link>
+
+    <joint name='remote_center_joint' type='fixed'>
+      <child>base_link</child>
+      <parent>remote_center_link</parent>
+      <physics>
+      <provide_feedback>true</provide_feedback>
+      </physics>
+    </joint>
+
+    <link name='outer_yaw_link'>
+      <pose>0.1174 0 0.1524 -1.57079 -1.57079 -5.35564e-08</pose>
+      <inertial>
+        <pose>0.0125 0 0.1575 -3.14159 -4.23516e-22 1.5708</pose>
+        <mass>0.1</mass>
+        <inertia>
+          <ixx>0.001</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.001</iyy>
+          <iyz>0</iyz>
+          <izz>0.001</izz>
+        </inertia>
+      </inertial>
+      <collision name='outer_yaw_link_collision'>
+        <pose>0.0125 0 0.1575 -3.14159 -4.23516e-22 1.5708</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://psm/meshes/outer_yaw.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='outer_yaw_link_visual'>
+        <pose>0 -0.0125 0.1575 -3.1415 -4.23516e-22 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://psm/meshes/outer_yaw.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+    </link>
+
+    <joint name='outer_yaw_joint' type='revolute'>
+      <child>outer_yaw_link</child>
+      <parent>base_link</parent>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-1.5707</lower>
+          <upper>1.5707</upper>
+          <effort>1000</effort>
+          <velocity>0.4</velocity>
+        </limit>
+        <dynamics damping="0.1"/>
+      </axis>
+      <physics>
+      <provide_feedback>true</provide_feedback>
+      </physics>
+    </joint>
+
+    <static>0</static>
+  </model>
+</sdf>

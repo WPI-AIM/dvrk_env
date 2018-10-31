@@ -16,9 +16,9 @@
     <arg name="verbose" value="true" />
   </include>
 
-<param name="robot_description" command="$(find xacro)/xacro.py '$(find dvrk_model)/ECM/ecm_launch.sdf'" />
+<param name="robot_description" command="$(find xacro)/xacro.py '$(find dvrk_model)/ecm/ecm_launch.sdf'" />
 
 <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
-args="-sdf -model dvrk_ecm -param robot_description"/>
+args="-sdf -model dvrk -param robot_description"/>
 
 </launch>
