@@ -19,7 +19,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://cart/meshes/base_link.STL</uri>
+            <uri>model://suj/meshes/base_link.STL</uri>
           </mesh>
         </geometry>
       </collision>
@@ -28,7 +28,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://cart/meshes/base_link.STL</uri>
+            <uri>model://suj/meshes/base_link.STL</uri>
           </mesh>
         </geometry>
       </visual>
@@ -60,7 +60,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://cart/meshes/suj_psm2_L0.STL</uri>
+            <uri>model://suj/meshes/suj_psm2_L0.STL</uri>
           </mesh>
         </geometry>
       </collision>
@@ -69,7 +69,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://cart/meshes/suj_psm2_L0.STL</uri>
+            <uri>model://suj/meshes/suj_psm2_L0.STL</uri>
           </mesh>
         </geometry>
       </visual>
@@ -113,7 +113,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://cart/meshes/suj_psm2_L1.STL</uri>
+            <uri>model://suj/meshes/suj_psm2_L1.STL</uri>
           </mesh>
         </geometry>
       </collision>
@@ -122,7 +122,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://cart/meshes/suj_psm2_L1.STL</uri>
+            <uri>model://suj/meshes/suj_psm2_L1.STL</uri>
           </mesh>
         </geometry>
       </visual>
@@ -162,7 +162,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://cart/meshes/suj_psm2_L2.STL</uri>
+            <uri>model://suj/meshes/suj_psm2_L2.STL</uri>
           </mesh>
         </geometry>
       </collision>
@@ -171,7 +171,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://cart/meshes/suj_psm2_L2.STL</uri>
+            <uri>model://suj/meshes/suj_psm2_L2.STL</uri>
           </mesh>
         </geometry>
       </visual>
@@ -213,7 +213,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://cart/meshes/suj_psm2_L3.STL</uri>
+            <uri>model://suj/meshes/suj_psm2_L3.STL</uri>
           </mesh>
         </geometry>
       </collision>
@@ -222,7 +222,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://cart/meshes/suj_psm2_L3.STL</uri>
+            <uri>model://suj/meshes/suj_psm2_L3.STL</uri>
           </mesh>
         </geometry>
       </visual>
@@ -264,7 +264,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://cart/meshes/suj_psm2_L4.STL</uri>
+            <uri>model://suj/meshes/suj_psm2_L4.STL</uri>
           </mesh>
         </geometry>
       </collision>
@@ -273,7 +273,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://cart/meshes/suj_psm2_L4.STL</uri>
+            <uri>model://suj/meshes/suj_psm2_L4.STL</uri>
           </mesh>
         </geometry>
       </visual>
@@ -315,7 +315,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://cart/meshes/suj_ecm_L0.STL</uri>
+            <uri>model://suj/meshes/suj_ecm_L0.STL</uri>
           </mesh>
         </geometry>
       </collision>
@@ -324,7 +324,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://cart/meshes/suj_ecm_L0.STL</uri>
+            <uri>model://suj/meshes/suj_ecm_L0.STL</uri>
           </mesh>
         </geometry>
       </visual>
@@ -368,7 +368,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://cart/meshes/suj_ecm_L1.STL</uri>
+            <uri>model://suj/meshes/suj_ecm_L1.STL</uri>
           </mesh>
         </geometry>
       </collision>
@@ -377,7 +377,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://cart/meshes/suj_ecm_L1.STL</uri>
+            <uri>model://suj/meshes/suj_ecm_L1.STL</uri>
           </mesh>
         </geometry>
       </visual>
@@ -419,7 +419,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://cart/meshes/suj_ecm_L2.STL</uri>
+            <uri>model://suj/meshes/suj_ecm_L2.STL</uri>
           </mesh>
         </geometry>
       </collision>
@@ -428,7 +428,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://cart/meshes/suj_ecm_L2.STL</uri>
+            <uri>model://suj/meshes/suj_ecm_L2.STL</uri>
           </mesh>
         </geometry>
       </visual>
@@ -470,7 +470,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://cart/meshes/suj_ecm_L3.STL</uri>
+            <uri>model://suj/meshes/suj_ecm_L3.STL</uri>
           </mesh>
         </geometry>
       </collision>
@@ -479,7 +479,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://cart/meshes/suj_ecm_L3.STL</uri>
+            <uri>model://suj/meshes/suj_ecm_L3.STL</uri>
           </mesh>
         </geometry>
       </visual>
@@ -521,7 +521,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://cart/meshes/suj_psm3_L0.STL</uri>
+            <uri>model://suj/meshes/suj_psm3_L0.STL</uri>
           </mesh>
         </geometry>
       </collision>
@@ -530,7 +530,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://cart/meshes/suj_psm3_L0.STL</uri>
+            <uri>model://suj/meshes/suj_psm3_L0.STL</uri>
           </mesh>
         </geometry>
       </visual>
@@ -574,7 +574,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://cart/meshes/suj_psm3_L1.STL</uri>
+            <uri>model://suj/meshes/suj_psm3_L1.STL</uri>
           </mesh>
         </geometry>
       </collision>
@@ -583,7 +583,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://cart/meshes/suj_psm3_L1.STL</uri>
+            <uri>model://suj/meshes/suj_psm3_L1.STL</uri>
           </mesh>
         </geometry>
       </visual>
@@ -625,7 +625,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://cart/meshes/suj_psm3_L2.STL</uri>
+            <uri>model://suj/meshes/suj_psm3_L2.STL</uri>
           </mesh>
         </geometry>
       </collision>
@@ -634,7 +634,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://cart/meshes/suj_psm3_L2.STL</uri>
+            <uri>model://suj/meshes/suj_psm3_L2.STL</uri>
           </mesh>
         </geometry>
       </visual>
@@ -674,7 +674,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://cart/meshes/suj_psm3_L3.STL</uri>
+            <uri>model://suj/meshes/suj_psm3_L3.STL</uri>
           </mesh>
         </geometry>
       </collision>
@@ -683,7 +683,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://cart/meshes/suj_psm3_L3.STL</uri>
+            <uri>model://suj/meshes/suj_psm3_L3.STL</uri>
           </mesh>
         </geometry>
       </visual>
@@ -725,7 +725,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://cart/meshes/suj_psm3_L4.STL</uri>
+            <uri>model://suj/meshes/suj_psm3_L4.STL</uri>
           </mesh>
         </geometry>
       </collision>
@@ -734,7 +734,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://cart/meshes/suj_psm3_L4.STL</uri>
+            <uri>model://suj/meshes/suj_psm3_L4.STL</uri>
           </mesh>
         </geometry>
       </visual>
@@ -776,7 +776,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://cart/meshes/suj_psm1_L0.STL</uri>
+            <uri>model://suj/meshes/suj_psm1_L0.STL</uri>
           </mesh>
         </geometry>
       </collision>
@@ -785,7 +785,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://cart/meshes/suj_psm1_L0.STL</uri>
+            <uri>model://suj/meshes/suj_psm1_L0.STL</uri>
           </mesh>
         </geometry>
       </visual>
@@ -829,7 +829,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://cart/meshes/suj_psm1_L1.STL</uri>
+            <uri>model://suj/meshes/suj_psm1_L1.STL</uri>
           </mesh>
         </geometry>
       </collision>
@@ -838,7 +838,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://cart/meshes/suj_psm1_L1.STL</uri>
+            <uri>model://suj/meshes/suj_psm1_L1.STL</uri>
           </mesh>
         </geometry>
       </visual>
@@ -880,7 +880,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://cart/meshes/suj_psm1_L2.STL</uri>
+            <uri>model://suj/meshes/suj_psm1_L2.STL</uri>
           </mesh>
         </geometry>
       </collision>
@@ -889,7 +889,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://cart/meshes/suj_psm1_L2.STL</uri>
+            <uri>model://suj/meshes/suj_psm1_L2.STL</uri>
           </mesh>
         </geometry>
       </visual>
@@ -931,7 +931,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://cart/meshes/suj_psm1_L3.STL</uri>
+            <uri>model://suj/meshes/suj_psm1_L3.STL</uri>
           </mesh>
         </geometry>
       </collision>
@@ -940,7 +940,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://cart/meshes/suj_psm1_L3.STL</uri>
+            <uri>model://suj/meshes/suj_psm1_L3.STL</uri>
           </mesh>
         </geometry>
       </visual>
@@ -982,7 +982,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://cart/meshes/suj_psm1_L4.STL</uri>
+            <uri>model://suj/meshes/suj_psm1_L4.STL</uri>
           </mesh>
         </geometry>
       </collision>
@@ -991,7 +991,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://cart/meshes/suj_psm1_L4.STL</uri>
+            <uri>model://suj/meshes/suj_psm1_L4.STL</uri>
           </mesh>
         </geometry>
       </visual>

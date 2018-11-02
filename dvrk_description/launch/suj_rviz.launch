@@ -6,10 +6,10 @@
     name="gui"
     default="true" />
 
- <arg name="rvizconfig" default="$(find dvrk_description)/rviz/cart.rviz" />
+ <arg name="rvizconfig" default="$(find dvrk_description)/rviz/suj.rviz" />
   <param
     name="robot_description"
-    command="$(find xacro)/xacro.py $(find dvrk_description)/cart/suj.urdf" />
+    command="$(find xacro)/xacro.py $(find dvrk_description)/suj/suj_launch.urdf" />
   <param
     name="use_gui"
     value="$(arg gui)" />
@@ -28,6 +28,5 @@
     args="-d $(arg rvizconfig)"
     required="true"    />
 
-<!--d $(find cart)/urdf.rviz" -->
 
 </launch>

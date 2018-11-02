@@ -27,7 +27,5 @@
     type="rviz"
     args="-d $(arg rvizconfig)"
     required="true"    />
-
-<!--d $(find cart)/urdf.rviz" -->
-
+    
 </launch>

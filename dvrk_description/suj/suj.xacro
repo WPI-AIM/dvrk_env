@@ -38,7 +38,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://dvrk_description/cart/meshes/base_link.STL" />
+          filename="package://dvrk_description/suj/meshes/base_link.STL" />
       </geometry>
       <material
         name="">
@@ -52,7 +52,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://dvrk_description/cart/meshes/base_link.STL" />
+          filename="package://dvrk_description/suj/meshes/base_link.STL" />
       </geometry>
     </collision>
   </link>
@@ -78,7 +78,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://dvrk_description/cart/meshes/suj_psm2_L0.STL" />
+          filename="package://dvrk_description/suj/meshes/suj_psm2_L0.STL" />
       </geometry>
       <material
         name="">
@@ -92,7 +92,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://dvrk_description/cart/meshes/suj_psm2_L0.STL" />
+          filename="package://dvrk_description/suj/meshes/suj_psm2_L0.STL" />
       </geometry>
     </collision>
   </link>
@@ -136,7 +136,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://dvrk_description/cart/meshes/suj_psm2_L1.STL" />
+          filename="package://dvrk_description/suj/meshes/suj_psm2_L1.STL" />
       </geometry>
       <material
         name="">
@@ -150,7 +150,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://dvrk_description/cart/meshes/suj_psm2_L1.STL" />
+          filename="package://dvrk_description/suj/meshes/suj_psm2_L1.STL" />
       </geometry>
     </collision>
   </link>
@@ -189,7 +189,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://dvrk_description/cart/meshes/suj_psm2_L2.STL" />
+          filename="package://dvrk_description/suj/meshes/suj_psm2_L2.STL" />
       </geometry>
       <material
         name="">
@@ -203,7 +203,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://dvrk_description/cart/meshes/suj_psm2_L2.STL" />
+          filename="package://dvrk_description/suj/meshes/suj_psm2_L2.STL" />
       </geometry>
     </collision>
   </link>
@@ -242,7 +242,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://dvrk_description/cart/meshes/suj_psm2_L3.STL" />
+          filename="package://dvrk_description/suj/meshes/suj_psm2_L3.STL" />
       </geometry>
       <material
         name="">
@@ -256,7 +256,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://dvrk_description/cart/meshes/suj_psm2_L3.STL" />
+          filename="package://dvrk_description/suj/meshes/suj_psm2_L3.STL" />
       </geometry>
     </collision>
   </link>
@@ -295,7 +295,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://dvrk_description/cart/meshes/suj_psm2_L4.STL" />
+          filename="package://dvrk_description/suj/meshes/suj_psm2_L4.STL" />
       </geometry>
       <material
         name="">
@@ -309,7 +309,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://dvrk_description/cart/meshes/suj_psm2_L4.STL" />
+          filename="package://dvrk_description/suj/meshes/suj_psm2_L4.STL" />
       </geometry>
     </collision>
   </link>
@@ -348,7 +348,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://dvrk_description/cart/meshes/suj_ecm_L0.STL" />
+          filename="package://dvrk_description/suj/meshes/suj_ecm_L0.STL" />
       </geometry>
       <material
         name="">
@@ -362,7 +362,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://dvrk_description/cart/meshes/suj_ecm_L0.STL" />
+          filename="package://dvrk_description/suj/meshes/suj_ecm_L0.STL" />
       </geometry>
     </collision>
   </link>
@@ -406,7 +406,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://dvrk_description/cart/meshes/suj_ecm_L1.STL" />
+          filename="package://dvrk_description/suj/meshes/suj_ecm_L1.STL" />
       </geometry>
       <material
         name="">
@@ -420,7 +420,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://dvrk_description/cart/meshes/suj_ecm_L1.STL" />
+          filename="package://dvrk_description/suj/meshes/suj_ecm_L1.STL" />
       </geometry>
     </collision>
   </link>
@@ -459,7 +459,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://dvrk_description/cart/meshes/suj_ecm_L2.STL" />
+          filename="package://dvrk_description/suj/meshes/suj_ecm_L2.STL" />
       </geometry>
       <material
         name="">
@@ -473,7 +473,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://dvrk_description/cart/meshes/suj_ecm_L2.STL" />
+          filename="package://dvrk_description/suj/meshes/suj_ecm_L2.STL" />
       </geometry>
     </collision>
   </link>
@@ -512,7 +512,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://dvrk_description/cart/meshes/suj_ecm_L3.STL" />
+          filename="package://dvrk_description/suj/meshes/suj_ecm_L3.STL" />
       </geometry>
       <material
         name="">
@@ -526,7 +526,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://dvrk_description/cart/meshes/suj_ecm_L3.STL" />
+          filename="package://dvrk_description/suj/meshes/suj_ecm_L3.STL" />
       </geometry>
     </collision>
   </link>
@@ -565,7 +565,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://dvrk_description/cart/meshes/suj_psm1_L0.STL" />
+          filename="package://dvrk_description/suj/meshes/suj_psm1_L0.STL" />
       </geometry>
       <material
         name="">
@@ -579,7 +579,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://dvrk_description/cart/meshes/suj_psm1_L0.STL" />
+          filename="package://dvrk_description/suj/meshes/suj_psm1_L0.STL" />
       </geometry>
     </collision>
   </link>
@@ -623,7 +623,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://dvrk_description/cart/meshes/suj_psm1_L1.STL" />
+          filename="package://dvrk_description/suj/meshes/suj_psm1_L1.STL" />
       </geometry>
       <material
         name="">
@@ -637,7 +637,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://dvrk_description/cart/meshes/suj_psm1_L1.STL" />
+          filename="package://dvrk_description/suj/meshes/suj_psm1_L1.STL" />
       </geometry>
     </collision>
   </link>
@@ -676,7 +676,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://dvrk_description/cart/meshes/suj_psm1_L2.STL" />
+          filename="package://dvrk_description/suj/meshes/suj_psm1_L2.STL" />
       </geometry>
       <material
         name="">
@@ -690,7 +690,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://dvrk_description/cart/meshes/suj_psm1_L2.STL" />
+          filename="package://dvrk_description/suj/meshes/suj_psm1_L2.STL" />
       </geometry>
     </collision>
   </link>
@@ -729,7 +729,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://dvrk_description/cart/meshes/suj_psm1_L3.STL" />
+          filename="package://dvrk_description/suj/meshes/suj_psm1_L3.STL" />
       </geometry>
       <material
         name="">
@@ -743,7 +743,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://dvrk_description/cart/meshes/suj_psm1_L3.STL" />
+          filename="package://dvrk_description/suj/meshes/suj_psm1_L3.STL" />
       </geometry>
     </collision>
   </link>
@@ -782,7 +782,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://dvrk_description/cart/meshes/suj_psm1_L4.STL" />
+          filename="package://dvrk_description/suj/meshes/suj_psm1_L4.STL" />
       </geometry>
       <material
         name="">
@@ -796,7 +796,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://dvrk_description/cart/meshes/suj_psm1_L4.STL" />
+          filename="package://dvrk_description/suj/meshes/suj_psm1_L4.STL" />
       </geometry>
     </collision>
   </link>
@@ -835,7 +835,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://dvrk_description/cart/meshes/suj_psm3_L0.STL" />
+          filename="package://dvrk_description/suj/meshes/suj_psm3_L0.STL" />
       </geometry>
       <material
         name="">
@@ -849,7 +849,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://dvrk_description/cart/meshes/suj_psm3_L0.STL" />
+          filename="package://dvrk_description/suj/meshes/suj_psm3_L0.STL" />
       </geometry>
     </collision>
   </link>
@@ -893,7 +893,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://dvrk_description/cart/meshes/suj_psm3_L1.STL" />
+          filename="package://dvrk_description/suj/meshes/suj_psm3_L1.STL" />
       </geometry>
       <material
         name="">
@@ -907,7 +907,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://dvrk_description/cart/meshes/suj_psm3_L1.STL" />
+          filename="package://dvrk_description/suj/meshes/suj_psm3_L1.STL" />
       </geometry>
     </collision>
   </link>
@@ -946,7 +946,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://dvrk_description/cart/meshes/suj_psm3_L2.STL" />
+          filename="package://dvrk_description/suj/meshes/suj_psm3_L2.STL" />
       </geometry>
       <material
         name="">
@@ -960,7 +960,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://dvrk_description/cart/meshes/suj_psm3_L2.STL" />
+          filename="package://dvrk_description/suj/meshes/suj_psm3_L2.STL" />
       </geometry>
     </collision>
   </link>
@@ -999,7 +999,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://dvrk_description/cart/meshes/suj_psm3_L3.STL" />
+          filename="package://dvrk_description/suj/meshes/suj_psm3_L3.STL" />
       </geometry>
       <material
         name="">
@@ -1013,7 +1013,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://dvrk_description/cart/meshes/suj_psm3_L3.STL" />
+          filename="package://dvrk_description/suj/meshes/suj_psm3_L3.STL" />
       </geometry>
     </collision>
   </link>
@@ -1052,7 +1052,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://dvrk_description/cart/meshes/suj_psm3_L4.STL" />
+          filename="package://dvrk_description/suj/meshes/suj_psm3_L4.STL" />
       </geometry>
       <material
         name="">
@@ -1066,7 +1066,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://dvrk_description/cart/meshes/suj_psm3_L4.STL" />
+          filename="package://dvrk_description/suj/meshes/suj_psm3_L4.STL" />
       </geometry>
     </collision>
   </link>

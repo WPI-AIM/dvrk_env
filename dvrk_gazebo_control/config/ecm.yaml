@@ -1,0 +1,21 @@
+dvrk:
+  ecm:
+    yaw_joint_controller:
+      p: 700
+      i: 1
+      d: 90
+      init_joint: -0.1
+    pitch_front_joint_controller:
+      p: 700
+      i: 1
+      d: 50
+      init_joint: -0.75
+    main_insertion_joint_controller:
+      p: 500
+      i: 0.1
+      d: 20
+      init_joint: 0.05
+    tool_joint_controller:
+      p: 200
+      i: 0.1
+      d: 10

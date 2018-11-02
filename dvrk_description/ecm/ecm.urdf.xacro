@@ -8,12 +8,12 @@
     <!-- Joint 0: Fixed to Setup Joint-->
     <joint name="fixed_joint" type="fixed">
       <parent link="${parent_link}"/>
-      <child link="${prefix}_base_link"/>
+      <child link="${prefix}base_link"/>
       <origin rpy="${rpy}" xyz="${xyz}"/>
     </joint>
 
     <link
-      name="${prefix}_base_link">
+      name="${prefix}base_link">
       <inertial>
         <origin
           xyz="-0.0048227 -2.9669E-05 0.068959"
@@ -53,7 +53,7 @@
       </collision>
     </link>
     <link
-      name="${prefix}_yaw_link">
+      name="${prefix}yaw_link">
       <inertial>
         <origin
           xyz="2.7532E-07 -0.029045 0.10669"
@@ -93,15 +93,15 @@
       </collision>
     </link>
     <joint
-      name="${prefix}_yaw_joint"
+      name="${prefix}yaw_joint"
       type="revolute">
       <origin
         xyz="0.0731999999999783 0 0.101460000000185"
         rpy="1.57079632679615 -3.58046925441613E-13 1.5707963267949" />
       <parent
-        link="${prefix}_base_link" />
+        link="${prefix}base_link" />
       <child
-        link="${prefix}_yaw_link" />
+        link="${prefix}yaw_link" />
       <axis
         xyz="0 0 1" />
       <limit
@@ -111,7 +111,7 @@
         velocity="10" />
     </joint>
     <link
-      name="${prefix}_pitch_front_link">
+      name="${prefix}pitch_front_link">
       <inertial>
         <origin
           xyz="-0.030619 -0.13578 -5.7828E-08"
@@ -151,15 +151,15 @@
       </collision>
     </link>
     <joint
-      name="${prefix}_pitch_front_joint"
+      name="${prefix}pitch_front_joint"
       type="revolute">
       <origin
         xyz="0 0 0.199000000000014"
         rpy="3.14 -1.5707963267949 0" />
       <parent
-        link="${prefix}_yaw_link" />
+        link="${prefix}yaw_link" />
       <child
-        link="${prefix}_pitch_front_link" />
+        link="${prefix}pitch_front_link" />
       <axis
         xyz="0 0 1" />
       <limit
@@ -169,7 +169,7 @@
         velocity="10" />
     </joint>
     <link
-      name="${prefix}_pitch_bottom_link">
+      name="${prefix}pitch_bottom_link">
       <inertial>
         <origin
           xyz="0.14594 -0.026715 -0.00016488"
@@ -209,15 +209,15 @@
       </collision>
     </link>
     <joint
-      name="${prefix}_pitch_bottom_joint"
+      name="${prefix}pitch_bottom_joint"
       type="revolute">
       <origin
         xyz="-0.103000865501078 -0.286804989831434 0"
         rpy="0 0 0" />
       <parent
-        link="${prefix}_pitch_front_link" />
+        link="${prefix}pitch_front_link" />
       <child
-        link="${prefix}_pitch_bottom_link" />
+        link="${prefix}pitch_bottom_link" />
       <axis
         xyz="0 0 1" />
       <limit
@@ -225,10 +225,10 @@
         upper="0.783710"
         effort="1000"
         velocity="10" />
-      <mimic joint="${prefix}_pitch_front_joint" multiplier="-1"/>
+      <mimic joint="${prefix}pitch_front_joint" multiplier="-1"/>
     </joint>
     <link
-      name="${prefix}_pitch_end_link">
+      name="${prefix}pitch_end_link">
       <inertial>
         <origin
           xyz="0.018122 -0.027143 0.00078916"
@@ -268,15 +268,15 @@
       </collision>
     </link>
     <joint
-      name="${prefix}_pitch_end_joint"
+      name="${prefix}pitch_end_joint"
       type="revolute">
       <origin
         xyz="0.340400072983362 -0.000135620545844151 0"
         rpy="0 0 0" />
       <parent
-        link="${prefix}_pitch_bottom_link" />
+        link="${prefix}pitch_bottom_link" />
       <child
-        link="${prefix}_pitch_end_link" />
+        link="${prefix}pitch_end_link" />
       <axis
         xyz="0 0 1" />
       <limit
@@ -284,10 +284,10 @@
         upper="1.157657"
         effort="1000"
         velocity="10" />
-      <mimic joint="${prefix}_pitch_front_joint" multiplier="1"/>
+      <mimic joint="${prefix}pitch_front_joint" multiplier="1"/>
     </joint>
     <link
-      name="${prefix}_main_insertion_link">
+      name="${prefix}main_insertion_link">
       <inertial>
         <origin
           xyz="0.0086165 -0.00079249 -0.047928"
@@ -327,15 +327,15 @@
       </collision>
     </link>
     <joint
-      name="${prefix}_main_insertion_joint"
+      name="${prefix}main_insertion_joint"
       type="prismatic">
       <origin
         xyz="0.042 -0.086143 0"
         rpy="-1.5708 0 0" />
       <parent
-        link="${prefix}_pitch_end_link" />
+        link="${prefix}pitch_end_link" />
       <child
-        link="${prefix}_main_insertion_link" />
+        link="${prefix}main_insertion_link" />
       <axis
         xyz="0 0 1" />
       <limit
@@ -345,7 +345,7 @@
         velocity="100" />
     </joint>
     <link
-      name="${prefix}_tool_link">
+      name="${prefix}tool_link">
       <inertial>
         <origin
           xyz="2.6548E-14 -0.0007925 -0.10732"
@@ -385,15 +385,15 @@
       </collision>
     </link>
     <joint
-      name="${prefix}_tool_joint"
+      name="${prefix}tool_joint"
       type="revolute">
       <origin
         xyz="0.0609999999999996 0 0"
         rpy="0 0 0" />
       <parent
-        link="${prefix}_main_insertion_link" />
+        link="${prefix}main_insertion_link" />
       <child
-        link="${prefix}_tool_link" />
+        link="${prefix}tool_link" />
       <axis
         xyz="0 0 -1" />
       <limit
@@ -403,7 +403,7 @@
         velocity="10" />
     </joint>
     <link
-      name="${prefix}_pitch_top_link">
+      name="${prefix}pitch_top_link">
       <inertial>
         <origin
           xyz="0.1702 -6.7816E-05 0.0007925"
@@ -443,15 +443,15 @@
       </collision>
     </link>
     <joint
-      name="${prefix}_pitch_top_joint"
+      name="${prefix}pitch_top_joint"
       type="revolute">
       <origin
         xyz="-0.10847228839493 -0.324257434492051 0"
         rpy="0 0 0" />
       <parent
-        link="${prefix}_pitch_front_link" />
+        link="${prefix}pitch_front_link" />
       <child
-        link="${prefix}_pitch_top_link" />
+        link="${prefix}pitch_top_link" />
       <axis
         xyz="0 0 1" />
       <limit
@@ -459,10 +459,10 @@
         upper="0.783710"
         effort="1000"
         velocity="10" />
-      <mimic joint="${prefix}_pitch_front_joint" multiplier="-1"/>
+      <mimic joint="${prefix}pitch_front_joint" multiplier="-1"/>
     </joint>
     <link
-      name="${prefix}_pitch_back_link">
+      name="${prefix}pitch_back_link">
       <inertial>
         <origin
           xyz="-0.032853 -0.14997 -0.0080613"
@@ -502,15 +502,15 @@
       </collision>
     </link>
     <joint
-      name="${prefix}_pitch_back_joint"
+      name="${prefix}pitch_back_joint"
       type="revolute">
       <origin
         xyz="0 -0.00979999999999302 0.162430000000002"
         rpy="3.14 -1.5707963267949 0" />
       <parent
-        link="${prefix}_yaw_link" />
+        link="${prefix}yaw_link" />
       <child
-        link="${prefix}_pitch_back_link" />
+        link="${prefix}pitch_back_link" />
       <axis
         xyz="0 0 1" />
       <limit
@@ -518,10 +518,10 @@
         upper="1.157657"
         effort="1000"
         velocity="10" />
-      <mimic joint="${prefix}_pitch_front_joint" multiplier="1"/>
+      <mimic joint="${prefix}pitch_front_joint" multiplier="1"/>
     </joint>
     <link
-      name="${prefix}_remote_center_link">
+      name="${prefix}remote_center_link">
       <inertial>
         <origin
           xyz="-1.1102E-16 0 0"
@@ -561,29 +561,29 @@
       </collision>
     </link>
     <joint
-      name="${prefix}_remote_center_joint"
+      name="${prefix}remote_center_joint"
       type="fixed">
       <origin
         xyz="0.612599207482277 0 0.10159534323531"
         rpy="-1.249734375614E-12 3.58046925441613E-13 -1.5707963267949" />
       <parent
-        link="${prefix}_base_link" />
+        link="${prefix}base_link" />
       <child
-        link="${prefix}_remote_center_link" />
+        link="${prefix}remote_center_link" />
       <axis
         xyz="0 0 0" />
     </joint>
-    <link name="${prefix}_end_link"/>
+    <link name="${prefix}end_link"/>
     <joint
-      name="${prefix}_end_joint"
+      name="${prefix}end_joint"
       type="fixed">
       <origin
         xyz="0 0 0.37364"
         rpy="0 0 0" />
       <parent
-        link="${prefix}_tool_link" />
+        link="${prefix}tool_link" />
       <child
-        link="${prefix}_end_link" />
+        link="${prefix}end_link" />
       <axis
         xyz="0 0 0" />
     </joint>
