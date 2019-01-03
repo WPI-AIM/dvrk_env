@@ -146,7 +146,8 @@ void ControlPlugin::PublishStates()
 
     msg.header.stamp=ros::Time::now();
     msg.name.push_back(joint_name);
-    msg.position.push_back(joint->GetAngle(0).Radian());
+//    msg.position.push_back(joint->GetAngle(0).Radian());
+    msg.position.push_back(joint->Position(0));
     msg.velocity.push_back(joint->GetVelocity(0));
     msg.effort.push_back(joint->GetForce(0));
 
