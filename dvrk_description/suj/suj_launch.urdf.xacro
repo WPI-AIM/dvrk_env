@@ -1,0 +1,6 @@
+<?xml version="1.0" ?>
+<robot name="master" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:include filename="$(find dvrk_description)/suj/suj.urdf.xacro"/>
+<xacro:suj prefix=""/>
+</robot>

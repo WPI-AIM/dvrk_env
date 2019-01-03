@@ -1,0 +1,13 @@
+<?xml version="1.0" ?>
+<robot name="master" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <!-- Macros -->
+  <xacro:include filename="$(find dvrk_description)/mtm/mtm.urdf.xacro"/>
+
+  <link name="world"/>
+  <xacro:mtm
+      prefix="mtm_"
+      parent_link="world"
+      xyz="0.0 0.0 1.0" rpy="0.0 0.0 0.0"/>
+
+</robot>

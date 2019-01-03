@@ -16,11 +16,10 @@
     <arg name="verbose" value="true" />
   </include>
 
-<rosparam file="$(find dvrk_gazebo_control)/config/ecm.yaml" command="load"/>
-
-<param name="robot_description" command="$(find xacro)/xacro.py '$(find dvrk_description)/ecm/ecm_launch.sdf'" />
+<param name="robot_description" command="$(find xacro)/xacro.py '$(find dvrk_description)/mtm/mtm_right.sdf'" />
 
 <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
-args="-sdf -model dvrk -param robot_description"/>
+ args="-sdf -model dvrk -param robot_description"/>
 
-</launch>
+
+ </launch>

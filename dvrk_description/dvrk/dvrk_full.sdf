@@ -1,0 +1,87 @@
+<sdf version="1.6">
+  <model name="dvrk">
+
+  <include>
+    <uri>model://suj</uri>
+    <name>suj</name>
+    <pose>0 0 0 0 0 0</pose>>
+  </include>
+
+  <include>
+    <uri>model://psm</uri>
+      <name>psm1</name>
+      <pose> -1.4637 -0.1016 1.07626 0 0 1.5708</pose> 
+  </include>
+
+  <include>
+    <uri>model://psm</uri>
+    <name>psm2</name>
+    <pose> 1.4637 -0.1016 1.07626 0 0 -1.5708</pose>
+  </include>
+
+  <include>
+    <uri>model://psm</uri>
+    <name>psm3</name>
+    <pose> 0 1.5145 0.79796 0 0 0</pose>
+  </include>
+
+  <include>
+    <uri>model://ecm</uri>
+    <name>ecm</name>
+    <pose>0 0.85 0.9 0 0.735398 1.5708</pose>
+  </include>
+
+
+  <joint name='psm1::rev_joint' type='revolute'>
+   <child>psm1::base_link</child>
+   <parent>suj::suj_psm1_L4</parent>
+   <axis>
+     <limit>
+       <lower>-1.57</lower>
+       <upper>1.57</upper>
+     </limit>
+     <dynamics>
+       <damping>0</damping>
+     </dynamics>
+     <xyz>0 0 1</xyz>
+   </axis>
+ </joint>
+
+ <joint name='psm2::rev_joint' type='revolute'>
+  <child>psm2::base_link</child>
+  <parent>suj::suj_psm2_L4</parent>
+  <axis>
+    <limit>
+      <lower>-1.57</lower>
+      <upper>1.57</upper>
+    </limit>
+    <dynamics>
+      <damping>0</damping>
+    </dynamics>
+    <xyz>0 0 1</xyz>
+  </axis>
+</joint>
+
+<joint name='psm3::rev_joint' type='revolute'>
+ <child>psm3::base_link</child>
+ <parent>suj::suj_psm3_L4</parent>
+ <axis>
+   <limit>
+     <lower>-1.57</lower>
+     <upper>1.57</upper>
+   </limit>
+   <dynamics>
+     <damping>0</damping>
+   </dynamics>
+   <xyz>0 0 1</xyz>
+ </axis>
+</joint>
+
+<joint name='ecm::fixed' type='fixed'>
+  <child>ecm::base_link</child>
+  <parent>suj::suj_ecm_L3</parent>
+</joint>
+
+  <plugin name='dvrk_plugin' filename='libdvrk_plugin.so'/>
+  </model>
+</sdf>

@@ -1,0 +1,1021 @@
+<sdf version='1.6'>
+  <model name='suj'>
+    <link name='base_link'>
+      <pose>0 0 0.167458 0 -0 0</pose>
+      <inertial>
+        <pose>3.41426e-07 -0.163433 0.552458 0 -0 0</pose>
+        <mass>251.331</mass>
+        <inertia>
+          <ixx>116.092</ixx>
+          <ixy>-5.29792e-06</ixy>
+          <ixz>3.94602e-05</ixz>
+          <iyy>116.786</iyy>
+          <iyz>-2.7945</iyz>
+          <izz>20.7205</izz>
+        </inertia>
+      </inertial>
+      <collision name='base_link_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://suj/meshes/base_link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='base_link_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://suj/meshes/base_link.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+    </link>
+    <joint name='base_joint' type='fixed'>
+      <child>base_link</child>
+      <parent>world</parent>
+    </joint>
+    <link name='suj_psm2_L0'>
+      <pose>0.1912 -0.1016 0.928558 -3.14159 -0 3.14159</pose>
+      <inertial>
+        <pose>0.05684 4.20187e-07 0.148467 0 -0 0</pose>
+        <mass>8.19045</mass>
+        <inertia>
+          <ixx>0.0849399</ixx>
+          <ixy>-2.62415e-07</ixy>
+          <ixz>-0.00950409</ixz>
+          <iyy>0.0840388</iyy>
+          <iyz>-7.34497e-07</iyz>
+          <izz>0.0337579</izz>
+        </inertia>
+      </inertial>
+      <collision name='suj_psm2_L0_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://suj/meshes/suj_psm2_L0.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='suj_psm2_L0_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://suj/meshes/suj_psm2_L0.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+    </link>
+    <joint name='suj_psm2_J0' type='prismatic'>
+      <child>suj_psm2_L0</child>
+      <parent>base_link</parent>
+      <axis>
+        <xyz>0 0 -1</xyz>
+        <limit>
+          <lower>-0.3798</lower>
+          <upper>0.8425</upper>
+          <effort>5000</effort>
+          <velocity>50</velocity>
+        </limit>
+        <dynamics>
+          <damping>0.2</damping>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='suj_psm2_L1'>
+      <pose>0.1912 -0.1016 0.928558 3.14159 3.23109e-15 1.5708</pose>
+      <inertial>
+        <pose>-2.39047e-06 0.181423 -0.108874 0 -0 0</pose>
+        <mass>4.28515</mass>
+        <inertia>
+          <ixx>0.165299</ixx>
+          <ixy>8.05521e-07</ixy>
+          <ixz>1.12357e-07</ixz>
+          <iyy>0.0318879</iyy>
+          <iyz>-0.0216382</iyz>
+          <izz>0.151812</izz>
+        </inertia>
+      </inertial>
+      <collision name='suj_psm2_L1_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://suj/meshes/suj_psm2_L1.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='suj_psm2_L1_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://suj/meshes/suj_psm2_L1.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+    </link>
+    <joint name='suj_psm2_J1' type='revolute'>
+      <child>suj_psm2_L1</child>
+      <parent>suj_psm2_L0</parent>
+      <axis>
+        <xyz>1.0058e-29 3.23109e-15 1</xyz>
+        <limit>
+          <lower>-3.14159</lower>
+          <upper>3.14159</upper>
+        </limit>
+        <dynamics/>
+      </axis>
+    </joint>
+    <link name='suj_psm2_L2'>
+      <pose>0.623 -0.1016 1.09981 -6.46218e-15 -2.33033e-29 -1.03251e-14</pose>
+      <inertial>
+        <pose>0.20892 -5.98682e-06 0.0907666 0 -0 0</pose>
+        <mass>3.37391</mass>
+        <inertia>
+          <ixx>0.0170496</ixx>
+          <ixy>1.14494e-06</ixy>
+          <ixz>0.00102556</ixz>
+          <iyy>0.122648</iyy>
+          <iyz>-5.47957e-07</iyz>
+          <izz>0.11478</izz>
+        </inertia>
+      </inertial>
+      <collision name='suj_psm2_L2_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://suj/meshes/suj_psm2_L2.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='suj_psm2_L2_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://suj/meshes/suj_psm2_L2.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+    </link>
+    <joint name='suj_psm2_J2' type='revolute'>
+      <child>suj_psm2_L2</child>
+      <parent>suj_psm2_L1</parent>
+      <axis>
+        <xyz>4.34192e-29 6.46218e-15 1</xyz>
+        <limit>
+          <lower>-3.14159</lower>
+          <upper>3.14159</upper>
+        </limit>
+        <dynamics>
+          <damping>0.2</damping>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='suj_psm2_L3'>
+      <pose>1.0548 -0.1016 1.09981 -1.5708 -6.66134e-15 -1.5708</pose>
+      <inertial>
+        <pose>-7.80457e-07 0.0671938 -0.0457966 0 -0 0</pose>
+        <mass>0.955411</mass>
+        <inertia>
+          <ixx>0.0050224</ixx>
+          <ixy>1.37715e-08</ixy>
+          <ixz>6.06907e-08</ixz>
+          <iyy>0.00485367</iyy>
+          <iyz>0.000256157</iyz>
+          <izz>0.00220603</izz>
+        </inertia>
+      </inertial>
+      <collision name='suj_psm2_L3_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://suj/meshes/suj_psm2_L3.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='suj_psm2_L3_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://suj/meshes/suj_psm2_L3.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+    </link>
+    <joint name='suj_psm2_J3' type='revolute'>
+      <child>suj_psm2_L3</child>
+      <parent>suj_psm2_L2</parent>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-3.14159</lower>
+          <upper>3.14159</upper>
+        </limit>
+        <dynamics>
+          <damping>0.2</damping>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='suj_psm2_L4'>
+      <pose>1.1158 -0.1016 1.02676 -3.14159 9.85853e-15 1.5708</pose>
+      <inertial>
+        <pose>4.48122e-08 0.13369 0.106531 0 -0 0</pose>
+        <mass>3.17073</mass>
+        <inertia>
+          <ixx>0.0814805</ixx>
+          <ixy>-2.272e-08</ixy>
+          <ixz>-1.15333e-09</ixz>
+          <iyy>0.0179293</iyy>
+          <iyz>-0.0218807</iyz>
+          <izz>0.0668099</izz>
+        </inertia>
+      </inertial>
+      <collision name='suj_psm2_L4_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://suj/meshes/suj_psm2_L4.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='suj_psm2_L4_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://suj/meshes/suj_psm2_L4.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+    </link>
+    <joint name='suj_psm2_J4' type='revolute'>
+      <child>suj_psm2_L4</child>
+      <parent>suj_psm2_L3</parent>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-3.14159</lower>
+          <upper>3.14159</upper>
+        </limit>
+        <dynamics>
+          <damping>0.2</damping>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='suj_ecm_L0'>
+      <pose>0 0.0896 0.928558 3.14159 -3.41872e-16 -1.5708</pose>
+      <inertial>
+        <pose>0.05684 4.20187e-07 0.148467 0 -0 0</pose>
+        <mass>8.19045</mass>
+        <inertia>
+          <ixx>0.0849399</ixx>
+          <ixy>-2.62415e-07</ixy>
+          <ixz>-0.00950409</ixz>
+          <iyy>0.0840388</iyy>
+          <iyz>-7.34497e-07</iyz>
+          <izz>0.0337579</izz>
+        </inertia>
+      </inertial>
+      <collision name='suj_ecm_L0_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://suj/meshes/suj_ecm_L0.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='suj_ecm_L0_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://suj/meshes/suj_ecm_L0.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+    </link>
+    <joint name='suj_ecm_J0' type='prismatic'>
+      <child>suj_ecm_L0</child>
+      <parent>base_link</parent>
+      <axis>
+        <xyz>0 0 -1</xyz>
+        <limit>
+          <lower>-0.3798</lower>
+          <upper>0.8425</upper>
+          <effort>5000</effort>
+          <velocity>50</velocity>
+        </limit>
+        <dynamics>
+          <damping>0.2</damping>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='suj_ecm_L1'>
+      <pose>0 0.0896 0.928558 -2.88922e-15 -3.23109e-15 3.14159</pose>
+      <inertial>
+        <pose>-2.39047e-06 -0.181423 0.108874 0 -0 0</pose>
+        <mass>4.28515</mass>
+        <inertia>
+          <ixx>0.165299</ixx>
+          <ixy>-8.05521e-07</ixy>
+          <ixz>-1.12357e-07</ixz>
+          <iyy>0.0318879</iyy>
+          <iyz>-0.0216382</iyz>
+          <izz>0.151812</izz>
+        </inertia>
+      </inertial>
+      <collision name='suj_ecm_L1_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://suj/meshes/suj_ecm_L1.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='suj_ecm_L1_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://suj/meshes/suj_ecm_L1.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+    </link>
+    <joint name='suj_ecm_J1' type='revolute'>
+      <child>suj_ecm_L1</child>
+      <parent>suj_ecm_L0</parent>
+      <axis>
+        <xyz>3.23109e-15 -2.88922e-15 1</xyz>
+        <limit>
+          <lower>-3.14159</lower>
+          <upper>3.14159</upper>
+        </limit>
+        <dynamics>
+          <damping>0.2</damping>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='suj_ecm_L2'>
+      <pose>3.66939e-15 0.5214 1.09981 -3.14159 -2.88922e-15 1.5708</pose>
+      <inertial>
+        <pose>0.20892 5.98682e-06 -0.0907666 0 -0 0</pose>
+        <mass>3.37391</mass>
+        <inertia>
+          <ixx>0.0170496</ixx>
+          <ixy>-1.14494e-06</ixy>
+          <ixz>-0.00102556</ixz>
+          <iyy>0.122648</iyy>
+          <iyz>-5.47957e-07</iyz>
+          <izz>0.11478</izz>
+        </inertia>
+      </inertial>
+      <collision name='suj_ecm_L2_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://suj/meshes/suj_ecm_L2.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='suj_ecm_L2_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://suj/meshes/suj_ecm_L2.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+    </link>
+    <joint name='suj_ecm_J2' type='revolute'>
+      <child>suj_ecm_L2</child>
+      <parent>suj_ecm_L1</parent>
+      <axis>
+        <xyz>-2.18909e-29 -2.88922e-15 1</xyz>
+        <limit>
+          <lower>-3.14159</lower>
+          <upper>3.14159</upper>
+        </limit>
+        <dynamics>
+          <damping>0.2</damping>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='suj_ecm_L3'>
+      <pose>8.31437e-15 0.9532 1.04781 -1.5708 2.94209e-15 -1.5708</pose>
+      <inertial>
+        <pose>0.101751 0.0259124 -9.327e-08 0 -0 0</pose>
+        <mass>3.45916</mass>
+        <inertia>
+          <ixx>0.0229633</ixx>
+          <ixy>-0.0059561</ixy>
+          <ixz>3.34205e-08</ixz>
+          <iyy>0.0229722</iyy>
+          <iyz>2.42316e-08</iyz>
+          <izz>0.0422114</izz>
+        </inertia>
+      </inertial>
+      <collision name='suj_ecm_L3_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://suj/meshes/suj_ecm_L3.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='suj_ecm_L3_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://suj/meshes/suj_ecm_L3.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+    </link>
+    <joint name='suj_ecm_J3' type='revolute'>
+      <child>suj_ecm_L3</child>
+      <parent>suj_ecm_L2</parent>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-3.14159</lower>
+          <upper>3.14159</upper>
+        </limit>
+        <dynamics>
+          <damping>0.2</damping>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='suj_psm3_L0'>
+      <pose>0 0.0896 0.548758 3.14159 -3.41872e-16 -1.5708</pose>
+      <inertial>
+        <pose>0.060211 -2.92607e-07 0.1132 0 -0 0</pose>
+        <mass>6.04817</mass>
+        <inertia>
+          <ixx>0.0427518</ixx>
+          <ixy>-6.0601e-07</ixy>
+          <ixz>-0.00566678</ixz>
+          <iyy>0.0405</iyy>
+          <iyz>-5.59951e-07</iyz>
+          <izz>0.0232273</izz>
+        </inertia>
+      </inertial>
+      <collision name='suj_psm3_L0_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://suj/meshes/suj_psm3_L0.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='suj_psm3_L0_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://suj/meshes/suj_psm3_L0.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+    </link>
+    <joint name='suj_psm3_J0' type='prismatic'>
+      <child>suj_psm3_L0</child>
+      <parent>base_link</parent>
+      <axis>
+        <xyz>0 0 -1</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>1.2223</upper>
+          <effort>5000</effort>
+          <velocity>50</velocity>
+        </limit>
+        <dynamics>
+          <damping>0.2</damping>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='suj_psm3_L1'>
+      <pose>0 0.0896 0.548758 -2.88922e-15 -3.23109e-15 3.14159</pose>
+      <inertial>
+        <pose>-8.83879e-07 -0.269227 0.0974465 0 -0 0</pose>
+        <mass>9.21434</mass>
+        <inertia>
+          <ixx>0.512543</ixx>
+          <ixy>-1.12853e-06</ixy>
+          <ixz>-1.98944e-07</ixz>
+          <iyy>0.0466755</iyy>
+          <iyz>-0.0223247</iyz>
+          <izz>0.500776</izz>
+        </inertia>
+      </inertial>
+      <collision name='suj_psm3_L1_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://suj/meshes/suj_psm3_L1.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='suj_psm3_L1_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://suj/meshes/suj_psm3_L1.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+    </link>
+    <joint name='suj_psm3_J1' type='revolute'>
+      <child>suj_psm3_L1</child>
+      <parent>suj_psm3_L0</parent>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-3.14159</lower>
+          <upper>3.14159</upper>
+        </limit>
+        <dynamics>
+          <damping>0.2</damping>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='suj_psm3_L2'>
+      <pose>4.21504e-15 0.6738 0.548508 -3.14159 -2.88922e-15 1.5708</pose>
+      <inertial>
+        <pose>0.20892 -5.98682e-06 0.0907666 0 -0 0</pose>
+        <mass>3.37391</mass>
+        <inertia>
+          <ixx>0.0170496</ixx>
+          <ixy>1.14494e-06</ixy>
+          <ixz>0.00102556</ixz>
+          <iyy>0.122648</iyy>
+          <iyz>-5.47957e-07</iyz>
+          <izz>0.11478</izz>
+        </inertia>
+      </inertial>
+      <collision name='suj_psm3_L2_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://suj/meshes/suj_psm3_L2.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='suj_psm3_L2_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://suj/meshes/suj_psm3_L2.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+    </link>
+    <joint name='suj_psm3_J2' type='revolute'>
+      <child>suj_psm3_L2</child>
+      <parent>suj_psm3_L1</parent>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-3.14159</lower>
+          <upper>3.14159</upper>
+        </limit>
+        <dynamics/>
+      </axis>
+    </joint>
+    <link name='suj_psm3_L3'>
+      <pose>8.90573e-15 1.1056 0.548508 -1.5708 3.15253e-17 3.14159</pose>
+      <inertial>
+        <pose>-5.52738e-07 -0.14737 0.0299587 0 -0 0</pose>
+        <mass>1.46017</mass>
+        <inertia>
+          <ixx>0.0128891</ixx>
+          <ixy>-1.05508e-07</ixy>
+          <ixz>2.68237e-08</ixz>
+          <iyy>0.00658385</iyy>
+          <iyz>0.00230089</iyz>
+          <izz>0.00938096</izz>
+        </inertia>
+      </inertial>
+      <collision name='suj_psm3_L3_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://suj/meshes/suj_psm3_L3.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='suj_psm3_L3_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://suj/meshes/suj_psm3_L3.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+    </link>
+    <joint name='suj_psm3_J3' type='revolute'>
+      <child>suj_psm3_L3</child>
+      <parent>suj_psm3_L2</parent>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-3.14159</lower>
+          <upper>3.14159</upper>
+        </limit>
+        <dynamics>
+          <damping>0.2</damping>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='suj_psm3_L4'>
+      <pose>9.34e-15 1.1666 0.748458 3.14159 3.15253e-17 3.14159</pose>
+      <inertial>
+        <pose>4.48122e-08 0.13369 0.106531 0 -0 0</pose>
+        <mass>3.17073</mass>
+        <inertia>
+          <ixx>0.0814805</ixx>
+          <ixy>-2.272e-08</ixy>
+          <ixz>-1.15333e-09</ixz>
+          <iyy>0.0179293</iyy>
+          <iyz>-0.0218807</iyz>
+          <izz>0.0668099</izz>
+        </inertia>
+      </inertial>
+      <collision name='suj_psm3_L4_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://suj/meshes/suj_psm3_L4.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='suj_psm3_L4_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://suj/meshes/suj_psm3_L4.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+    </link>
+    <joint name='suj_psm3_J4' type='revolute'>
+      <child>suj_psm3_L4</child>
+      <parent>suj_psm3_L3</parent>
+      <axis>
+        <xyz>0 -1 0</xyz>
+        <limit>
+          <lower>-3.14159</lower>
+          <upper>3.14159</upper>
+        </limit>
+        <dynamics>
+          <damping>0.2</damping>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='suj_psm1_L0'>
+      <pose>-0.1912 -0.1016 0.928558 3.14159 -0 0</pose>
+      <inertial>
+        <pose>0.05684 4.20187e-07 0.148467 0 -0 0</pose>
+        <mass>8.19045</mass>
+        <inertia>
+          <ixx>0.0849399</ixx>
+          <ixy>-2.62415e-07</ixy>
+          <ixz>-0.00950409</ixz>
+          <iyy>0.0840388</iyy>
+          <iyz>-7.34497e-07</iyz>
+          <izz>0.0337579</izz>
+        </inertia>
+      </inertial>
+      <collision name='suj_psm1_L0_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://suj/meshes/suj_psm1_L0.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='suj_psm1_L0_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://suj/meshes/suj_psm1_L0.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+    </link>
+    <joint name='suj_psm1_J0' type='prismatic'>
+      <child>suj_psm1_L0</child>
+      <parent>base_link</parent>
+      <axis>
+        <xyz>0 0 -1</xyz>
+        <limit>
+          <lower>-0.3798</lower>
+          <upper>0.8425</upper>
+          <effort>5000</effort>
+          <velocity>50</velocity>
+        </limit>
+        <dynamics>
+          <damping>0.2</damping>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='suj_psm1_L1'>
+      <pose>-0.1912 -0.1016 0.928558 -3.14159 -3.23109e-15 -1.5708</pose>
+      <inertial>
+        <pose>-2.39047e-06 0.181423 -0.108874 0 -0 0</pose>
+        <mass>4.28515</mass>
+        <inertia>
+          <ixx>0.165299</ixx>
+          <ixy>8.05521e-07</ixy>
+          <ixz>1.12357e-07</ixz>
+          <iyy>0.0318879</iyy>
+          <iyz>-0.0216382</iyz>
+          <izz>0.151812</izz>
+        </inertia>
+      </inertial>
+      <collision name='suj_psm1_L1_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://suj/meshes/suj_psm1_L1.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='suj_psm1_L1_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://suj/meshes/suj_psm1_L1.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+    </link>
+    <joint name='suj_psm1_J1' type='revolute'>
+      <child>suj_psm1_L1</child>
+      <parent>suj_psm1_L0</parent>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-3.14159</lower>
+          <upper>3.14159</upper>
+        </limit>
+        <dynamics>
+          <damping>0.2</damping>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='suj_psm1_L2'>
+      <pose>-0.623 -0.1016 1.09981 -8.53916e-44 2.36658e-29 3.14159</pose>
+      <inertial>
+        <pose>0.20892 -5.98682e-06 0.0907666 0 -0 0</pose>
+        <mass>3.37391</mass>
+        <inertia>
+          <ixx>0.0170496</ixx>
+          <ixy>1.14494e-06</ixy>
+          <ixz>0.00102556</ixz>
+          <iyy>0.122648</iyy>
+          <iyz>-5.47957e-07</iyz>
+          <izz>0.11478</izz>
+        </inertia>
+      </inertial>
+      <collision name='suj_psm1_L2_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://suj/meshes/suj_psm1_L2.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='suj_psm1_L2_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://suj/meshes/suj_psm1_L2.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+    </link>
+    <joint name='suj_psm1_J2' type='revolute'>
+      <child>suj_psm1_L2</child>
+      <parent>suj_psm1_L1</parent>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-3.14159</lower>
+          <upper>3.14159</upper>
+        </limit>
+        <dynamics>
+          <damping>0.2</damping>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='suj_psm1_L3'>
+      <pose>-1.0548 -0.1016 1.09981 1.5708 -5.55112e-17 1.5708</pose>
+      <inertial>
+        <pose>-7.80457e-07 -0.0671938 0.0457966 0 -0 0</pose>
+        <mass>0.955411</mass>
+        <inertia>
+          <ixx>0.0050224</ixx>
+          <ixy>-1.37715e-08</ixy>
+          <ixz>-6.06907e-08</ixz>
+          <iyy>0.00485367</iyy>
+          <iyz>0.000256157</iyz>
+          <izz>0.00220603</izz>
+        </inertia>
+      </inertial>
+      <collision name='suj_psm1_L3_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://suj/meshes/suj_psm1_L3.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='suj_psm1_L3_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://suj/meshes/suj_psm1_L3.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+    </link>
+    <joint name='suj_psm1_J3' type='revolute'>
+      <child>suj_psm1_L3</child>
+      <parent>suj_psm1_L2</parent>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-3.14159</lower>
+          <upper>3.14159</upper>
+        </limit>
+        <dynamics>
+          <damping>0.2</damping>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='suj_psm1_L4'>
+      <pose>-1.1158 -0.1016 1.02676 3.14159 -3.34265e-15 -1.5708</pose>
+      <inertial>
+        <pose>4.48122e-08 0.13369 0.106531 0 -0 0</pose>
+        <mass>3.17073</mass>
+        <inertia>
+          <ixx>0.0814805</ixx>
+          <ixy>-2.272e-08</ixy>
+          <ixz>-1.15333e-09</ixz>
+          <iyy>0.0179293</iyy>
+          <iyz>-0.0218807</iyz>
+          <izz>0.0668099</izz>
+        </inertia>
+      </inertial>
+      <collision name='suj_psm1_L4_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://suj/meshes/suj_psm1_L4.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='suj_psm1_L4_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://suj/meshes/suj_psm1_L4.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+    </link>
+    <joint name='suj_psm1_J4' type='revolute'>
+      <child>suj_psm1_L4</child>
+      <parent>suj_psm1_L3</parent>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-3.14159</lower>
+          <upper>3.14159</upper>
+        </limit>
+        <dynamics>
+          <damping>0.2</damping>
+        </dynamics>
+      </axis>
+    </joint>
+
+    <static>0</static>
+    <plugin name='dvrk_plugin' filename='libdvrk_plugin.so'/>
+  </model>
+</sdf>

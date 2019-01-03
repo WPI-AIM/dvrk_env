@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package>
+  <name>dvrk_description</name>
+  <version>0.0.0</version>
+  <description>The dvrk_description package</description>
+
+  <maintainer email="ragondokaryono@wpi.edu">Radian</maintainer>
+  <license>BSD</license>
+
+  <author email="asagrawal@wpi.edu">Ankur Agrawal</author>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <run_depend>gazebo</run_depend>
+
+  <!-- The export tag contains other, unspecified, tags -->
+  <export>
+  </export>
+</package>

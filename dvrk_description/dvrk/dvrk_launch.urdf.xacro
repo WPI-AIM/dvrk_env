@@ -1,0 +1,36 @@
+<?xml version="1.0" ?>
+<robot name="master" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<!-- Macros -->
+<xacro:include filename="$(find dvrk_description)/suj/suj.urdf.xacro"/>
+<xacro:include filename="$(find dvrk_description)/psm/psm.urdf.xacro"/>
+<xacro:include filename="$(find dvrk_description)/ecm/ecm.urdf.xacro"/>
+<!--xacro:include filename="$(find dvrk_description)/tool_lnd/tool_lnd.urdf.xacro"/-->
+
+
+<!--change true to specify which psm or ecm you want -->
+<property name= "ecm_num_1" value = "true" />
+<property name= "psm_num_1" value = "true" />
+<property name= "psm_num_2" value = "true" />
+<property name= "psm_num_3" value = "true"  />
+
+
+
+<xacro:suj prefix=""/>
+ <xacro:if value="${ecm_num_1}">
+	<!-- <xacro:ecm prefix="ecm_" parent_link="suj_ecm_L3" xyz="0.16 0.125 0.075" rpy="0.0 0 -${3.14159/4-0.05}"  /> -->
+  <xacro:ecm prefix="ecm_" parent_link="suj_ecm_L3" xyz="0.103 0.173 0" rpy="-1.5708 0 ${-0.735398+3.14}"  />
+ </xacro:if>
+ <xacro:if value="${psm_num_1}">
+	<xacro:psm prefix="psm1_" parent_link="suj_psm1_L4" xyz= "0 0.3479 -0.0495" rpy="0 3.14159 0"/>
+ </xacro:if>
+
+ <xacro:if value="${psm_num_2}">
+	<xacro:psm prefix="psm2_" parent_link="suj_psm2_L4" xyz= "0 0.3479 -0.0495" rpy="0 3.14159 0"/>
+ </xacro:if>
+
+ <xacro:if value="${psm_num_3}">
+	<xacro:psm prefix="psm3_" parent_link="suj_psm3_L4" xyz= "0 0.3479 -0.0495" rpy="0 3.14159 0"/>
+ </xacro:if>
+
+</robot>

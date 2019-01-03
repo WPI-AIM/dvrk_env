@@ -1,9 +1,0 @@
-<package>
-  <description brief="dvrk_model">Cart</description>
-  <depend package="gazebo" />
-  <author>Radian Azhar</author>
-  <email>ragondokaryono@wpi.edu</email>
-  <author>Ankur Agrawal</author>
-  <email>asagrawal@wpi.edu</email>
-  <license>BSD</license>
-</package>

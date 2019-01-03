@@ -1,0 +1,801 @@
+<?xml version="1.0" ?>
+<sdf version='1.4'>
+
+  <model name='psm'>
+  <pose> 0 0 0 0 0 0 </pose>
+    <link name='remote_center_link'>
+      <!-- <pose>-0.5 0 1 0 -0 3.14159</pose> -->
+      <pose>-0.5 0.485 0.845 0 -0 3.14159</pose>
+      <inertial>
+        <pose>0.039 0.075 0.07879 1.5708 -4.23516e-22 -3.14159</pose>
+        <mass>0.1</mass>
+        <inertia>
+          <ixx>0.001</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.001</iyy>
+          <iyz>0</iyz>
+          <izz>0.001</izz>
+        </inertia>
+      </inertial>
+      <collision name='remote_center_link_collision_psm_base_link'>
+        <pose>0.039 0.075 0.07879 1.5708 -4.23516e-22 -3.14159</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://psm/meshes/psm_base.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='remote_center_link_visual_psm_base_link'>
+        <!-- <pose>0.039 -0.40788 -0.07879 1.5708 -4.23516e-22 -3.14159</pose> -->
+        <pose>0.039 0.075 0.07879 1.5708 -4.23516e-22 -3.14159</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://psm/meshes/psm_base.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+    </link>
+    <link name='outer_yaw_link'>
+      <pose>-0.5 0.369 1 -1.57079 -1.57079 -5.35564e-08</pose>
+      <inertial>
+        <pose>0.0125 0 0.1575 -3.14159 -4.23516e-22 1.5708</pose>
+        <mass>0.1</mass>
+        <inertia>
+          <ixx>0.001</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.001</iyy>
+          <iyz>0</iyz>
+          <izz>0.001</izz>
+        </inertia>
+      </inertial>
+      <collision name='outer_yaw_link_collision'>
+        <pose>0.0125 0 0.1575 -3.14159 -4.23516e-22 1.5708</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://psm/meshes/outer_yaw.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='outer_yaw_link_visual'>
+        <pose>0.0125 0 0.1575 -3.14159 -4.23516e-22 1.5708</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://psm/meshes/outer_yaw.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+    </link>
+    <link name='outer_pitch_back_link'>
+      <pose>-0.470501 0.5185 1 1.5708 3.67319e-06 1.5708</pose>
+      <inertial>
+        <pose>0 0 0 0 0 -0.27129</pose>
+        <mass>0.1</mass>
+        <inertia>
+          <ixx>0.001</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.001</iyy>
+          <iyz>0</iyz>
+          <izz>0.001</izz>
+        </inertia>
+      </inertial>
+      <collision name='outer_pitch_back_link_collision'>
+        <pose>0 0 0 0 0 -0.27129</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://psm/meshes/outer_pitch_back.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='outer_pitch_back_link_visual'>
+        <pose>0 0 0 0 0 -0.27129</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://psm/meshes/outer_pitch_back.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+    </link>
+    <link name='outer_pitch_front_link'>
+      <pose>-0.4705 0.4285 1 1.5708 3.67319e-06 1.5708</pose>
+      <inertial>
+        <pose>0 0 0 0 0 -0.27129</pose>
+        <mass>0.1</mass>
+        <inertia>
+          <ixx>0.001</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.001</iyy>
+          <iyz>0</iyz>
+          <izz>0.001</izz>
+        </inertia>
+      </inertial>
+      <collision name='outer_pitch_front_link_collision'>
+        <pose>0 0 0 0 0 -0.27129</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://psm/meshes/outer_pitch_front.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='outer_pitch_front_link_visual'>
+        <pose>0 0 0 0 0 -0.27129</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://psm/meshes/outer_pitch_front.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+    </link>
+    <link name='outer_pitch_bottom_link'>
+      <pose>-0.484201 0.560281 1.15007 1.5708 3.67319e-06 1.5708</pose>
+      <inertial>
+        <pose>0.009 0 0 3.14159 -1.57079 3.14159</pose>
+        <mass>0.3</mass>
+        <inertia>
+          <ixx>0.001</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.001</iyy>
+          <iyz>0</iyz>
+          <izz>0.001</izz>
+        </inertia>
+      </inertial>
+      <collision name='outer_pitch_bottom_link_collision'>
+        <pose>0.009 0 0 3.14159 -1.57079 3.14159</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://psm/meshes/outer_pitch_bottom.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='outer_pitch_bottom_link_visual'>
+        <pose>0.009 0 0 3.14159 -1.57079 3.14159</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://psm/meshes/outer_pitch_bottom.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+    </link>
+    <link name='outer_pitch_top_link'>
+      <pose>-0.494621 0.560591 1.18695 1.5708 3.67319e-06 1.5708</pose>
+      <inertial>
+        <pose>0.009 0 0 3.14159 -1.57079 3.14159</pose>
+        <mass>0.2</mass>
+        <inertia>
+          <ixx>0.001</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.001</iyy>
+          <iyz>0</iyz>
+          <izz>0.001</izz>
+        </inertia>
+      </inertial>
+      <collision name='outer_pitch_top_link_collision'>
+        <pose>0.009 0 0 3.14159 -1.57079 3.14159</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://psm/meshes/outer_pitch_top.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='outer_pitch_top_link_visual'>
+        <pose>0.009 0 0 3.14159 -1.57079 3.14159</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://psm/meshes/outer_pitch_top.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+    </link>
+    <link name='outer_insertion_link'>
+      <pose>-0.499699 0.0402806 1.15007 1.5708 3.67319e-06 1.5708</pose>
+      <inertial>
+        <pose>0.02528 0.429 0 3.14159 -1.57079 -1.57079</pose>
+        <mass>0.5</mass>
+        <inertia>
+          <ixx>0.001</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.001</iyy>
+          <iyz>0</iyz>
+          <izz>0.001</izz>
+        </inertia>
+      </inertial>
+      <collision name='outer_insertion_link_collision'>
+        <pose>0.02528 0.429 0 3.14159 -1.57079 -1.57079</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://psm/meshes/outer_insertion.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='outer_insertion_link_visual'>
+        <pose>0.02528 0.429 0 3.14159 -1.57079 -1.57079</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://psm/meshes/outer_insertion.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+    </link>
+    <link name='tool_main_link'>
+      <pose>-0.499699 -1.858e-05 1.38629 -3.14159 3.67319e-06 1.5708</pose>
+      <inertial>
+        <pose>0 0 0 0 -0 1.5708</pose>
+        <mass>0.1</mass>
+        <inertia>
+          <ixx>0.001</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.001</iyy>
+          <iyz>0</iyz>
+          <izz>0.001</izz>
+        </inertia>
+      </inertial>
+      <collision name='tool_main_link_collision'>
+        <pose>0 0 0 0 -0 1.5708</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://psm/meshes/tool_main.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='tool_main_link_visual'>
+        <pose>0 0 0 0 -0 1.5708</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://psm/meshes/tool_main.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+    </link>
+
+
+    <!-- <joint name='fixed_joint' type='revolute'>
+      <child>remote_center_link</child>
+      <parent>world</parent>
+      <pose>0 0 0 0 0 0</pose>
+      <axis>
+        <limit>
+          <lower>0</lower>
+          <upper>0</upper>
+        </limit>
+        <dynamics>
+          <damping>0</damping>
+        </dynamics>
+        <xyz>0 0 1</xyz>
+      </axis>
+    </joint> -->
+    <joint name='outer_yaw_joint' type='revolute'>
+      <child>outer_yaw_link</child>
+      <parent>remote_center_link</parent>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-1.5707</lower>
+          <upper>1.5707</upper>
+          <effort>1000</effort>
+          <velocity>0.4</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0.1</spring_stiffness>
+          <damping>0.1</damping>
+        </dynamics>
+      </axis>
+    </joint>
+    <joint name='outer_pitch_joint_1' type='revolute'>
+      <child>outer_pitch_back_link</child>
+      <parent>outer_yaw_link</parent>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-1.5708</lower>
+          <upper>1.5708</upper>
+          <effort>1000</effort>
+          <velocity>0.4</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0.1</spring_stiffness>
+          <damping>0.1</damping>
+        </dynamics>
+      </axis>
+    </joint>
+    <joint name='outer_pitch_joint_2' type='revolute'>
+      <child>outer_pitch_bottom_link</child>
+      <parent>outer_pitch_back_link</parent>
+      <axis>
+        <xyz>1 3.61963e-06 -2.77556e-17</xyz>
+        <limit>
+          <lower>-1.5708</lower>
+          <upper>1.5708</upper>
+          <effort>1000</effort>
+          <velocity>0.4</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0.1</spring_stiffness>
+          <damping>0.1</damping>
+        </dynamics>
+      </axis>
+    </joint>
+    <joint name='outer_pitch_joint_3' type='revolute'>
+      <child>outer_pitch_front_link</child>
+      <parent>outer_yaw_link</parent>
+      <axis>
+        <xyz>1 3.61963e-06 -2.77556e-17</xyz>
+        <limit>
+          <lower>-1.5708</lower>
+          <upper>1.5708</upper>
+          <effort>1000</effort>
+          <velocity>0.4</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0.1</spring_stiffness>
+          <damping>0.1</damping>
+        </dynamics>
+      </axis>
+    </joint>
+    <joint name='outer_pitch_joint_4' type='revolute'>
+      <child>outer_pitch_bottom_link</child>
+      <parent>outer_pitch_front_link</parent>
+      <pose>-0.09 0 0 0 0 0</pose>
+      <axis>
+        <xyz>1 3.61963e-06 -2.77556e-17</xyz>
+        <limit>
+          <lower>-1.5708</lower>
+          <upper>1.5708</upper>
+          <effort>1000</effort>
+          <velocity>0.4</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0.1</spring_stiffness>
+          <damping>0.1</damping>
+        </dynamics>
+      </axis>
+    </joint>
+    <joint name='outer_pitch_joint_5' type='revolute'>
+      <child>outer_pitch_top_link</child>
+      <parent>outer_pitch_back_link</parent>
+      <axis>
+        <xyz>1 3.61963e-06 -2.77556e-17</xyz>
+        <limit>
+          <lower>-1.5708</lower>
+          <upper>1.5708</upper>
+          <effort>1000</effort>
+          <velocity>0.4</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0.1</spring_stiffness>
+          <damping>0.1</damping>
+        </dynamics>
+      </axis>
+    </joint>
+<!-- DontIncludeStart -->
+
+<!--    <joint name='outer_pitch_joint_6' type='revolute'>
+      <child>outer_pitch_top_link</child>
+      <parent>outer_pitch_front_link</parent>
+      <axis>
+        <xyz>1 3.61963e-06 -2.77556e-17</xyz>
+        <limit>
+          <lower>-1.5708</lower>
+          <upper>1.5708</upper>
+          <effort>1000</effort>
+          <velocity>0.4</velocity>
+        </limit>
+        <dynamics/>
+      </axis>
+    </joint>-->
+<!-- DontIncludeEnd     -->
+
+    <joint name='outer_pitch_joint_7' type='revolute'>
+      <child>outer_insertion_link</child>
+      <parent>outer_pitch_bottom_link</parent>
+      <axis>
+        <xyz>1 3.61963e-06 -2.77556e-17</xyz>
+        <limit>
+          <lower>-1.5708</lower>
+          <upper>1.5708</upper>
+          <effort>1000</effort>
+          <velocity>0.4</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0.1</spring_stiffness>
+          <damping>0.1</damping>
+        </dynamics>
+      </axis>
+    </joint>
+    <joint name='outer_pitch_joint_8' type='revolute'>
+      <child>outer_insertion_link</child>
+      <parent>outer_pitch_top_link</parent>
+      <pose>0 0.036 0 0 0 0</pose>
+      <axis>
+        <xyz>1 3.61963e-06 -2.77556e-17</xyz>
+        <limit>
+          <lower>-1.5708</lower>
+          <upper>1.5708</upper>
+          <effort>1000</effort>
+          <velocity>0.4</velocity>
+        </limit>
+        <dynamics/>
+      </axis>
+    </joint>
+    <joint name='outer_insertion_joint' type='prismatic'>
+      <child>tool_main_link</child>
+      <parent>outer_insertion_link</parent>
+      <axis>
+        <xyz>-3.67319e-06 -3.6732e-06 -1</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>0.24</upper>
+          <effort>1000</effort>
+          <velocity>0.4</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0.1</spring_stiffness>
+          <damping>0.1</damping>
+        </dynamics>
+      </axis>
+    </joint>
+   <link name='tool_wrist_link'>
+      <pose>-0.4997 -1.99273e-05 1.01949 -3.14159 3.67319e-06 1.5708</pose>
+      <inertial>
+        <pose>0 0.003208 0.00728 0 -0 1.5708</pose>
+        <mass>0.05</mass>
+        <inertia>
+          <ixx>5</ixx>
+          <ixy>4.72524e-13</ixy>
+          <ixz>-2.91928e-07</ixz>
+          <iyy>5</iyy>
+          <iyz>1.07231e-12</iyz>
+          <izz>5</izz>
+        </inertia>
+      </inertial>
+      <collision name='tool_wrist_link_collision'>
+        <pose>0 0 0 0 -0 1.5708</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://psm/meshes/tool_wrist_link.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <!-- <collision name='tool_wrist_link_collision_tool_wrist_shaft_link'>
+        <pose>0 0.00401 0.0364 1.5708 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://psm/meshes/tool_wrist_shaft_link.dae</uri>
+          </mesh>
+        </geometry>
+      </collision> -->
+      <visual name='tool_wrist_link_visual'>
+        <pose>0 0 0 0 -0 1.5708</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://psm/meshes/tool_wrist_link.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <!-- <visual name='tool_wrist_link_visual_tool_wrist_shaft_link'>
+        <pose>0 0.00401 0.0364 1.5708 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://psm/meshes/tool_wrist_shaft_link.dae</uri>
+          </mesh>
+        </geometry>
+      </visual> -->
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+    </link>
+    <joint name='outer_roll_joint' type='revolute'>
+      <pose>0 0 0 0 0 0</pose>
+      <child>tool_wrist_link</child>
+      <parent>tool_main_link</parent>
+      <axis>
+        <xyz>-3.67319e-06 -3.6732e-06 -1</xyz>
+        <limit>
+          <lower>-2.2689</lower>
+          <upper>2.2689</upper>
+          <effort>1000</effort>
+          <velocity>0.4</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0.1</spring_stiffness>
+          <damping>0.1</damping>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='tool_wrist_sca_link'>
+      <!-- <pose>-0.4997 -2.0061e-05 0.983092 -2.03445 1.57079 -2.03444</pose> -->
+      <pose>-0.4997 -2.0061e-05 1.0098 -2.03445 1.57079 -2.03444</pose>
+      <inertial>
+        <pose>0.0051 0.0032 0 -1.57079 -7.34641e-06 3.14159</pose>
+        <mass>0.01</mass>
+        <inertia>
+          <ixx>1</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1</iyy>
+          <iyz>0</iyz>
+          <izz>1</izz>
+        </inertia>
+      </inertial>
+      <collision name='tool_wrist_sca_link_collision'>
+        <pose>0.0051 0.0032 0 -1.57079 -7.34641e-06 3.14159</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://psm/meshes/tool_wrist_sca_link.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='tool_wrist_sca_link_visual'>
+        <pose>0.0051 0.0032 0 -1.57079 -7.34641e-06 3.14159</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://psm/meshes/tool_wrist_sca_link.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+    </link>
+    <joint name='outer_wrist_pitch_joint' type='revolute'>
+      <child>tool_wrist_sca_link</child>
+      <parent>tool_wrist_link</parent>
+      <axis>
+        <xyz>1 7.29282e-06 -3.67323e-06</xyz>
+        <limit>
+          <lower>-1.5707</lower>
+          <upper>1.5707</upper>
+          <effort>1000</effort>
+          <velocity>0.4</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0.1</spring_stiffness>
+          <damping>0.1</damping>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='tool_wrist_sca_shaft_link'>
+      <pose>-0.4997 -2.01264e-05 1.0009 -1.57081 2.69848e-11 7.29285e-06</pose>
+      <inertial>
+        <pose>0 0 -0.0025 0 -0 0</pose>
+        <mass>0.01</mass>
+        <inertia>
+          <ixx>1</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1</iyy>
+          <iyz>0</iyz>
+          <izz>1</izz>
+        </inertia>
+      </inertial>
+      <collision name='tool_wrist_sca_shaft_link_collision'>
+        <pose>0 0 -0.0025 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://psm/meshes/tool_wrist_sca_shaft_link.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='tool_wrist_sca_shaft_link_visual'>
+        <pose>0 0 -0.0025 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://psm/meshes/tool_wrist_sca_shaft_link.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+    </link>
+    <joint name='outer_wrist_yaw_joint' type='revolute'>
+      <child>tool_wrist_sca_shaft_link</child>
+      <parent>tool_wrist_sca_link</parent>
+      <axis>
+        <xyz>-7.29285e-06 1 -1.10196e-05</xyz>
+        <limit>
+          <lower>-1.3963</lower>
+          <upper>1.3963</upper>
+          <effort>1000</effort>
+          <velocity>0.4</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0.1</spring_stiffness>
+          <damping>0.1</damping>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='tool_wrist_sca_ee_link_1'>
+      <!-- <pose>-0.4997 -2.01264e-05 0.974192 -1.57081 2.69848e-11 7.29285e-06</pose> -->
+      <pose>-0.4997 -2.01264e-05 1.0009 -1.57081 2.69848e-11 7.29285e-06</pose>
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>0.01</mass>
+        <inertia>
+          <ixx>1</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1</iyy>
+          <iyz>0</iyz>
+          <izz>1</izz>
+        </inertia>
+      </inertial>
+      <collision name='tool_wrist_sca_ee_link_1_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://psm/meshes/tool_wrist_sca_link_2.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='tool_wrist_sca_ee_link_1_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://psm/meshes/tool_wrist_sca_link_2.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+    </link>
+    <joint name='outer_wrist_open_angle_joint_1' type='revolute'>
+      <child>tool_wrist_sca_ee_link_1</child>
+      <parent>tool_wrist_sca_shaft_link</parent>
+      <axis>
+        <xyz>-7.29285e-06 1 -1.10196e-05</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>1.5707</upper>
+          <effort>1000</effort>
+          <velocity>0.4</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0.1</spring_stiffness>
+          <damping>0.1</damping>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='tool_wrist_sca_ee_link_2'>
+      <pose>-0.4997 -2.01264e-05 1.0009 -1.57081 2.69848e-11 7.29285e-06</pose>
+      <inertial>
+        <pose>0 0 0.1 3.14159 -0.0100073 3.14159</pose>
+        <mass>0.01</mass>
+        <inertia>
+          <ixx>1</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1</iyy>
+          <iyz>0</iyz>
+          <izz>1</izz>
+        </inertia>
+      </inertial>
+      <collision name='tool_wrist_sca_ee_link_2_collision'>
+        <!-- <pose>0 0 0.1 3.14159 -0.0100073 3.14159</pose> -->
+        <pose>0 0 0 3.14159 0 3.14159</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://psm/meshes/tool_wrist_sca_link_2.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='tool_wrist_sca_ee_link_2_visual'>
+        <!-- <pose>0 0 0.1 3.14159 -0.0100073 3.14159</pose> -->
+        <pose>0 0 0 3.14159 0 3.14159</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://psm/meshes/tool_wrist_sca_link_2.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+    </link>
+    <joint name='outer_wrist_open_angle_joint_2' type='revolute'>
+      <child>tool_wrist_sca_ee_link_2</child>
+      <parent>tool_wrist_sca_shaft_link</parent>
+      <axis>
+        <xyz>-7.29285e-06 1 -1.10196e-05</xyz>
+        <limit>
+          <lower>-1.5707</lower>
+          <upper>1.5707</upper>
+          <effort>1000</effort>
+          <velocity>0.4</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0.1</spring_stiffness>
+          <damping>0.1</damping>
+        </dynamics>
+      </axis>
+    </joint>
+
+    <static>0</static>
+    <plugin name='dvrk_plugin' filename='libdvrk_plugin.so'/>
+  </model>
+</sdf>

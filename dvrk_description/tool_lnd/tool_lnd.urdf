@@ -1,0 +1,308 @@
+<robot
+  name="tool_lnd">
+  <link
+    name="tool_main_link">
+    <inertial>
+      <origin
+        xyz="0.00152807921185497 -0.000126939120532178 0.0138479507815198"
+        rpy="0 0 0" />
+      <mass
+        value="0.193727961900235" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://dvrk_description/Tool_LND/meshes/tool_main_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.796078431372549 0.823529411764706 0.937254901960784 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://dvrk_description/Tool_LND/meshes/tool_main_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="tool_roll_link">
+    <inertial>
+      <origin
+        xyz="-3.40772311467272E-06 -1.09585930850586E-08 0.00345740540836414"
+        rpy="0 0 0" />
+      <mass
+        value="0.000342893775775674" />
+      <inertia
+        ixx="3.49788101814612E-10"
+        ixy="1.28329906023435E-17"
+        ixz="6.6077244420398E-12"
+        iyy="3.49912926019935E-10"
+        iyz="-6.7933029937245E-16"
+        izz="1.24824207962126E-13" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://dvrk_description/Tool_LND/meshes/tool_roll_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.796078431372549 0.823529411764706 0.937254901960784 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://dvrk_description/Tool_LND/meshes/tool_roll_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="tool_roll_joint"
+    type="continuous">
+    <origin
+      xyz="0 0 0.4071"
+      rpy="0 0 1.5707963267949" />
+    <parent
+      link="tool_main_link" />
+    <child
+      link="tool_roll_link" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="tool_pitch_link">
+    <inertial>
+      <origin
+        xyz="-0.00372944363842065 0.000200069305450416 5.07548076205981E-05"
+        rpy="0 0 0" />
+      <mass
+        value="0.000249121193515496" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://dvrk_description/Tool_LND/meshes/tool_pitch_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.796078431372549 0.823529411764706 0.937254901960784 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://dvrk_description/Tool_LND/meshes/tool_pitch_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="tool_pitch_joint"
+    type="continuous">
+    <origin
+      xyz="0 0 0.00910000000000002"
+      rpy="1.5707963267949 1.5707963267949 0" />
+    <parent
+      link="tool_roll_link" />
+    <child
+      link="tool_pitch_link" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="tool_yaw_link">
+    <inertial>
+      <origin
+        xyz="0 0 -0.000100000000000025"
+        rpy="0 0 0" />
+      <mass
+        value="6.63661448070839E-06" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://dvrk_description/Tool_LND/meshes/tool_yaw_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.796078431372549 0.823529411764706 0.937254901960784 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://dvrk_description/Tool_LND/meshes/tool_yaw_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="tool_yaw_joint"
+    type="continuous">
+    <origin
+      xyz="-0.0091 0.000199999999999992 0"
+      rpy="-3.14159265358979 -4.99406881401635E-16 1.28567744673266" />
+    <parent
+      link="tool_pitch_link" />
+    <child
+      link="tool_yaw_link" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="gripper1_link">
+    <inertial>
+      <origin
+        xyz="-0.000188736724875568 0.00135264310276204 0.00085694646319168"
+        rpy="0 0 0" />
+      <mass
+        value="3.90695979761286E-05" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://dvrk_description/Tool_LND/meshes/gripper1_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.796078431372549 0.823529411764706 0.937254901960784 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://dvrk_description/Tool_LND/meshes/gripper1_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="gripper1_joint"
+    type="continuous">
+    <origin
+      xyz="0 0 0"
+      rpy="2.56706827831286E-16 -5.82756799938937E-16 2.85647377352755" />
+    <parent
+      link="tool_yaw_link" />
+    <child
+      link="gripper1_link" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="gripper2_link">
+    <inertial>
+      <origin
+        xyz="-0.000188736724875578 0.00135264310276204 0.000966946463191687"
+        rpy="0 0 0" />
+      <mass
+        value="3.90695979761289E-05" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://dvrk_description/Tool_LND/meshes/gripper2_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.796078431372549 0.823529411764706 0.937254901960784 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://dvrk_description/Tool_LND/meshes/gripper2_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="gripper2_joint"
+    type="continuous">
+    <origin
+      xyz="0 0 0"
+      rpy="3.14159265358979 -2.43964166529459E-17 -0.28511888006224" />
+    <parent
+      link="tool_yaw_link" />
+    <child
+      link="gripper2_link" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+</robot>

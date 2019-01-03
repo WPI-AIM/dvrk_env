@@ -2,13 +2,13 @@
 
 
 
-void dvrk_gazebo_control::getECMEndEffector(const gazebo_msgs::LinkStatesPtr &msg)
+void dvrk_gazebo_control::getecmEndEffector(const gazebo_msgs::LinkStatesPtr &msg)
 {
   gazebo_msgs::LinkState ecm_roll;
   for (int i=0;i<msg->pose.size();i++)
   {
     if (!msg->name[i].compare("dvrk::ecm::camera_link"))
-    // if (!msg->name[i].compare("dvrk::PSM1::one_tool_wrist_link"))
+    // if (!msg->name[i].compare("dvrk::psm1::one_tool_wrist_link"))
     {
       ecm_roll.pose = msg->pose[i];
     }
@@ -41,15 +41,15 @@ void dvrk_gazebo_control::getECMEndEffector(const gazebo_msgs::LinkStatesPtr &ms
   // ecmPub[2].publish(msg2);
   // msg2.data=0;
 
-  PublishCartStates();
-  PublishECMStates();
-  PublishPSM1States();
-  PublishPSM2States();
-  PublishPSM3States();
+  PublishcartStates();
+  PublishecmStates();
+  Publishpsm1States();
+  Publishpsm2States();
+  Publishpsm3States();
 
 }
 
-void dvrk_gazebo_control::PublishECMStates()
+void dvrk_gazebo_control::PublishecmStates()
 {
   std::vector<std_msgs::Float64> msg;
   msg.resize(4);
@@ -65,7 +65,7 @@ void dvrk_gazebo_control::PublishECMStates()
 
 }
 
-void dvrk_gazebo_control::PublishPSM1States()
+void dvrk_gazebo_control::Publishpsm1States()
 {
   std::vector<std_msgs::Float64> msg;
   msg.resize(5);
@@ -82,7 +82,7 @@ void dvrk_gazebo_control::PublishPSM1States()
   psm1Pub[4].publish(msg[4]);
 
 }
-void dvrk_gazebo_control::PublishPSM2States()
+void dvrk_gazebo_control::Publishpsm2States()
 {
   std::vector<std_msgs::Float64> msg;
   msg.resize(5);
@@ -100,7 +100,7 @@ void dvrk_gazebo_control::PublishPSM2States()
 
 }
 
-void dvrk_gazebo_control::PublishPSM3States()
+void dvrk_gazebo_control::Publishpsm3States()
 {
   std::vector<std_msgs::Float64> msg;
   msg.resize(5);
@@ -118,7 +118,7 @@ void dvrk_gazebo_control::PublishPSM3States()
 
 }
 
-void dvrk_gazebo_control::PublishCartStates()
+void dvrk_gazebo_control::PublishcartStates()
 {
   std::vector<std_msgs::Float64> msg;
   msg.resize(19);
@@ -184,11 +184,11 @@ int main(int argc, char **argv)
 
   while(count<150&&ros::ok())
   {
-  obj.PublishCartStates();
-  obj.PublishECMStates();
-  obj.PublishPSM1States();
-  obj.PublishPSM2States();
-  obj.PublishPSM3States();
+  obj.PublishcartStates();
+  obj.PublishecmStates();
+  obj.Publishpsm1States();
+  obj.Publishpsm2States();
+  obj.Publishpsm3States();
   loop_rate.sleep();
   //ROS_INFO("%s", mes.data.c_str());
   count=count+1;
@@ -196,11 +196,11 @@ int main(int argc, char **argv)
 
 /*  while (ros::ok())
   {
-    obj.PublishCartStates();
-  obj.PublishECMStates();
-  obj.PublishPSM1States();
-  obj.PublishPSM2States();
-  obj.PublishPSM3States();
+    obj.PublishcartStates();
+  obj.PublishecmStates();
+  obj.Publishpsm1States();
+  obj.Publishpsm2States();
+  obj.Publishpsm3States();
   count=count+1;
   ROS_INFO("%s", mes.data.c_str());
    // ros::spin();

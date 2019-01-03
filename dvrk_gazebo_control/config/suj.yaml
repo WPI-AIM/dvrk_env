@@ -1,0 +1,115 @@
+dvrk:
+  suj:
+    suj_psm2_J0_controller:
+      p: 2000
+      i: 0
+      d: 10
+      init_joint: 0.1
+
+    suj_psm2_J1_controller:
+      p: 2000
+      i: 0
+      d: 10
+      init_joint: -0.9
+
+    suj_psm2_J2_controller:
+      p: 2000
+      i: 0
+      d: 10
+      init_joint: 0.25
+
+    suj_psm2_J3_controller:
+      p: 2000
+      i: 0
+      d: 10
+      init_joint: -1.1
+
+    suj_psm2_J4_controller:
+      p: 2000
+      i: 0
+      d: 10
+      init_joint: 0.57
+
+    suj_ecm_J0_controller:
+      p: 2000
+      i: 0
+      d: 10
+      init_joint: 0.7
+
+    suj_ecm_J1_controller:
+      p: 2000
+      i: 0
+      d: 10
+      init_joint: 0
+
+    suj_ecm_J2_controller:
+      p: 2000
+      i: 0
+      d: 10
+      init_joint: 0.0
+
+    suj_ecm_J3_controller:
+      p: 2000
+      i: 0
+      d: 10
+      init_joint: 0.0
+
+    suj_psm1_J0_controller:
+      p: 2000
+      i: 0
+      d: 10
+      init_joint: 0.23
+
+    suj_psm1_J1_controller:
+      p: 2000
+      i: 0
+      d: 10
+      init_joint: 0.33
+
+    suj_psm1_J2_controller:
+      p: 2000
+      i: 0
+      d: 10
+      init_joint: -1.52
+
+    suj_psm1_J3_controller:
+      p: 2000
+      i: 0
+      d: 10
+      init_joint: -0.23
+
+    suj_psm1_J4_controller:
+      p: 2000
+      i: 0
+      d: 10
+      init_joint: -0.64
+
+    suj_psm3_J0_controller:
+      p: 2000
+      i: 0
+      d: 10
+      init_joint: 0.35
+
+    suj_psm3_J1_controller:
+      p: 2000
+      i: 0
+      d: 10
+      init_joint: 1.61
+
+    suj_psm3_J2_controller:
+      p: 2000
+      i: 0
+      d: 10
+      init_joint: 1.70
+
+    suj_psm3_J3_controller:
+      p: 2000
+      i: 0
+      d: 10
+      init_joint: 0.46
+
+    suj_psm3_J4_controller:
+      p: 2000
+      i: 0
+      d: 10
+      init_joint: 0.91

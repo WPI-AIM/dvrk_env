@@ -1,0 +1,591 @@
+<?xml version="1.0" ?>
+<robot name="ecm" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <!-- Macro for da Vinci Endoscope Camera Manipulator (ecm) -->
+  <xacro:macro name="ecm" params="prefix parent_link xyz rpy">
+  <xacro:property name="PI" value="3.14159" />
+
+    <!-- Joint 0: Fixed to Setup Joint-->
+    <joint name="fixed_joint" type="fixed">
+      <parent link="${parent_link}"/>
+      <child link="${prefix}base_link"/>
+      <origin rpy="${rpy}" xyz="${xyz}"/>
+    </joint>
+
+    <link
+      name="${prefix}base_link">
+      <inertial>
+        <origin
+          xyz="-0.0048227 0 0.068959"
+          rpy="0 0 0" />
+        <mass
+          value="2.6363" />
+        <inertia
+          ixx="0"
+          ixy="0"
+          ixz="0"
+          iyy="0"
+          iyz="0"
+          izz="0" />
+      </inertial>
+      <visual>
+        <origin
+          xyz="0 0 0"
+          rpy="0 0 0" />
+        <geometry>
+          <mesh
+            filename="package://dvrk_description/ecm//meshes/base_link.STL" />
+        </geometry>
+        <material
+          name="">
+          <color
+            rgba="0.64706 0.61961 0.58824 1" />
+        </material>
+      </visual>
+      <collision>
+        <origin
+          xyz="0 0 0"
+          rpy="0 0 0" />
+        <geometry>
+          <mesh
+            filename="package://dvrk_description/ecm//meshes/base_link.STL" />
+        </geometry>
+      </collision>
+    </link>
+    <link
+      name="${prefix}yaw_link">
+      <inertial>
+        <origin
+          xyz="0 -0.029045 0.10669"
+          rpy="0 0 0" />
+        <mass
+          value="6.4168" />
+        <inertia
+          ixx="0.00086598"
+          ixy="0"
+          ixz="0"
+          iyy="0.0016561"
+          iyz="-0.00015825"
+          izz="0.00085001" />
+      </inertial>
+      <visual>
+        <origin
+          xyz="0 0 0"
+          rpy="0 0 0" />
+        <geometry>
+          <mesh
+            filename="package://dvrk_description/ecm//meshes/yaw_link.STL" />
+        </geometry>
+        <material
+          name="">
+          <color
+            rgba="0.64706 0.61961 0.58824 1" />
+        </material>
+      </visual>
+      <collision>
+        <origin
+          xyz="0 0 0"
+          rpy="0 0 0" />
+        <geometry>
+          <mesh
+            filename="package://dvrk_description/ecm//meshes/yaw_link.STL" />
+        </geometry>
+      </collision>
+    </link>
+    <joint
+      name="${prefix}yaw_joint"
+      type="revolute">
+      <origin
+        xyz="0.0731999999999783 0 0.101460000000185"
+        rpy="1.57079632679615 0 1.5707963267949" />
+      <parent
+        link="${prefix}base_link" />
+      <child
+        link="${prefix}yaw_link" />
+      <axis
+        xyz="0 0 1" />
+      <limit
+        lower="-1.595183"
+        upper="1.581733"
+        effort="1000"
+        velocity="10" />
+    </joint>
+    <link
+      name="${prefix}pitch_front_link">
+      <inertial>
+        <origin
+          xyz="-0.030619 -0.13578 0"
+          rpy="0 0 0" />
+        <mass
+          value="1.6069" />
+        <inertia
+          ixx="0"
+          ixy="0"
+          ixz="0"
+          iyy="0"
+          iyz="0"
+          izz="0" />
+      </inertial>
+      <visual>
+        <origin
+          xyz="0 0 0"
+          rpy="0 0 0" />
+        <geometry>
+          <mesh
+            filename="package://dvrk_description/ecm//meshes/pitch_front_link.STL" />
+        </geometry>
+        <material
+          name="">
+          <color
+            rgba="0.64706 0.61961 0.58824 1" />
+        </material>
+      </visual>
+      <collision>
+        <origin
+          xyz="0 0 0"
+          rpy="0 0 0" />
+        <geometry>
+          <mesh
+            filename="package://dvrk_description/ecm//meshes/pitch_front_link.STL" />
+        </geometry>
+      </collision>
+    </link>
+    <joint
+      name="${prefix}pitch_front_joint"
+      type="revolute">
+      <origin
+        xyz="0 0 0.199000000000014"
+        rpy="3.14 -1.5707963267949 0" />
+      <parent
+        link="${prefix}yaw_link" />
+      <child
+        link="${prefix}pitch_front_link" />
+      <axis
+        xyz="0 0 1" />
+      <limit
+        lower="-0.783710"
+        upper="1.157657"
+        effort="1000"
+        velocity="10" />
+    </joint>
+    <link
+      name="${prefix}pitch_bottom_link">
+      <inertial>
+        <origin
+          xyz="0.14594 -0.026715 -0.00016488"
+          rpy="0 0 0" />
+        <mass
+          value="0.35928" />
+        <inertia
+          ixx="0.00023901"
+          ixy="0.00022767"
+          ixz="0"
+          iyy="0.0030096"
+          iyz="0"
+          izz="0.0029617" />
+      </inertial>
+      <visual>
+        <origin
+          xyz="0 0 0"
+          rpy="0 0 0" />
+        <geometry>
+          <mesh
+            filename="package://dvrk_description/ecm//meshes/pitch_bottom_link.STL" />
+        </geometry>
+        <material
+          name="">
+          <color
+            rgba="0.25098 0.25098 0.25098 1" />
+        </material>
+      </visual>
+      <collision>
+        <origin
+          xyz="0 0 0"
+          rpy="0 0 0" />
+        <geometry>
+          <mesh
+            filename="package://dvrk_description/ecm//meshes/pitch_bottom_link.STL" />
+        </geometry>
+      </collision>
+    </link>
+    <joint
+      name="${prefix}pitch_bottom_joint"
+      type="revolute">
+      <origin
+        xyz="-0.103000865501078 -0.286804989831434 0"
+        rpy="0 0 0" />
+      <parent
+        link="${prefix}pitch_front_link" />
+      <child
+        link="${prefix}pitch_bottom_link" />
+      <axis
+        xyz="0 0 1" />
+      <limit
+        lower="-1.157657"
+        upper="0.783710"
+        effort="1000"
+        velocity="10" />
+      <mimic joint="${prefix}pitch_front_joint" multiplier="-1"/>
+    </joint>
+    <link
+      name="${prefix}pitch_end_link">
+      <inertial>
+        <origin
+          xyz="0.018122 -0.027143 0.00078916"
+          rpy="0 0 0" />
+        <mass
+          value="2.0321" />
+        <inertia
+          ixx="0"
+          ixy="0"
+          ixz="0"
+          iyy="0"
+          iyz="0"
+          izz="0" />
+      </inertial>
+      <visual>
+        <origin
+          xyz="0 0 0"
+          rpy="0 0 0" />
+        <geometry>
+          <mesh
+            filename="package://dvrk_description/ecm//meshes/pitch_end_link.STL" />
+        </geometry>
+        <material
+          name="">
+          <color
+            rgba="0.89804 0.91765 0.92941 1" />
+        </material>
+      </visual>
+      <collision>
+        <origin
+          xyz="0 0 0"
+          rpy="0 0 0" />
+        <geometry>
+          <mesh
+            filename="package://dvrk_description/ecm//meshes/pitch_end_link.STL" />
+        </geometry>
+      </collision>
+    </link>
+    <joint
+      name="${prefix}pitch_end_joint"
+      type="revolute">
+      <origin
+        xyz="0.340400072983362 -0.000135620545844151 0"
+        rpy="0 0 0" />
+      <parent
+        link="${prefix}pitch_bottom_link" />
+      <child
+        link="${prefix}pitch_end_link" />
+      <axis
+        xyz="0 0 1" />
+      <limit
+        lower="-0.783710"
+        upper="1.157657"
+        effort="1000"
+        velocity="10" />
+      <mimic joint="${prefix}pitch_front_joint" multiplier="1"/>
+    </joint>
+    <link
+      name="${prefix}main_insertion_link">
+      <inertial>
+        <origin
+          xyz="0.0086165 -0.00079249 -0.047928"
+          rpy="0 0 0" />
+        <mass
+          value="0.23108" />
+        <inertia
+          ixx="0"
+          ixy="0"
+          ixz="0"
+          iyy="0"
+          iyz="0"
+          izz="0" />
+      </inertial>
+      <visual>
+        <origin
+          xyz="0 0 0"
+          rpy="0 0 0" />
+        <geometry>
+          <mesh
+            filename="package://dvrk_description/ecm//meshes/main_insertion_link.STL" />
+        </geometry>
+        <material
+          name="">
+          <color
+            rgba="0.25098 0.25098 0.25098 1" />
+        </material>
+      </visual>
+      <collision>
+        <origin
+          xyz="0 0 0"
+          rpy="0 0 0" />
+        <geometry>
+          <mesh
+            filename="package://dvrk_description/ecm//meshes/main_insertion_link.STL" />
+        </geometry>
+      </collision>
+    </link>
+    <joint
+      name="${prefix}main_insertion_joint"
+      type="prismatic">
+      <origin
+        xyz="0.042 -0.086143 0"
+        rpy="-1.5708 0 0" />
+      <parent
+        link="${prefix}pitch_end_link" />
+      <child
+        link="${prefix}main_insertion_link" />
+      <axis
+        xyz="0 0 1" />
+      <limit
+        lower="0"
+        upper="0.254193"
+        effort="50"
+        velocity="100" />
+    </joint>
+    <link
+      name="${prefix}tool_link">
+      <inertial>
+        <origin
+          xyz="0 -0.0007925 -0.10732"
+          rpy="0 0 0" />
+        <mass
+          value="1.9074" />
+        <inertia
+          ixx="0"
+          ixy="0"
+          ixz="0"
+          iyy="0"
+          iyz="0"
+          izz="0" />
+      </inertial>
+      <visual>
+        <origin
+          xyz="0 0 0"
+          rpy="0 0 0" />
+        <geometry>
+          <mesh
+            filename="package://dvrk_description/ecm//meshes/tool_link.STL" />
+        </geometry>
+        <material
+          name="">
+          <color
+            rgba="0.75294 0.75294 0.75294 1" />
+        </material>
+      </visual>
+      <collision>
+        <origin
+          xyz="0 0 0"
+          rpy="0 0 0" />
+        <geometry>
+          <mesh
+            filename="package://dvrk_description/ecm//meshes/tool_link.STL" />
+        </geometry>
+      </collision>
+    </link>
+    <joint
+      name="${prefix}tool_joint"
+      type="revolute">
+      <origin
+        xyz="0.0609999999999996 0 0"
+        rpy="0 0 0" />
+      <parent
+        link="${prefix}main_insertion_link" />
+      <child
+        link="${prefix}tool_link" />
+      <axis
+        xyz="0 0 -1" />
+      <limit
+        lower="-1.552676"
+        upper="1.566741"
+        effort="1000"
+        velocity="10" />
+    </joint>
+    <link
+      name="${prefix}pitch_top_link">
+      <inertial>
+        <origin
+          xyz="0.1702 0 0.0007925"
+          rpy="0 0 0" />
+        <mass
+          value="0.43851" />
+        <inertia
+          ixx="0"
+          ixy="0"
+          ixz="0"
+          iyy="0"
+          iyz="0"
+          izz="0" />
+      </inertial>
+      <visual>
+        <origin
+          xyz="0 0 0"
+          rpy="0 0 0" />
+        <geometry>
+          <mesh
+            filename="package://dvrk_description/ecm//meshes/pitch_top_link.STL" />
+        </geometry>
+        <material
+          name="">
+          <color
+            rgba="0.64706 0.51765 0 1" />
+        </material>
+      </visual>
+      <collision>
+        <origin
+          xyz="0 0 0"
+          rpy="0 0 0" />
+        <geometry>
+          <mesh
+            filename="package://dvrk_description/ecm//meshes/pitch_top_link.STL" />
+        </geometry>
+      </collision>
+    </link>
+    <joint
+      name="${prefix}pitch_top_joint"
+      type="revolute">
+      <origin
+        xyz="-0.10847228839493 -0.324257434492051 0"
+        rpy="0 0 0" />
+      <parent
+        link="${prefix}pitch_front_link" />
+      <child
+        link="${prefix}pitch_top_link" />
+      <axis
+        xyz="0 0 1" />
+      <limit
+        lower="-1.157657"
+        upper="0.783710"
+        effort="1000"
+        velocity="10" />
+      <mimic joint="${prefix}pitch_front_joint" multiplier="-1"/>
+    </joint>
+    <link
+      name="${prefix}pitch_back_link">
+      <inertial>
+        <origin
+          xyz="-0.032853 -0.14997 -0.0080613"
+          rpy="0 0 0" />
+        <mass
+          value="0.4214" />
+        <inertia
+          ixx="0"
+          ixy="0"
+          ixz="0"
+          iyy="0"
+          iyz="0"
+          izz="0" />
+      </inertial>
+      <visual>
+        <origin
+          xyz="0 0 0"
+          rpy="0 0 0" />
+        <geometry>
+          <mesh
+            filename="package://dvrk_description/ecm//meshes/pitch_back_link.STL" />
+        </geometry>
+        <material
+          name="">
+          <color
+            rgba="0.64706 0.51765 0 1" />
+        </material>
+      </visual>
+      <collision>
+        <origin
+          xyz="0 0 0"
+          rpy="0 0 0" />
+        <geometry>
+          <mesh
+            filename="package://dvrk_description/ecm//meshes/pitch_back_link.STL" />
+        </geometry>
+      </collision>
+    </link>
+    <joint
+      name="${prefix}pitch_back_joint"
+      type="revolute">
+      <origin
+        xyz="0 -0.00979999999999302 0.162430000000002"
+        rpy="3.14 -1.5707963267949 0" />
+      <parent
+        link="${prefix}yaw_link" />
+      <child
+        link="${prefix}pitch_back_link" />
+      <axis
+        xyz="0 0 1" />
+      <limit
+        lower="-0.783710"
+        upper="1.157657"
+        effort="1000"
+        velocity="10" />
+      <mimic joint="${prefix}pitch_front_joint" multiplier="1"/>
+    </joint>
+    <link
+      name="${prefix}remote_center_link">
+      <inertial>
+        <origin
+          xyz="0 0 0"
+          rpy="0 0 0" />
+        <mass
+          value="0.004482" />
+        <inertia
+          ixx="0"
+          ixy="0"
+          ixz="0"
+          iyy="0"
+          iyz="0"
+          izz="0" />
+      </inertial>
+      <visual>
+        <origin
+          xyz="0 0 0"
+          rpy="0 0 0" />
+        <geometry>
+          <mesh
+            filename="package://dvrk_description/ecm//meshes/remote_center_link.STL" />
+        </geometry>
+        <material
+          name="">
+          <color
+            rgba="1 1 1 1" />
+        </material>
+      </visual>
+      <collision>
+        <origin
+          xyz="0 0 0"
+          rpy="0 0 0" />
+        <geometry>
+          <mesh
+            filename="package://dvrk_description/ecm//meshes/remote_center_link.STL" />
+        </geometry>
+      </collision>
+    </link>
+    <joint
+      name="${prefix}remote_center_joint"
+      type="fixed">
+      <origin
+        xyz="0.612599207482277 0 0.10159534323531"
+        rpy="0 0 -1.5707963267949" />
+      <parent
+        link="${prefix}base_link" />
+      <child
+        link="${prefix}remote_center_link" />
+      <axis
+        xyz="0 0 0" />
+    </joint>
+    <link name="${prefix}end_link"/>
+    <joint
+      name="${prefix}end_joint"
+      type="fixed">
+      <origin
+        xyz="0 0 0.37364"
+        rpy="0 0 0" />
+      <parent
+        link="${prefix}tool_link" />
+      <child
+        link="${prefix}end_link" />
+      <axis
+        xyz="0 0 0" />
+    </joint>
+  </xacro:macro>
+</robot>
