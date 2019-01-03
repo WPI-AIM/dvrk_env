@@ -2,7 +2,7 @@
 <robot name="master" xmlns:xacro="http://www.ros.org/wiki/xacro">
 
 <!-- Macros -->
-<xacro:include filename="$(find dvrk_description)/suj/suj.xacro"/>
+<xacro:include filename="$(find dvrk_description)/suj/suj.urdf.xacro"/>
 <xacro:include filename="$(find dvrk_description)/psm/psm.urdf.xacro"/>
 <xacro:include filename="$(find dvrk_description)/ecm/ecm.urdf.xacro"/>
 <!--xacro:include filename="$(find dvrk_description)/tool_lnd/tool_lnd.urdf.xacro"/-->

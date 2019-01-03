@@ -9,7 +9,7 @@
  <arg name="rvizconfig" default="$(find dvrk_description)/rviz/suj.rviz" />
   <param
     name="robot_description"
-    command="$(find xacro)/xacro.py $(find dvrk_description)/suj/suj_launch.urdf" />
+    command="$(find xacro)/xacro.py $(find dvrk_description)/suj/suj_launch.urdf.xacro" />
   <param
     name="use_gui"
     value="$(arg gui)" />

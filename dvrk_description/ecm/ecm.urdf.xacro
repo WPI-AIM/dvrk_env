@@ -16,7 +16,7 @@
       name="${prefix}base_link">
       <inertial>
         <origin
-          xyz="-0.0048227 -2.9669E-05 0.068959"
+          xyz="-0.0048227 0 0.068959"
           rpy="0 0 0" />
         <mass
           value="2.6363" />
@@ -56,14 +56,14 @@
       name="${prefix}yaw_link">
       <inertial>
         <origin
-          xyz="2.7532E-07 -0.029045 0.10669"
+          xyz="0 -0.029045 0.10669"
           rpy="0 0 0" />
         <mass
           value="6.4168" />
         <inertia
           ixx="0.00086598"
-          ixy="7.8532E-10"
-          ixz="2.5709E-09"
+          ixy="0"
+          ixz="0"
           iyy="0.0016561"
           iyz="-0.00015825"
           izz="0.00085001" />
@@ -97,7 +97,7 @@
       type="revolute">
       <origin
         xyz="0.0731999999999783 0 0.101460000000185"
-        rpy="1.57079632679615 -3.58046925441613E-13 1.5707963267949" />
+        rpy="1.57079632679615 0 1.5707963267949" />
       <parent
         link="${prefix}base_link" />
       <child
@@ -114,7 +114,7 @@
       name="${prefix}pitch_front_link">
       <inertial>
         <origin
-          xyz="-0.030619 -0.13578 -5.7828E-08"
+          xyz="-0.030619 -0.13578 0"
           rpy="0 0 0" />
         <mass
           value="1.6069" />
@@ -179,9 +179,9 @@
         <inertia
           ixx="0.00023901"
           ixy="0.00022767"
-          ixz="-3.8706E-06"
+          ixz="0"
           iyy="0.0030096"
-          iyz="-7.279E-07"
+          iyz="0"
           izz="0.0029617" />
       </inertial>
       <visual>
@@ -348,7 +348,7 @@
       name="${prefix}tool_link">
       <inertial>
         <origin
-          xyz="2.6548E-14 -0.0007925 -0.10732"
+          xyz="0 -0.0007925 -0.10732"
           rpy="0 0 0" />
         <mass
           value="1.9074" />
@@ -406,7 +406,7 @@
       name="${prefix}pitch_top_link">
       <inertial>
         <origin
-          xyz="0.1702 -6.7816E-05 0.0007925"
+          xyz="0.1702 0 0.0007925"
           rpy="0 0 0" />
         <mass
           value="0.43851" />
@@ -524,7 +524,7 @@
       name="${prefix}remote_center_link">
       <inertial>
         <origin
-          xyz="-1.1102E-16 0 0"
+          xyz="0 0 0"
           rpy="0 0 0" />
         <mass
           value="0.004482" />
@@ -565,7 +565,7 @@
       type="fixed">
       <origin
         xyz="0.612599207482277 0 0.10159534323531"
-        rpy="-1.249734375614E-12 3.58046925441613E-13 -1.5707963267949" />
+        rpy="0 0 -1.5707963267949" />
       <parent
         link="${prefix}base_link" />
       <child

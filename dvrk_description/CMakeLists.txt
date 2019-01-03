@@ -4,7 +4,7 @@ project(dvrk_description)
 find_package(catkin REQUIRED)
 
 catkin_package(
-  INCLUDE_DIRS dvrk ecm cart mtm psm tool_lnd
+  INCLUDE_DIRS dvrk ecm suj mtm psm tool_lnd
   CATKIN_DEPENDS
 )
 

@@ -2,7 +2,7 @@
 <launch>
   <group ns="/dvrk_mtm">
 
-    <arg name="model" default="$(find dvrk_description)/mtm/mtm_right.urdf.xacro" />
+    <arg name="model" default="$(find dvrk_description)/mtm/mtm_launch.urdf.xacro" />
     <arg name="gui" default="true" />
     <arg name="rate" default="20" />
 
