@@ -1,18 +1,20 @@
 Notification
 ====================
 
-This work is unofficial, unsupported and in progress in the current location.
+All the models have been designed at WPI from scratch.
 
 Description
 ====================
 This repository contains RViz and Gazebo simulations of the da Vinci Surgical System controlled using ROS. 
 
-# Author
+# Authors
 
 Ankur Agrawal:asagrawal@wpi.edu
-
 Radian Azhar Gondokaryono:ragondokaryono@wpi.edu
 
+# Maintainer
+
+Adnan Munawar: amunawar@wpi.edu
 
 # Install
 * download & compile dvrk_env
