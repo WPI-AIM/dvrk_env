@@ -12,3 +12,12 @@ We provide a simple script to take care of that: Just execute the **install** fi
 
 `./install.sh`
 
+# Usage
+## ROS (Running in only RViz)
+
+All the launch files are located in the launch folder. Make sure that your **ros_ws** that contains this package is sourced. Remember, you can either source the package for the current terminal session using `source **ros_ws**/devel/setup.bash` or add it to your **~/.bashrc** file. Afterwards run:
+
+`roslaunch dvrk_description <arm_type>_rviz.launch`
+
+Where `<arm_type>` is one of the following `mtm, psm, ecm, suj, dvrk`.
+
