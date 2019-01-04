@@ -7,3 +7,8 @@ Moreover, the whole integrated dvrk setup for simulation using RViz and Gazebo i
 # Note
 
 For the integrated models, nesting of different models has been done. For this, the models need to be present in the .gazebo folder of your system for Gazebo to recognize the models that are nested.
+
+We provide a simple script to take care of that: Just execute the **install** file as follows:
+
+`./install.sh`
+
