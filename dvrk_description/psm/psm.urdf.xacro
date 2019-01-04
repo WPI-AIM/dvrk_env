@@ -56,7 +56,7 @@
     </collision>
   </link>
   <link
-    name="${prefix}yaw_Link">
+    name="${prefix}yaw_link">
     <inertial>
       <origin
         xyz="-0.038769 0 0.041596"
@@ -77,7 +77,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://dvrk_description/psm/meshes/yaw_Link.STL" />
+          filename="package://dvrk_description/psm/meshes/yaw_link.STL" />
       </geometry>
       <material
         name="">
@@ -91,7 +91,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://dvrk_description/psm/meshes/yaw_Link.STL" />
+          filename="package://dvrk_description/psm/meshes/yaw_link.STL" />
       </geometry>
     </collision>
   </link>
@@ -104,7 +104,7 @@
     <parent
       link="${prefix}base_link" />
     <child
-      link="${prefix}yaw_Link" />
+      link="${prefix}yaw_link" />
     <axis
       xyz="0 0 1" />
     <limit
@@ -114,7 +114,7 @@
 	  velocity="10" />
   </joint>
   <link
-    name="${prefix}pitch_back_Link">
+    name="${prefix}pitch_back_link">
     <inertial>
       <origin
         xyz="-0.011651 -0.036241 0"
@@ -135,7 +135,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://dvrk_description/psm/meshes/pitch_back_Link.STL" />
+          filename="package://dvrk_description/psm/meshes/pitch_back_link.STL" />
       </geometry>
       <material
         name="">
@@ -149,7 +149,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://dvrk_description/psm/meshes/pitch_back_Link.STL" />
+          filename="package://dvrk_description/psm/meshes/pitch_back_link.STL" />
       </geometry>
     </collision>
   </link>
@@ -160,9 +160,9 @@
       xyz="0 0 0.0296"
       rpy="-1.5708 -0.29073 0" />
     <parent
-      link="${prefix}yaw_Link" />
+      link="${prefix}yaw_link" />
     <child
-      link="${prefix}pitch_back_Link" />
+      link="${prefix}pitch_back_link" />
     <axis
       xyz="0 0 1" />
 	<limit
@@ -173,7 +173,7 @@
 
   </joint>
   <link
-    name="${prefix}pitch_bottom_Link">
+    name="${prefix}pitch_bottom_link">
     <inertial>
       <origin
         xyz="0.25683 -0.010348 0"
@@ -194,7 +194,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://dvrk_description/psm/meshes/pitch_bottom_Link.STL" />
+          filename="package://dvrk_description/psm/meshes/pitch_bottom_link.STL" />
       </geometry>
       <material
         name="">
@@ -208,7 +208,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://dvrk_description/psm/meshes/pitch_bottom_Link.STL" />
+          filename="package://dvrk_description/psm/meshes/pitch_bottom_link.STL" />
       </geometry>
     </collision>
   </link>
@@ -219,9 +219,9 @@
       xyz="0.15 0 0"
       rpy="0 0 1.8615" />
     <parent
-      link="${prefix}pitch_back_Link" />
+      link="${prefix}pitch_back_link" />
     <child
-      link="${prefix}pitch_bottom_Link" />
+      link="${prefix}pitch_bottom_link" />
     <axis
       xyz="0 0 1" />
     <limit
@@ -232,7 +232,7 @@
     <mimic joint="${prefix}pitch_back_joint" multiplier="-1"/>
   </joint>
   <link
-    name="${prefix}pitch_end_Link">
+    name="${prefix}pitch_end_link">
     <inertial>
       <origin
         xyz="-0.0019293 -0.13613 0"
@@ -253,7 +253,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://dvrk_description/psm/meshes/pitch_end_Link.STL" />
+          filename="package://dvrk_description/psm/meshes/pitch_end_link.STL" />
       </geometry>
       <material
         name="">
@@ -267,7 +267,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://dvrk_description/psm/meshes/pitch_end_Link.STL" />
+          filename="package://dvrk_description/psm/meshes/pitch_end_link.STL" />
       </geometry>
     </collision>
   </link>
@@ -278,9 +278,9 @@
       xyz="0.516 0 0"
       rpy="0 0 0" />
     <parent
-      link="${prefix}pitch_bottom_Link" />
+      link="${prefix}pitch_bottom_link" />
     <child
-      link="${prefix}pitch_end_Link" />
+      link="${prefix}pitch_end_link" />
     <axis
       xyz="0 0 1" />
     <limit
@@ -291,7 +291,7 @@
     <mimic joint="${prefix}pitch_back_joint" multiplier="1"/>
   </joint>
   <link
-    name="${prefix}main_insertion_Link">
+    name="${prefix}main_insertion_link">
     <inertial>
       <origin
         xyz="0.0040563 -0.00010934 0.0098616"
@@ -312,7 +312,7 @@
         rpy="0 0 1.5708" />
       <geometry>
         <mesh
-          filename="package://dvrk_description/psm/meshes/main_insertion_Link.STL" />
+          filename="package://dvrk_description/psm/meshes/main_insertion_link.STL" />
       </geometry>
       <material
         name="">
@@ -326,7 +326,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://dvrk_description/psm/meshes/main_insertion_Link.STL" />
+          filename="package://dvrk_description/psm/meshes/main_insertion_link.STL" />
       </geometry>
     </collision>
   </link>
@@ -337,9 +337,9 @@
       xyz="0.043 -0.28809 0"
       rpy="1.5708 1.5708 3.1416" />
     <parent
-      link="${prefix}pitch_end_Link" />
+      link="${prefix}pitch_end_link" />
     <child
-      link="${prefix}main_insertion_Link" />
+      link="${prefix}main_insertion_link" />
     <axis
       xyz="0 0 1" />
     <limit
@@ -396,7 +396,7 @@
       xyz="0 0 0.4162"
       rpy="0 0 -1.5708" />
     <parent
-      link="${prefix}main_insertion_Link" />
+      link="${prefix}main_insertion_link" />
     <child
       link="${prefix}tool_roll_link" />
     <axis
@@ -642,7 +642,7 @@
 	  velocity="0" />
   </joint>
   <link
-    name="${prefix}pitch_top_Link">
+    name="${prefix}pitch_top_link">
     <inertial>
       <origin
         xyz="0.31246 -0.00056566 0"
@@ -663,7 +663,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://dvrk_description/psm/meshes/pitch_top_Link.STL" />
+          filename="package://dvrk_description/psm/meshes/pitch_top_link.STL" />
       </geometry>
       <material
         name="">
@@ -677,7 +677,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://dvrk_description/psm/meshes/pitch_top_Link.STL" />
+          filename="package://dvrk_description/psm/meshes/pitch_top_link.STL" />
       </geometry>
     </collision>
   </link>
@@ -688,9 +688,9 @@
       xyz="0.18366 0.014121 0"
       rpy="0 0 1.8615" />
     <parent
-      link="${prefix}pitch_back_Link" />
+      link="${prefix}pitch_back_link" />
     <child
-      link="${prefix}pitch_top_Link" />
+      link="${prefix}pitch_top_link" />
     <axis
       xyz="0 0 1" />
     <limit
@@ -701,7 +701,7 @@
     <mimic joint="${prefix}pitch_back_joint" multiplier="-1"/>
   </joint>
   <link
-    name="${prefix}pitch_front_Link">
+    name="${prefix}pitch_front_link">
     <inertial>
       <origin
         xyz="0.096269 0 0.047551"
@@ -722,7 +722,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://dvrk_description/psm/meshes/pitch_front_Link.STL" />
+          filename="package://dvrk_description/psm/meshes/pitch_front_link.STL" />
       </geometry>
       <material
         name="">
@@ -736,7 +736,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://dvrk_description/psm/meshes/pitch_front_Link.STL" />
+          filename="package://dvrk_description/psm/meshes/pitch_front_link.STL" />
       </geometry>
     </collision>
   </link>
@@ -748,9 +748,9 @@
       xyz="0 0 -0.0664"
       rpy="-1.5708 -0.29073 0" />
     <parent
-      link="${prefix}yaw_Link" />
+      link="${prefix}yaw_link" />
     <child
-      link="${prefix}pitch_front_Link" />
+      link="${prefix}pitch_front_link" />
     <axis
       xyz="0 0 1" />
     <mimic joint="${prefix}pitch_back_joint" multiplier="1"/>

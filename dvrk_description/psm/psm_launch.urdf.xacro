@@ -5,6 +5,6 @@
 
 <link name="world"/>
 <xacro:psm parent_link="world" prefix="psm_" xyz="0 0 0.1524" rpy="0 0 0"/>
-<!--xacro:tool_lnd prefix="" parent_link="main_insertion_Link" xyz="0 0 0" rpy="0 0 0"/-->
+<!--xacro:tool_lnd prefix="" parent_link="main_insertion_link" xyz="0 0 0" rpy="0 0 0"/-->
 
 </robot>
