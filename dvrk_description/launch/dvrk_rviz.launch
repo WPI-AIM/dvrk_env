@@ -13,10 +13,14 @@
   <param
     name="use_gui"
     value="$(arg gui)" />
+  <rosparam>
+      source_list: [/dvrk/joint_states]
+  </rosparam>
   <node
     name="joint_state_publisher"
     pkg="joint_state_publisher"
     type="joint_state_publisher" />
+
   <node
     name="robot_state_publisher"
     pkg="robot_state_publisher"

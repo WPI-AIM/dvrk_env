@@ -766,7 +766,7 @@
   <joint name="${prefix}remote_center_joint" type="fixed">
     <parent link="${prefix}base_link"/>
     <child link="${prefix}remote_center_link"/>
-    <origin rpy="0 0 0" xyz="0.4864 0 0"/>
+    <origin rpy="0 0 0" xyz="0 0.4864 0"/>
   </joint>
 
   </xacro:macro>
