@@ -53,3 +53,10 @@ roslaunch dvrk_gazebo dvrk_gazebo.launch
 # Dependencies
 
 Gazebo 7, ROS kinetic or ROS indigo, gazebo_ros_pkgs. If ROS-indigo is to be used with Gazebo 7, keep gazebo_ros_pkgs (https://github.com/ros-simulation/gazebo_ros_pkgs/tree/indigo-devel) in your src folder.
+
+# Citation
+If you find this work useful and use it in your research. Please use the following citation
+
+
+Agrawal, Ankur & Munawar, Adnan & Fischer, Gregory & Nycz, Christopher & Gondokaryono, Radian. (2019). An Approach to Modeling Closed-Loop Kinematic Chain Mechanisms, Applied to Simulations of the da Vinci Surgical System. 10.12700/APH.16.8.2019.8.3. 
+
