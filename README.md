@@ -58,5 +58,4 @@ Gazebo 7, ROS kinetic or ROS indigo, gazebo_ros_pkgs. If ROS-indigo is to be use
 If you find this work useful and use it in your research. Please use the following citation
 
 
-Agrawal, Ankur & Munawar, Adnan & Fischer, Gregory & Nycz, Christopher & Gondokaryono, Radian. (2019). An Approach to Modeling Closed-Loop Kinematic Chain Mechanisms, Applied to Simulations of the da Vinci Surgical System. 10.12700/APH.16.8.2019.8.3. 
-
+Gondokaryono RA, Agrawal A, Munawar A, Nycz CJ, Fischer GS, An Approach to Modeling Closed-Loop Kinematic Chain Mechanisms, applied to Simulations of the da Vinci Surgical System, Special Issue on Platforms for Robotics Research - Acta Polytechnica Hungarica, Vol 16, No 8, pp 29-48, Nov 2019
